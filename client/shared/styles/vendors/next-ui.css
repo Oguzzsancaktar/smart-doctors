@@ -1,0 +1,22 @@
+.nextui-input-wrapper--bordered {
+  border-radius: 6px;
+}
+.nextui-checkbox--checked .nextui-checkbox-container {
+  background: red !important;
+}
+.nextui-icon-check-line1::after {
+  background: #525f60;
+  height: 3px;
+}
+.nextui-icon-check-line2::after {
+  background: #525f60;
+  width: 3px;
+}
+
+.nextui-icon-check-line1 {
+  height: 3px;
+}
+
+.nextui-icon-check-line2 {
+  width: 3px;
+}
