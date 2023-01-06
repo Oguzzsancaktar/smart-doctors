@@ -29,7 +29,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
         {/* head */}
         <div className="py-[26px] px-[40px] flex justify-between border-b-[1px] border-gallery">
           <div className="flex flex-col ">
-            <h3 className="leading-[35px] text-[35px] font-bold text-easternBlue mb-[3px]">
+            <h3 className="leading-[35px] text-[35px] font-UbuntuBold text-easternBlue mb-[3px]">
               Sign In
             </h3>
             <h6 className="text-[14px] text-jungleMist leading-[15px] lowercase">
@@ -45,7 +45,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
               css={{ borderRadius: "6px" }}
               onClick={onSwitchChange}
             >
-              <h4 className="font-bold text-white text-[14px] leading-[16px]">
+              <h4 className="font-UbuntuBold text-white text-[14px] leading-[16px]">
                 Switch to{" "}
                 {capitalizeFirstLetter(
                   EUserType[loginType] === "DOCTOR"
@@ -111,7 +111,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 css={{ borderRadius: "6px", width: "170px" }}
                 onPress={handleLogin}
               >
-                <h4 className="font-bold text-white text-[14px] leading-[16px]">
+                <h4 className="font-UbuntuBold text-white text-[14px] leading-[16px]">
                   Sign In
                 </h4>
               </Button>
@@ -164,7 +164,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
           </div>
 
           <div className="mt-[20px]">
-            <h2 className="font-bold text-center text-corduroy text-[16px] leading-[18px]">
+            <h2 className="font-UbuntuBold text-center text-corduroy text-[16px] leading-[18px]">
               New User ?
               <span className="text-easternBlue ml-[5px] underline underline-offset-2">
                 Create an account

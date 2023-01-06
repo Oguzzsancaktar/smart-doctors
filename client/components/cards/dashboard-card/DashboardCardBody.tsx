@@ -4,7 +4,11 @@ interface IProps {
   bodyElement?: React.ReactNode;
 }
 const DashboardCardBody: React.FC<IProps> = ({ bodyElement }) => {
-  return <div className="flex flex-col h-full pt-[40px]">{bodyElement}</div>;
+  return (
+    <div className="flex flex-col h-[calc(100%-80px)] pt-[40px]">
+      {bodyElement}
+    </div>
+  );
 };
 
 export default DashboardCardBody;

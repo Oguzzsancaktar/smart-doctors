@@ -8,7 +8,7 @@ interface IProps {
 }
 const ActivityListItem: React.FC<IProps> = ({ type }) => {
   const appointmentItem = (
-    <div className="my-[17px] flex flex-row ">
+    <div className={"my-[17px] flex flex-row  "}>
       <span className="flex items-center w-[26px] mr-[20px] ">
         {selectIcon("bg-calendar")}
       </span>
@@ -30,7 +30,7 @@ const ActivityListItem: React.FC<IProps> = ({ type }) => {
   );
 
   const messageItem = (
-    <div className="my-[17px] flex flex-row ">
+    <div className={"my-[17px] flex flex-row  "}>
       <span className="flex items-center w-[26px] mr-[20px] ">
         {selectIcon("bg-message")}
       </span>
@@ -53,7 +53,7 @@ const ActivityListItem: React.FC<IProps> = ({ type }) => {
   );
 
   const reviewItem = (
-    <div className="my-[17px] flex flex-row ">
+    <div className={"my-[17px] flex flex-row  "}>
       <span className="flex items-center w-[26px] mr-[20px] ">
         {selectIcon("bg-star")}
       </span>

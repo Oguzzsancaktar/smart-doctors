@@ -5,6 +5,8 @@ import { AuthProvider } from "../contexts/authContext";
 
 import "../shared/styles/globals.css";
 import "../shared/styles/vendors/next-ui.css";
+import "../shared/styles/vendors/react-flatpckr.css";
+
 import { ProtectRoute } from "../routers/ProtectedRoute";
 
 function MyApp({ Component, pageProps }: AppProps) {

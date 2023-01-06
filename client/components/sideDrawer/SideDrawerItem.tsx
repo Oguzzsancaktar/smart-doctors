@@ -17,7 +17,7 @@ const SideDrawerItem: React.FC<ISideDrawerItemProps> = ({
       <div className="w-[150px] m-auto ">
         <div
           className={
-            "flex items-center font-bold text-[16px] leading-[18px] " +
+            "flex items-center font-UbuntuBold text-[16px] leading-[18px] " +
             (isActive ? "text-easternBlue" : "text-corduroy")
           }
         >

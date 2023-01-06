@@ -10,7 +10,7 @@ import {
 const PatientDashboard = () => {
   return (
     <>
-      <div className="w-full flex flex-row h-[calc(100%-450px)] pb-[20px]">
+      <div className="w-full flex flex-row h-auto pb-[20px]">
         <div className="w-[calc(100%-360px)] mr-[20px] ">
           <DashboardCard
             headButtonText="New Appointment"
@@ -28,8 +28,8 @@ const PatientDashboard = () => {
         </div>
       </div>
 
-      <div className=" w-full flex flex-row h-[450px] pt-[20px] ">
-        <div className="w-6/12  mr-[20px]">
+      <div className=" w-full flex flex-row h-max pt-[20px] ">
+        <div className="h-full w-6/12  mr-[20px]">
           <DashboardCard
             headButtonText="View All"
             headIconName="message"
@@ -37,7 +37,7 @@ const PatientDashboard = () => {
             bodyElement={<PatientsChatList />}
           />
         </div>
-        <div className="w-6/12 ml-[20px]">
+        <div className="h-full w-6/12 ml-[20px]">
           <DashboardCard
             headIconName="heart"
             headIconText="Favorite Doctors"

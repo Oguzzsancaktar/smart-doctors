@@ -16,7 +16,7 @@ const DashboardCardHeader: React.FC<IProps> = ({
     <div className="h-[80px] px-[40px]  border-b-[1px] border-gallery flex items-center justify-between">
       <div
         className={
-          "flex items-center font-bold text-[16px] leading-[18px] text-easternBlue"
+          "flex items-center font-UbuntuBold text-[16px] leading-[18px] text-easternBlue"
         }
       >
         <span className="mr-[18px] ">{selectIcon(headIconName)} </span>
@@ -33,7 +33,7 @@ const DashboardCardHeader: React.FC<IProps> = ({
             size={"sm"}
             // onClick={onSwitchChange}
           >
-            <h4 className="font-bold text-white text-[14px] leading-[16px]">
+            <h4 className="font-UbuntuBold text-white text-[14px] leading-[16px]">
               {headButtonText}
             </h4>
           </Button>

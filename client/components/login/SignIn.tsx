@@ -41,7 +41,7 @@ const SignIn = () => {
 
       <div className="absolute left-1/2 w-1/2 h-full  top-0 flex items-center">
         <div className="flex flex-col h-min">
-          <h2 className="text-[74px] text-easternBlue font-bold leading-[85px] h-min max-w-[600px]">
+          <h2 className="text-[74px] text-easternBlue font-UbuntuBold leading-[85px] h-min max-w-[600px]">
             Welcome back to <br /> SmartDocs.
           </h2>
           <div className="mt-[40px] ">
