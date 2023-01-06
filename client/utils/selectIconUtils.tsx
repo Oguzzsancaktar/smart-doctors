@@ -2,11 +2,14 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import {
   ActivitiesIcon,
   ArrowRightCircleIcon,
+  CalendarBgIcon,
   CalendarIcon,
   DashboardIcon,
   HeartIcon,
+  MessageBgIcon,
   MessageIcon,
   SettingsIcon,
+  StarBgIcon,
   StethescopeIcon,
 } from "../components";
 
@@ -35,6 +38,15 @@ export const selectIcon = (iconName: string, size?: string, color?: string) => {
       return <ActivitiesIcon size={size} color={color} />;
     case "arrow-right-circle":
       return <ArrowRightCircleIcon size={size} color={color} />;
+
+    // backgrounded
+
+    case "bg-calendar":
+      return <CalendarBgIcon size={size} color={color} />;
+    case "bg-message":
+      return <MessageBgIcon size={size} color={color} />;
+    case "bg-star":
+      return <StarBgIcon size={size} color={color} />;
     default:
       return undefined;
   }

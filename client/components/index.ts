@@ -7,3 +7,4 @@ export * from "./icons";
 export * from "./login";
 export * from "./page";
 export * from "./sideDrawer";
+export * from "./views";
