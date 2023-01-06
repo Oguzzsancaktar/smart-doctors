@@ -1,7 +1,30 @@
 import React from "react";
+import DashboardCardHeader from "./DashboardCardHeader";
+import DashboardCardBody from "./DashboardCardBody";
 
-const DashboardCard = () => {
-  return <div>DashboardCard</div>;
+interface IProps {
+  headIconName: string;
+  headIconText: string;
+  headButtonText?: string;
+  bodyElement?: React.ReactNode;
+}
+
+const DashboardCard: React.FC<IProps> = ({
+  headIconName,
+  headIconText,
+  headButtonText,
+  bodyElement,
+}) => {
+  return (
+    <div className="w-full h-full flex flex-col bg-white rounded-[12px]">
+      <DashboardCardHeader
+        headIconName={headIconName}
+        headIconText={headIconText}
+        headButtonText={headButtonText}
+      />
+      <DashboardCardBody bodyElement={bodyElement} />
+    </div>
+  );
 };
 
 export default DashboardCard;

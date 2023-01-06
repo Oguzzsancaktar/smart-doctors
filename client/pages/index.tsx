@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
 import { SideDrawer } from "../widgets";
 import { useAuth } from "../contexts/authContext";
+import { MainContent } from "../components";
 
 function Home() {
   const { logout } = useAuth();
@@ -19,10 +19,9 @@ function Home() {
           <SideDrawer />
         </section>
 
-        <div className="p-[40px]">
-          <Link href="/login">login</Link>
-          <button onClick={() => logout()}>logout</button>
-        </div>
+        <section className="h-full w-[calc(100%-278px)] p-[40px] ">
+          <MainContent />
+        </section>
       </main>
     </div>
   );

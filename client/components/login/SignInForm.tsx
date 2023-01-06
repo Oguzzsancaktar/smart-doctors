@@ -6,6 +6,8 @@ import { EUserType } from "../../models/enumerations/user";
 import { capitalizeFirstLetter } from "../../utils/stringUtils";
 import { handleInputChange } from "../../utils/handleStateUtils";
 import { selectIcon } from "../../utils/selectIconUtils";
+import Router from "next/router";
+import { selectAppRoute } from "../../utils/appRouteUtils";
 
 interface IProps {
   loginType: EUserType;
@@ -17,7 +19,9 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
     password: "",
   });
 
-  const handleLogin = () => {};
+  const handleLogin = () => {
+    Router.replace(selectAppRoute("home"));
+  };
 
   return (
     <div className=" bg-white w-[463px] h-min rounded-[12px]">

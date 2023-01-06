@@ -1,12 +1,10 @@
 import React from "react";
-import DashboardCardHeader from "./DashboardCardHeader";
 
-const DashboardCardBody = () => {
-  return (
-    <div className="flex flex-col bg-white rounded-[6px]">
-      <DashboardCardBody />
-    </div>
-  );
+interface IProps {
+  bodyElement?: React.ReactNode;
+}
+const DashboardCardBody: React.FC<IProps> = ({ bodyElement }) => {
+  return <div className="flex flex-col ">{bodyElement}</div>;
 };
 
 export default DashboardCardBody;

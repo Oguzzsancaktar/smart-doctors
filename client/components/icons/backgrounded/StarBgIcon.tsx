@@ -16,9 +16,9 @@ const StarBgIcon: React.FC<IIconProps> = ({ color, size }) => {
         transform="translate(-1.5 -1.5)"
         fill="#ffc674"
         stroke="#ee9310"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="3"
       />
     </svg>
   );

@@ -21,9 +21,9 @@ const CalendarBgIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(0 -0.599)"
           fill="#c9e0df"
           stroke="#21ada9"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
         />
         <path
           id="Pfad_39"
@@ -32,9 +32,9 @@ const CalendarBgIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-3.892)"
           fill="#c9e0df"
           stroke="#21ada9"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
         />
         <path
           id="Pfad_40"
@@ -43,9 +43,9 @@ const CalendarBgIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-1.497)"
           fill="#c9e0df"
           stroke="#21ada9"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
         />
         <path
           id="Pfad_41"
@@ -54,9 +54,9 @@ const CalendarBgIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(0 -2.395)"
           fill="#c9e0df"
           stroke="#21ada9"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
         />
       </g>
     </svg>

@@ -16,9 +16,9 @@ const MessageBgIcon: React.FC<IIconProps> = ({ color, size }) => {
         transform="translate(-3 -3)"
         fill="#a6cee3"
         stroke="#1f78b4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="3"
       />
     </svg>
   );

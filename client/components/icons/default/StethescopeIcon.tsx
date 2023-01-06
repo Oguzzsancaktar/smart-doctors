@@ -21,7 +21,7 @@ const StethescopeIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(0)"
           fill={color}
           stroke={color}
-          stroke-width="1"
+          strokeWidth="1"
         />
         <path
           id="Pfad_51"
@@ -30,7 +30,7 @@ const StethescopeIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-41.63 -291.948)"
           fill={color}
           stroke={color}
-          stroke-width="1"
+          strokeWidth="1"
         />
       </g>
     </svg>

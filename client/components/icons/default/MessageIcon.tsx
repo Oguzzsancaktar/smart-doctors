@@ -16,9 +16,9 @@ const MessageIcon: React.FC<IIconProps> = ({ color, size }) => {
         transform="translate(-3 -3)"
         fill="none"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="3"
       />
     </svg>
   );

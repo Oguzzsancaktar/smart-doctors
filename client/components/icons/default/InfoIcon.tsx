@@ -21,9 +21,9 @@ const InfoIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(0 0)"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="Pfad_53"
@@ -32,9 +32,9 @@ const InfoIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-5.492 -5.492)"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="Pfad_54"
@@ -43,9 +43,9 @@ const InfoIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-5.492 -3.295)"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
       </g>
     </svg>

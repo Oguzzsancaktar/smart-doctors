@@ -1,5 +1,6 @@
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import {
+  ActivitiesIcon,
   ArrowRightCircleIcon,
   CalendarIcon,
   DashboardIcon,
@@ -30,6 +31,8 @@ export const selectIcon = (iconName: string, size?: string, color?: string) => {
       return <HeartIcon size={size} color={color} />;
     case "settings":
       return <SettingsIcon size={size} color={color} />;
+    case "activity":
+      return <ActivitiesIcon size={size} color={color} />;
     case "arrow-right-circle":
       return <ArrowRightCircleIcon size={size} color={color} />;
     default:
