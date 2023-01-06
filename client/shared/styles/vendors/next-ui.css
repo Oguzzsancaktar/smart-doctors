@@ -2,7 +2,7 @@
   border-radius: 6px;
 }
 .nextui-checkbox--checked .nextui-checkbox-container {
-  background: red !important;
+  /* background: red !important; */
 }
 .nextui-icon-check-line1::after {
   background: #525f60;

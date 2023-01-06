@@ -1,8 +1,8 @@
 import { Image } from "@nextui-org/react";
-import React, { useMemo, useState } from "react";
-import { SignInForm } from "../../components";
+import React, { useState } from "react";
 import { EUserType } from "../../models/enumerations/user";
 import { Footer } from "../../widgets";
+import SignInForm from "./SignInForm";
 
 const SignIn = () => {
   const [loginType, setLoginType] = useState<EUserType>(EUserType.DOCTOR);

@@ -1,16 +1,24 @@
 import React from "react";
 import { Button, Checkbox, Grid, Input, Row } from "@nextui-org/react";
-import ArrowRightCircle from "../../public/icons/ArrowRightCircle.svg";
-import AppleLogo from "../../public/icons/AppleLogo.svg";
-import GoogleLogo from "../../public/icons/GoogleLogo.svg";
+import AppleLogo from "../../public/images/AppleLogo.svg";
+import GoogleLogo from "../../public/images/GoogleLogo.svg";
 import { EUserType } from "../../models/enumerations/user";
 import { capitalizeFirstLetter } from "../../utils/stringUtils";
+import { handleInputChange } from "../../utils/handleStateUtils";
+import { selectIcon } from "../../utils/selectIconUtils";
 
 interface IProps {
   loginType: EUserType;
   onSwitchChange: () => void;
 }
 const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
+  const [loginCredentials, setLoginCredentials] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const handleLogin = () => {};
+
   return (
     <div className=" bg-white w-[463px] h-min rounded-[12px]">
       <div className="flex flex-col h-full">
@@ -43,7 +51,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 Login
               </h4>
               <span className="pl-[5px]">
-                <ArrowRightCircle fill="currentColor" />
+                {selectIcon("arrow-right-circle")}
               </span>
             </Button>
           </div>
@@ -59,15 +67,27 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 bordered
                 borderWeight="light"
                 css={{ borderRadius: "6px", width: "100%" }}
+                name="email"
+                type="email"
+                value={loginCredentials.email}
+                onChange={(e) =>
+                  handleInputChange(e, loginCredentials, setLoginCredentials)
+                }
               />
             </Grid>
             <Grid className="mb-[30px] w-full">
-              <Input
+              <Input.Password
                 color="primary"
                 labelPlaceholder="Password"
                 bordered
                 borderWeight="light"
                 css={{ borderRadius: "6px", width: "100%" }}
+                name="password"
+                type="password"
+                value={loginCredentials.password}
+                onChange={(e) =>
+                  handleInputChange(e, loginCredentials, setLoginCredentials)
+                }
               />
             </Grid>
 
@@ -85,6 +105,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 auto
                 color="primary"
                 css={{ borderRadius: "6px", width: "170px" }}
+                onPress={handleLogin}
               >
                 <h4 className="font-bold text-white text-[14px] leading-[16px]">
                   Sign In
@@ -110,6 +131,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                     width: "170px",
                     borderColor: "$corduroy",
                   }}
+                  onPress={handleLogin}
                 >
                   <AppleLogo />
                   <h4 className="font-normal ml-[5px] text-corduroy text-[12px] leading-[13px]">

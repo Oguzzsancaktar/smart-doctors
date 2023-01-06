@@ -1,10 +1,11 @@
 import { NextUIProvider, createTheme } from "@nextui-org/react";
-import "../shared/styles/globals.css";
-import "../shared/styles/vendors/next-ui.css";
-
 import { AppProps } from "next/app";
 import { themeColors } from "../constants";
-import { Footer } from "../widgets";
+import { AuthProvider } from "../contexts/authContext";
+
+import "../shared/styles/globals.css";
+import "../shared/styles/vendors/next-ui.css";
+import { ProtectRoute } from "../routers/ProtectedRoute";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = createTheme({
@@ -25,7 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <NextUIProvider theme={theme}>
-      <Component {...pageProps} />
+      <AuthProvider>
+        <ProtectRoute>
+          <Component {...pageProps} />
+        </ProtectRoute>
+      </AuthProvider>
     </NextUIProvider>
   );
 }
