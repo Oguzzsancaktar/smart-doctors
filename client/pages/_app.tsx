@@ -1,13 +1,14 @@
 import { NextUIProvider, createTheme } from "@nextui-org/react";
 import { AppProps } from "next/app";
 import { themeColors } from "../constants";
-import { AuthProvider } from "../contexts/authContext";
 
 import "../shared/styles/globals.css";
 import "../shared/styles/vendors/next-ui.css";
 import "../shared/styles/vendors/react-flatpckr.css";
 
-import { ProtectRoute } from "../routers/ProtectedRoute";
+import { AppProvider } from "../contexts/appContext";
+import { AuthProvider } from "../contexts/authContext";
+import AuthRouter from "../routers/AuthRouter";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = createTheme({
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         border: themeColors.jungleMist,
         accents6: themeColors.jungleMist,
         primarySolidHover: themeColors.gamboge,
+        text: themeColors.corduroy,
       },
       radii: {
         lg: "25px",
@@ -28,11 +30,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <NextUIProvider theme={theme}>
-      <AuthProvider>
-        <ProtectRoute>
+      <AppProvider>
+        <AuthProvider>
           <Component {...pageProps} />
-        </ProtectRoute>
-      </AuthProvider>
+        </AuthProvider>
+      </AppProvider>
     </NextUIProvider>
   );
 }

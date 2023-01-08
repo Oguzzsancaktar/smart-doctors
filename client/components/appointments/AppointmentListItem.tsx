@@ -29,10 +29,10 @@ const AppointmentListItem: React.FC<IProps> = ({ appointment }) => {
             <span className="font-UbuntuBold text-corduroy text-[12px] leading-[13px]">
               {appointment.doctor.name + " " + appointment.doctor.surname}
             </span>
-            <span className=" text-easternBlue  text-[12px] leading-[13px] my-[4px]">
+            <span className="  text-corduroy text-[12px] leading-[13px] my-[4px]">
               {appointment.doctor.address}
             </span>
-            <span className="text-corduroy text-[11px] leading-[12px] ">
+            <span className="text-easternBlue text-[11px] leading-[12px] ">
               {appointment.doctor.speciality}
             </span>
           </div>

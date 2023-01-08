@@ -1,11 +1,9 @@
 import Head from "next/head";
 import { SideDrawer } from "../widgets";
-import { useAuth } from "../contexts/authContext";
 import { MainContent } from "../components";
+import AuthRouter from "../routers/AuthRouter";
 
 function Home() {
-  const { logout } = useAuth();
-
   return (
     <div>
       <Head>
@@ -26,4 +24,4 @@ function Home() {
     </div>
   );
 }
-export default Home;
+export default AuthRouter(Home);

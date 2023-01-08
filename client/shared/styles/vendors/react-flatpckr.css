@@ -1,17 +1,26 @@
+.appointmentMiniCalendar .flatpickr-calendar {
+  font-family: "Ubuntu-Bold";
+  box-shadow: none;
+  font-weight: bold;
+}
+
 .flatpickr-calendar .flatpickr-day {
-  color: #ffffff;
+  color: #3d3d3d;
+  font-size: 13px;
+  line-height: 18px;
 }
-.flatpickr-calendar .flatpickr-day.today {
-  border-color: #21ada9;
-}
+
 .flatpickr-calendar .flatpickr-day.today:hover {
   background: transparent;
-  color: #ffffff;
+  color: #3d3d3d;
 }
 .flatpickr-calendar .flatpickr-day.selected,
 .flatpickr-calendar .flatpickr-day.selected:hover {
-  background: #21ada9;
-  color: white;
+  max-width: 36px;
+  height: 36px;
+  margin: 9px;
+  background: transparent;
+  color: #21ada9;
   border-color: #21ada9;
 }
 .flatpickr-calendar .flatpickr-day.inRange,
@@ -40,9 +49,8 @@
   box-shadow: -10px 0 0 #21ada9;
 }
 .flatpickr-calendar .flatpickr-day.flatpickr-disabled,
-.flatpickr-calendar .flatpickr-day.prevMonthDay,
-.flatpickr-calendar .flatpickr-day.nextMonthDay {
-  color: gray;
+.flatpickr-calendar .flatpickr-day.prevMonthDay {
+  color: #f0f0f0;
 }
 .flatpickr-calendar .flatpickr-day:hover {
   background: gainsboro;
@@ -155,7 +163,7 @@
   opacity: 1 !important;
 }
 .flatpickr-weekdays {
-  margin-top: 8px;
+  margin-top: 0px;
 }
 .flatpickr-current-month .flatpickr-monthDropdown-months {
   -webkit-appearance: none;
@@ -172,6 +180,76 @@
   display: none;
 }
 
-.appointmentMibiCalendar input.flatpickr-input {
+.flatpickr-calendar .flatpickr-day.today {
+  border-radius: 0;
+  border-color: #21ada9;
+  width: 54px;
+  height: 54px;
+  max-width: 54px;
+  margin: 0;
+  background-color: #21ada9;
+  color: white;
+}
+
+.appointmentMiniCalendar {
+  width: 380px;
+}
+.appointmentMiniCalendar input.flatpickr-input {
   display: none;
+}
+
+.appointmentMiniCalendar .flatpickr-calendar,
+.appointmentMiniCalendar .flatpickr-innerContainer,
+.appointmentMiniCalendar .flatpickr-innerContainer .flatpickr-rContainer,
+.appointmentMiniCalendar
+  .flatpickr-innerContainer
+  .flatpickr-rContainer
+  .flatpickr-days,
+.appointmentMiniCalendar
+  .flatpickr-innerContainer
+  .flatpickr-rContainer
+  .flatpickr-days
+  .dayContainer {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.appointmentMiniCalendar .flatpickr-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px !important;
+  height: 54px;
+  max-width: 54px;
+}
+
+.appointmentMiniCalendar .flatpickr-calendar .flatpickr-weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #21ada9;
+  width: 54px;
+  height: 54px;
+  max-width: 54px;
+}
+.appointmentMiniCalendar .flatpickr-calendar .flatpickr-days {
+  border: none;
+}
+
+.appointmentMiniCalendar .flatpickr-weekdays {
+  height: 54px;
+  background: transparent;
+}
+
+.appointmentMiniCalendar .flatpickr-months {
+  display: none;
+}
+
+.appointmentMiniCalendar .flatpickr-calendar .flatpickr-day.nextMonthDay {
+  color: #c9e0df;
+}
+.appointmentMiniCalendar .flatpickr-innerContainer {
+  border: none;
 }

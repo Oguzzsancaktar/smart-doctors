@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "sender": { "name": "John", "photo": "https://picsum.photos/200" },
+      "message": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et ",
+      "date": 1673184778
+    },
+    {
+      "sender": { "name": "John", "photo": "https://picsum.photos/200" },
+      "message": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et ",
+      "date": 1628000000
+    },
+    {
+      "sender": { "name": "John", "photo": "https://picsum.photos/200" },
+      "message": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et ",
+      "date": 1673000000
+    },
+    {
+      "sender": { "name": "John", "photo": "https://picsum.photos/200" },
+      "message": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et ",
+      "date": 1478000000
+    },
+    {
+      "sender": { "name": "John", "photo": "https://picsum.photos/200" },
+      "message": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et ",
+      "date": 1618000000
+    },
+    {
+      "sender": { "name": "John", "photo": "https://picsum.photos/200" },
+      "message": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et ",
+      "date": 1278000000
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export const sideDrawerItems: ISideDrawerItemProps[] = [
   {
     text: "Messages",
     iconName: "message",
-    tab: "messages",
+    tab: "chat",
   },
   {
     text: "Doctor Search",
@@ -24,6 +24,6 @@ export const sideDrawerItems: ISideDrawerItemProps[] = [
   {
     text: "Favorite Docs",
     iconName: "heart",
-    tab: "favorite-docs",
+    tab: "favorite-doctors",
   },
 ];

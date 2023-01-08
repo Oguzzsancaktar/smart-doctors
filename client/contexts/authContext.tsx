@@ -1,65 +1,87 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
-import Cookies from "js-cookie";
-import api from "../api/axiosInstance";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { EUserType, ILoginCredentials } from "../models";
+import Router from "next/router";
+import { selectAppRoute } from "../utils/appRouteUtils";
+import {
+  doctorCredentials,
+  patientCredentials,
+} from "../constants/tempCredentials";
 
-const AuthContext = createContext({
-  isAuthenticated: false,
-  user: null,
-  isLoading: true,
-  login: (email: any, password: any) => {},
+const AuthStateContext = createContext<{ loggedUser: any }>({
+  loggedUser: null,
+});
+
+const AuthApiContext = createContext({
+  login: (credentials: ILoginCredentials): any => {},
   logout: () => {},
 });
 
-export const AuthProvider = ({ children }: any) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+const useAuthStateContext = () => {
+  const context = useContext(AuthStateContext);
 
-  useEffect(() => {
-    async function loadUserFromCookies() {
-      const token = Cookies.get("token");
-      if (token) {
-        console.log("Got a token in the cookies, let's see if it is valid");
-        api.defaults.headers.Authorization = `Bearer ${token}`;
-        const { data: user } = { data: "oguz" };
-        if (user) setUser(user as any);
-      }
-      setLoading(false);
-    }
-    loadUserFromCookies();
-  }, []);
+  if (!context) {
+    throw new Error("useAuthStateContext must be used within a AuthProvider");
+  }
 
-  const login = async (email: any, password: any) => {
-    const { data: token } = await api.post("auth/login", { email, password });
-    if (token) {
-      console.log("Got token");
-      Cookies.set("token", token, { expires: 60 });
-      api.defaults.headers.Authorization = `Bearer ${token.token}`;
-      const { data: user } = await api.get("users/me");
-      setUser(user);
-      console.log("Got user", user);
-    }
-  };
+  return context;
+};
 
-  const logout = () => {
-    Cookies.remove("token");
-    setUser(null);
-    delete api.defaults.headers.Authorization;
-    window.location.pathname = "/login";
-  };
+const useAuthApiContext = () => {
+  const context = useContext(AuthApiContext);
+
+  if (!context) {
+    throw new Error("useAuthApiContext must be used within a AuthProvider");
+  }
+
+  return context;
+};
+
+const AuthProvider = ({ children }: any) => {
+  const [user, setUser] = useState<any>(null);
+
+  const authApi = useMemo(() => {
+    return {
+      login: (credentials: ILoginCredentials) => {
+        let user = null;
+
+        if (
+          credentials.email === doctorCredentials.email &&
+          credentials.password === doctorCredentials.password
+        ) {
+          user = {
+            name: "Doctor Doe",
+            type: EUserType.DOCTOR,
+          };
+        } else if (
+          credentials.email === patientCredentials.email &&
+          credentials.password === patientCredentials.password
+        ) {
+          user = {
+            name: "Patient Doe",
+            type: EUserType.PATIENT,
+          };
+        } else {
+          user = null;
+        }
+
+        setUser(user);
+        return user;
+      },
+      logout: () => setUser(null),
+    };
+  }, [setUser]);
 
   return (
-    <AuthContext.Provider
+    <AuthStateContext.Provider
       value={{
-        isAuthenticated: !!user,
-        user,
-        login,
-        isLoading: loading,
-        logout,
+        loggedUser: user,
       }}
     >
-      {children}
-    </AuthContext.Provider>
+      <AuthApiContext.Provider value={authApi}>
+        {children}
+      </AuthApiContext.Provider>
+    </AuthStateContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export { AuthProvider, useAuthStateContext, useAuthApiContext };

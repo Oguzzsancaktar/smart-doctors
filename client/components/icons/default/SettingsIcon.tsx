@@ -7,8 +7,8 @@ const SettingsIcon: React.FC<IIconProps> = ({ color, size }) => {
       id="Icon_feather-settings"
       data-name="Icon feather-settings"
       xmlns="http://www.w3.org/2000/svg"
-      width="30.056"
-      height="30.056"
+      width={size ? size : "30.056"}
+      height={size ? size : "30.056"}
       viewBox="0 0 30.056 30.056"
     >
       <path

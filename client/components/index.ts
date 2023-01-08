@@ -8,3 +8,5 @@ export * from "./login";
 export * from "./page";
 export * from "./sideDrawer";
 export * from "./views";
+export * from "./statistics";
+export * from "./charts";

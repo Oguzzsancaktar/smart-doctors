@@ -9,8 +9,8 @@ import {
 
 const PatientDashboard = () => {
   return (
-    <>
-      <div className="w-full flex flex-row h-auto pb-[20px]">
+    <div className="h-full">
+      <div className="h-[602px]  w-full flex flex-row pb-[20px]">
         <div className="w-[calc(100%-360px)] mr-[20px] ">
           <DashboardCard
             headButtonText="New Appointment"
@@ -28,7 +28,7 @@ const PatientDashboard = () => {
         </div>
       </div>
 
-      <div className=" w-full flex flex-row h-max pt-[20px] ">
+      <div className="h-[calc(100%-602px)]  w-full flex flex-row  pt-[20px] ">
         <div className="h-full w-6/12  mr-[20px]">
           <DashboardCard
             headButtonText="View All"
@@ -45,7 +45,7 @@ const PatientDashboard = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

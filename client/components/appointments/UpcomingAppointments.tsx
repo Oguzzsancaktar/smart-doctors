@@ -7,7 +7,7 @@ const UpcomingAppointments = () => {
     <div className="h-full px-[40px]">
       <div className="flex h-full flex-col justify-between ">
         <div className="flex justify-between h-[calc(100%-56px)] ">
-          <div className="w-2/3 h-full flex flex-col justify-between border-r-[1px]  border-gallery pr-[40px]">
+          <div className="w-[calc(100%-390px)] h-full flex flex-col justify-between border-r-[1px]  border-gallery pr-[40px]">
             <h4 className="text-[16px] leading-[18px] text-corduroy font-UbuntuBold pb-[30px] mb-[30px] border-b-[1px]  border-gallery">
               Upcoming Appointments
             </h4>
@@ -16,8 +16,8 @@ const UpcomingAppointments = () => {
             </div>
           </div>
 
-          <div className="w-1/3 h-full  flex flex-col justify-between ml-[40px]">
-            <h4 className="text-[16px] leading-[18px] text-easternBlue  text-end font-UbuntuBold mb-[30px] pb-[30px]">
+          <div className="w-[390px] h-full  flex flex-col justify-between ml-[40px]">
+            <h4 className="text-[16px] leading-[18px] text-easternBlue  text-end font-UbuntuBold  pb-[30px]">
               December 2022
             </h4>
             <div className="h-[calc(100%-18px)] ">

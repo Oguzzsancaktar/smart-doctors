@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import CompanyLogo from "../public/images/CompanyLogo.svg";
 import { SideDrawerItem } from "../components";
 import { sideDrawerItems } from "../constants";
+import { useAppApiContext, useAppStateContext } from "../contexts/appContext";
 
 const SideDrawer = () => {
-  const [activeTab, setActiveTab] = useState<string>("dashboard");
-  console.log(activeTab);
+  const { activePage } = useAppStateContext();
+  const { changePage } = useAppApiContext();
+
   return (
     <div className="w-[2578x] h-screen bg-white">
       <div className="h-full flex flex-col content-between">
@@ -15,20 +17,16 @@ const SideDrawer = () => {
 
         <div style={{ height: "inherit " }} className=" overflow-y-auto">
           {sideDrawerItems.map((item, index) => (
-            <div onClick={() => setActiveTab(item.tab)}>
-              <SideDrawerItem
-                {...item}
-                isActive={activeTab === item.tab}
-                key={index}
-              />
+            <div onClick={() => changePage(item.tab)} key={index}>
+              <SideDrawerItem {...item} isActive={activePage === item.tab} />
             </div>
           ))}
         </div>
 
-        <div className="mb-[80px]" onClick={() => setActiveTab("settings")}>
+        <div className="mb-[80px]" onClick={() => changePage("settings")}>
           <SideDrawerItem
             iconName="settings"
-            isActive={activeTab === "settings"}
+            isActive={activePage === "settings"}
             text="Settings"
             tab="settings"
           />

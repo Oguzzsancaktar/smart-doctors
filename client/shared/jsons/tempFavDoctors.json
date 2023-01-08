@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Dr. Faisal",
+      "surname": "Rainieriz",
+      "speciality": "Physiotherapy",
+      "address": "Chester St. 34, 48034 Southfield",
+      "phone": "212-555-1212",
+      "email": "",
+      "photo": "https://picsum.photos/200"
+    },
+    {
+      "id": 2,
+      "name": "George",
+      "surname": "Roger",
+      "speciality": "Orthopedics",
+      "address": "Rail Road 2, 48006 Troy.",
+      "phone": "212-555-1212",
+      "email": ""
+    },
+    {
+      "id": 3,
+      "name": "Dr. Med. Marcus ",
+      "surname": "Rash",
+      "speciality": "Dental Clinic",
+      "address": "Peak Road 4, 48039 Marine City",
+      "phone": "212-555-1212",
+      "email": ""
+    },
+
+    {
+      "id": 4,
+      "name": "Dr. Alynna ",
+      "surname": "Park",
+      "speciality": "Cardiology",
+      "address": "Rail Road 2, 48006 Troy",
+      "phone": "212-555-1212",
+      "email": ""
+    },
+    {
+      "id": 1,
+      "name": "Dr. Faisal",
+      "surname": "Rainieriz",
+      "speciality": "Physiotherapy",
+      "address": "Chester St. 34, 48034 Southfield",
+      "phone": "212-555-1212",
+      "email": "",
+      "photo": "https://picsum.photos/200"
+    },
+    {
+      "id": 2,
+      "name": "George",
+      "surname": "Roger",
+      "speciality": "Orthopedics",
+      "address": "Rail Road 2, 48006 Troy.",
+      "phone": "212-555-1212",
+      "email": ""
+    },
+    {
+      "id": 3,
+      "name": "Dr. Med. Marcus ",
+      "surname": "Rash",
+      "speciality": "Dental Clinic",
+      "address": "Peak Road 4, 48039 Marine City",
+      "phone": "212-555-1212",
+      "email": ""
+    }
+  ]
+}

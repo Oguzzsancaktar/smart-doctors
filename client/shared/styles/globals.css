@@ -41,3 +41,15 @@ h6 {
   font-family: "Ubuntu-Regular";
   src: url("../../public/fonts/Ubuntu-Regular.ttf");
 }
+
+::-webkit-scrollbar {
+  width: 3px;
+  background: #f0f0f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #bcd7d9;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #21ada9;
+}

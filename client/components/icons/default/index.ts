@@ -7,3 +7,6 @@ export { default as InfoIcon } from "./InfoIcon";
 export { default as MessageIcon } from "./MessageIcon";
 export { default as SettingsIcon } from "./SettingsIcon";
 export { default as StethescopeIcon } from "./StethescopeIcon";
+export { default as PhoneIcon } from "./PhoneIcon";
+export { default as TurnRightIcon } from "./TurnRightIcon";
+export { default as ChartIcon } from "./ChartIcon";

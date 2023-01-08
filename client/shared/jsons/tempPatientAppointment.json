@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "doctor": {
+        "id": 1,
+        "name": "Han-Yu ",
+        "surname": "Wang",
+        "speciality": "Female | 27 Years | Non-Smoker",
+        "address": "General Examination",
+        "phone": "212-555-1212",
+        "email": "",
+        "photo": "https://picsum.photos/200"
+      },
+      "patient": {
+        "id": 1,
+        "name": "John Doe"
+      },
+      "date": 1623000000,
+      "duration": 1800000
+    },
+    {
+      "doctor": {
+        "id": 2,
+        "name": "Maximilian ",
+        "surname": "Meyer",
+        "speciality": "Male | 26 Years | Non-Smoker",
+        "address": "General Examination",
+        "phone": "212-555-1212",
+        "email": ""
+      },
+      "patient": {
+        "id": 1,
+        "name": "John Doe"
+      },
+      "date": 1678000000,
+      "duration": 2700000
+    },
+    {
+      "doctor": {
+        "id": 3,
+        "name": "Georgia  ",
+        "surname": "Smiths",
+        "speciality": "Female | 37 Years | Non-Smoker",
+        "address": "Operation",
+        "phone": "212-555-1212",
+        "email": ""
+      },
+      "patient": {
+        "id": 1,
+        "name": "John Doe"
+      },
+      "date": 1673000000,
+      "duration": 1800000
+    },
+
+    {
+      "doctor": {
+        "id": 4,
+        "name": "Jonas  ",
+        "surname": "Mustermann",
+        "speciality": "Male | 47 Years | Non-Smoker",
+        "address": "Computer Tomography",
+        "phone": "212-555-1212",
+        "email": ""
+      },
+      "patient": {
+        "id": 4,
+        "name": "General Medicine"
+      },
+      "date": 1473000000,
+      "duration": 1800000
+    }
+  ]
+}

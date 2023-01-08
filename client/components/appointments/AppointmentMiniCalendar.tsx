@@ -6,7 +6,7 @@ import Flatpickr from "react-flatpickr";
 const AppointmentMiniCalendar = () => {
   const [date, setDate] = useState(new Date());
   return (
-    <div className="appointmentMibiCalendar">
+    <div className="appointmentMiniCalendar">
       <Flatpickr
         value={date}
         options={{

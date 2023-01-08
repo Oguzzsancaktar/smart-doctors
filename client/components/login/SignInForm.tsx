@@ -8,19 +8,25 @@ import { handleInputChange } from "../../utils/handleStateUtils";
 import { selectIcon } from "../../utils/selectIconUtils";
 import Router from "next/router";
 import { selectAppRoute } from "../../utils/appRouteUtils";
+import { useAuthApiContext } from "../../contexts/authContext";
 
 interface IProps {
   loginType: EUserType;
   onSwitchChange: () => void;
 }
 const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
+  const { login } = useAuthApiContext();
+
   const [loginCredentials, setLoginCredentials] = React.useState({
-    email: "",
-    password: "",
+    email: "doctor@doctor.com",
+    password: "dotnet2023",
   });
 
   const handleLogin = () => {
-    Router.replace(selectAppRoute("home"));
+    const user = login(loginCredentials);
+    if (user) {
+      Router.replace(selectAppRoute("home"));
+    }
   };
 
   return (
