@@ -18,7 +18,7 @@ import {
 } from "../components";
 
 export const selectIcon = (iconName: string, size?: string, color?: string) => {
-  if (!size) size = "30px";
+  if (!size) size = "3rem";
   if (!color) color = "currentColor";
 
   switch (iconName) {

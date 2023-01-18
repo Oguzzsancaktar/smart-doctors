@@ -9,9 +9,9 @@ const SideDrawer = () => {
   const { changePage } = useAppApiContext();
 
   return (
-    <div className="w-[2578x] h-screen bg-white">
+    <div className="w-[260px] h-screen bg-white">
       <div className="h-full flex flex-col content-between">
-        <div className="flex items-center justify-center py-[30px] border-b-[1px] border-gallery">
+        <div className="flex items-center justify-center py-[3rem] border-b-[0.1rem] border-gallery">
           <CompanyLogo />
         </div>
 
@@ -23,7 +23,7 @@ const SideDrawer = () => {
           ))}
         </div>
 
-        <div className="mb-[80px]" onClick={() => changePage("settings")}>
+        <div className="mb-[8rem]" onClick={() => changePage("settings")}>
           <SideDrawerItem
             iconName="settings"
             isActive={activePage === "settings"}

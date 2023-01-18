@@ -14,10 +14,10 @@ interface IProps {
 
 const AppointmentListItem: React.FC<IProps> = ({ appointment }) => {
   return (
-    <div className="w-full border-b-[1px] border-gallery  px-[15px] cursor-pointer">
-      <div className="my-[17px] flex flex-row justify-between">
+    <div className="w-full border-b-[0.1rem] border-gallery  px-[1.5rem] cursor-pointer">
+      <div className="my-[1.7rem] flex flex-row justify-between">
         <div className="flex items-center">
-          <span className="flex items-center w-[46px] mr-[13px] ">
+          <span className="flex items-center w-[4.6rem] mr-[1.3rem] ">
             <Avatar
               squared
               src={appointment.doctor.photo}
@@ -26,31 +26,31 @@ const AppointmentListItem: React.FC<IProps> = ({ appointment }) => {
             />
           </span>
           <div className="flex flex-col">
-            <span className="font-UbuntuBold text-corduroy text-[12px] leading-[13px]">
+            <span className="font-UbuntuBold text-corduroy text-[1.2rem] leading-[1.3rem]">
               {appointment.doctor.name + " " + appointment.doctor.surname}
             </span>
-            <span className="  text-corduroy text-[12px] leading-[13px] my-[4px]">
+            <span className="  text-corduroy text-[1.2rem] leading-[1.3rem] my-[0.4rem]">
               {appointment.doctor.address}
             </span>
-            <span className="text-easternBlue text-[11px] leading-[12px] ">
+            <span className="text-easternBlue text-[1.1rem] leading-[1.2rem] ">
               {appointment.doctor.speciality}
             </span>
           </div>
         </div>
 
         <div className="flex items-center">
-          <div className="flex flex-col w-[160px]">
-            <span className="font-UbuntuBold text-corduroy text-[16px] leading-[18px] mb-[5px]">
+          <div className="flex flex-col w-[16rem]">
+            <span className="font-UbuntuBold text-corduroy text-[1.6rem] leading-[1.8rem] mb-[0.5rem]">
               {getDateFromTimestamp(appointment.date)}
             </span>
-            <span className=" text-easternBlue  text-[12px] leading-[13px] my-[4px]">
+            <span className=" text-easternBlue  text-[1.2rem] leading-[1.3rem] my-[0.4rem]">
               {getDayFromTimestamp(appointment.date)} |{" "}
               {getTimeFromTimestamp(appointment.date)} -{" "}
               {getTimeFromTimestamp(appointment.date + appointment.duration)}
             </span>
           </div>
-          <div className="flex items-center w-[16px] mr-[20px] ml-[40px] ">
-            <FiChevronRight />
+          <div className="flex items-center w-[16px] mr-[1rem] ml-[1rem] ">
+            <FiChevronRight size={16} />
           </div>
         </div>
       </div>

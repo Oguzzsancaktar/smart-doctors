@@ -22,8 +22,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         primarySolidHover: themeColors.gamboge,
         text: themeColors.corduroy,
       },
+      space: {
+        12: "30px",
+      },
       radii: {
-        lg: "25px",
+        lg: "2.5rem",
       },
     },
   });

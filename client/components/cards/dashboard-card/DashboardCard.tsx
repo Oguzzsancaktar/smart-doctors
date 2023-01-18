@@ -16,7 +16,7 @@ const DashboardCard: React.FC<IProps> = ({
   bodyElement,
 }) => {
   return (
-    <div className="w-full h-full flex flex-col bg-white rounded-[12px]">
+    <div className="w-full h-full flex flex-col bg-white rounded-[1.2rem]">
       <DashboardCardHeader
         headIconName={headIconName}
         headIconText={headIconText}

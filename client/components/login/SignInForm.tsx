@@ -30,28 +30,28 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
   };
 
   return (
-    <div className=" bg-white w-[463px] h-min rounded-[12px]">
+    <div className=" bg-white w-[46.3rem] h-min rounded-[1.2rem]">
       <div className="flex flex-col h-full">
         {/* head */}
-        <div className="py-[26px] px-[40px] flex justify-between border-b-[1px] border-gallery">
+        <div className="py-[2.6rem] px-[2rem] flex justify-between border-b-[0.1rem] border-gallery">
           <div className="flex flex-col ">
-            <h3 className="leading-[35px] text-[35px] font-UbuntuBold text-easternBlue mb-[3px]">
+            <h3 className="leading-[3.5rem] text-[3.5rem] font-UbuntuBold text-easternBlue mb-[0.3rem]">
               Sign In
             </h3>
-            <h6 className="text-[14px] text-jungleMist leading-[15px] lowercase">
+            <h6 className="text-[1.4rem] text-jungleMist leading-[1.5rem] lowercase">
               for {EUserType[loginType]}
             </h6>
           </div>
 
           <div className="flex flex-col justify-center">
             <Button
-              className="bg-gamboge px-[10px]"
+              className="bg-gamboge px-[1rem]"
               auto
               color="primary"
-              css={{ borderRadius: "6px" }}
+              css={{ borderRadius: "0.6rem" }}
               onClick={onSwitchChange}
             >
-              <h4 className="font-UbuntuBold text-white text-[14px] leading-[16px]">
+              <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
                 Switch to{" "}
                 {capitalizeFirstLetter(
                   EUserType[loginType] === "DOCTOR"
@@ -60,7 +60,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 )}{" "}
                 Login
               </h4>
-              <span className="pl-[5px]">
+              <span className="pl-[0.5rem]">
                 {selectIcon("arrow-right-circle")}
               </span>
             </Button>
@@ -68,15 +68,15 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
         </div>
 
         {/* body */}
-        <div className="py-[40px] px-[40px]">
-          <div className="flex flex-col  border-b-[1px] border-gallery">
-            <Grid className="mb-[30px] w-full">
+        <div className="py-[2rem] px-[2rem]">
+          <div className="flex flex-col  border-b-[0.1rem] border-gallery">
+            <Grid className="mb-[3rem] w-full">
               <Input
                 color="primary"
                 labelPlaceholder="E-Mail"
                 bordered
                 borderWeight="light"
-                css={{ borderRadius: "6px", width: "100%" }}
+                css={{ borderRadius: "0.6rem", width: "100%" }}
                 name="email"
                 type="email"
                 value={loginCredentials.email}
@@ -85,13 +85,13 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 }
               />
             </Grid>
-            <Grid className="mb-[30px] w-full">
+            <Grid className="mb-[3rem] w-full">
               <Input.Password
                 color="primary"
                 labelPlaceholder="Password"
                 bordered
                 borderWeight="light"
-                css={{ borderRadius: "6px", width: "100%" }}
+                css={{ borderRadius: "0.6rem", width: "100%" }}
                 name="password"
                 type="password"
                 value={loginCredentials.password}
@@ -101,67 +101,67 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
               />
             </Grid>
 
-            <Grid className="mb-[20px]">
+            <Grid className="mb-[2rem]">
               <Checkbox size="lg">
-                <h5 className="font-normal text-corduroy text-[13px] leading-[14px]">
+                <h5 className="font-normal text-corduroy text-[1.3rem] leading-[1.4rem]">
                   Save my login information and keep me signed in.
                 </h5>
               </Checkbox>
             </Grid>
 
-            <Grid className="mb-[20px]">
+            <Grid className="mb-[2rem]">
               <Button
-                className="bg-easternBlue px-[10px]"
+                className="bg-easternBlue px-[1rem]"
                 auto
                 color="primary"
-                css={{ borderRadius: "6px", width: "170px" }}
+                css={{ borderRadius: "0.6rem", width: "17rem" }}
                 onPress={handleLogin}
               >
-                <h4 className="font-UbuntuBold text-white text-[14px] leading-[16px]">
+                <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
                   Sign In
                 </h4>
               </Button>
             </Grid>
 
-            <Grid className="mb-[20px]">
-              <h5 className="font-normal text-corduroy text-[12px] leading-[13px]">
+            <Grid className="mb-[2rem]">
+              <h5 className="font-normal text-corduroy text-[1.2rem] leading-[1.3rem]">
                 Alternatively use your Apple or Google account to sign in.
               </h5>
             </Grid>
 
-            <Grid className="mb-[20px]">
+            <Grid className="mb-[2rem]">
               <Row>
                 <Button
-                  className="bg-white px-[10px] mr-[10px]"
+                  className="bg-white px-[1rem] mr-[1rem]"
                   bordered
                   color="primary"
                   css={{
-                    borderWidth: "1px",
-                    borderRadius: "6px",
-                    width: "170px",
+                    borderWidth: "0.1rem",
+                    borderRadius: "0.6rem",
+                    width: "17rem",
                     borderColor: "$corduroy",
                   }}
                   onPress={handleLogin}
                 >
                   <AppleLogo />
-                  <h4 className="font-normal ml-[5px] text-corduroy text-[12px] leading-[13px]">
+                  <h4 className="font-normal ml-[0.5rem] text-corduroy text-[1.2rem] leading-[1.3rem]">
                     Continue with Apple
                   </h4>
                 </Button>
 
                 <Button
-                  className="bg-white px-[10px] ml-[10px]"
+                  className="bg-white px-[1rem] ml-[1rem]"
                   bordered
                   color="primary"
                   css={{
-                    borderWidth: "1px",
-                    borderRadius: "6px",
-                    width: "170px",
+                    borderWidth: "0.1rem",
+                    borderRadius: "0.6rem",
+                    width: "17rem",
                     borderColor: "$corduroy",
                   }}
                 >
                   <GoogleLogo />
-                  <h4 className="font-normal ml-[5px] text-corduroy text-[12px] leading-[13px]">
+                  <h4 className="font-normal ml-[0.5rem] text-corduroy text-[1.2rem] leading-[1.3rem]">
                     Continue with Google
                   </h4>
                 </Button>
@@ -169,10 +169,10 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
             </Grid>
           </div>
 
-          <div className="mt-[20px]">
-            <h2 className="font-UbuntuBold text-center text-corduroy text-[16px] leading-[18px]">
+          <div className="mt-[2rem]">
+            <h2 className="font-UbuntuBold text-center text-corduroy text-[1.6rem] leading-[1.8rem]">
               New User ?
-              <span className="text-easternBlue ml-[5px] underline underline-offset-2">
+              <span className="text-easternBlue ml-[0.5rem] underline underline-offset-2">
                 Create an account
               </span>
             </h2>

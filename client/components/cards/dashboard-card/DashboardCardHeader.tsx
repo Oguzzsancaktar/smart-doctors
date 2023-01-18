@@ -13,27 +13,27 @@ const DashboardCardHeader: React.FC<IProps> = ({
   headButtonText,
 }) => {
   return (
-    <div className="h-[80px] px-[40px]  border-b-[1px] border-gallery flex items-center justify-between">
+    <div className="h-[8rem] px-[2rem]  border-b-[0.1rem] border-gallery flex items-center justify-between">
       <div
         className={
-          "flex items-center font-UbuntuBold text-[16px] leading-[18px] text-easternBlue"
+          "flex items-center font-UbuntuBold text-[1.6rem] leading-[1.8rem] text-easternBlue"
         }
       >
-        <span className="mr-[18px] ">{selectIcon(headIconName)} </span>
+        <span className="mr-[1.8rem] ">{selectIcon(headIconName)} </span>
         <span>{headIconText}</span>
       </div>
 
       {headButtonText && (
         <div className="w-auto">
           <Button
-            className="bg-easternBlue px-[10px]"
+            className="bg-easternBlue px-[1rem]"
             auto
             color="primary"
-            css={{ borderRadius: "6px" }}
+            css={{ borderRadius: "0.6rem" }}
             size={"sm"}
             // onClick={onSwitchChange}
           >
-            <h4 className="font-UbuntuBold text-white text-[14px] leading-[16px]">
+            <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
               {headButtonText}
             </h4>
           </Button>

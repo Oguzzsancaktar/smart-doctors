@@ -33,7 +33,7 @@ const MonthlyBarChart = () => {
       },
       offsetY: 0,
       style: {
-        fontSize: "12px",
+        fontSize: "1.2rem",
         colors: [themeColors.white],
       },
     },

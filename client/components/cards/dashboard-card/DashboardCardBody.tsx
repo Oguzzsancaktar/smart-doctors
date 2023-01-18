@@ -5,7 +5,7 @@ interface IProps {
 }
 const DashboardCardBody: React.FC<IProps> = ({ bodyElement }) => {
   return (
-    <div className="flex flex-col h-[calc(100%-80px)] pt-[40px]">
+    <div className="flex flex-col h-[calc(100%-8rem)] pt-[2rem]">
       {bodyElement}
     </div>
   );

@@ -4,10 +4,10 @@ import { IIconProps } from "../../../models";
 const PhoneIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
     <svg
-      height="18px"
+      height="1.8rem"
       version="1.1"
       viewBox="0 0 18 18"
-      width="18px"
+      width="1.8rem"
       xmlns="http://www.w3.org/2000/svg"
     >
       <title />

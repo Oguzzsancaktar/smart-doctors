@@ -7,7 +7,7 @@ interface IProps {
 }
 const BorderedIcon: React.FC<IProps> = ({ iconName, color }) => {
   return (
-    <div className="flex items-center justify-center rounded-[6px] border-[2px] w-[32px] h-[32px]">
+    <div className="flex items-center justify-center rounded-[0.6rem] border-[0.2rem] w-[3.2rem] h-[3.2rem]">
       {selectIcon(iconName)}
     </div>
   );

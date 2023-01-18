@@ -19,21 +19,21 @@ const SignIn = () => {
     <section className="h-full min-h-screen bg-catskillWhite overflow-hidden relative ">
       <div className="h-full relative min-h-screen">
         <div className="absolute bottom-0 flex justify-center left-1/3 -translate-x-1/2">
-          <div className="absolute bottom-0  rounded-full bg-edgeWater opacity-25  w-[990px]  h-[990px] translate-y-1/3 "></div>
+          <div className="absolute bottom-0  rounded-full bg-edgeWater opacity-25  w-[99rem]  h-[99rem] translate-y-1/3 "></div>
 
           {EUserType[loginType] === "DOCTOR" ? (
             <Image
               objectFit="cover"
               src={"/images/doctor-image.png"}
-              width={"460px"}
-              height="787px"
+              width={"46rem"}
+              height="78.7rem"
             />
           ) : (
             <Image
               objectFit="cover"
               src={"/images/patient-image.png"}
-              width={"460px"}
-              height="787px"
+              width={"46rem"}
+              height="78.7rem"
             />
           )}
         </div>
@@ -41,10 +41,10 @@ const SignIn = () => {
 
       <div className="absolute left-1/2 w-1/2 h-full  top-0 flex items-center">
         <div className="flex flex-col h-min">
-          <h2 className="text-[74px] text-easternBlue font-UbuntuBold leading-[85px] h-min max-w-[600px]">
+          <h2 className="text-[7.4rem] text-easternBlue font-UbuntuBold leading-[8.5rem] h-min max-w-[60rem]">
             Welcome back to <br /> SmartDocs.
           </h2>
-          <div className="mt-[40px] ">
+          <div className="mt-[2rem] ">
             <SignInForm
               loginType={loginType}
               onSwitchChange={handleSwitchLoginType}
@@ -53,7 +53,7 @@ const SignIn = () => {
         </div>
       </div>
 
-      <div className="h-[125px] bg-white">
+      <div className="h-[12.5rem] bg-white">
         <Footer />
       </div>
     </section>

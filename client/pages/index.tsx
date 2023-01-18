@@ -13,11 +13,11 @@ function Home() {
       </Head>
 
       <main className="h-screen bg-catskillWhite overflow-hidden flex">
-        <section className="w-[278px]">
+        <section className="w-[260px]">
           <SideDrawer />
         </section>
 
-        <section className="h-full w-[calc(100%-278px)] p-[40px] ">
+        <section className="h-full w-[calc(100%-260px)] p-[2rem] ">
           <MainContent />
         </section>
       </main>

@@ -10,18 +10,18 @@ const SideDrawerItem: React.FC<ISideDrawerItemProps> = ({
   return (
     <div
       className={
-        "h-[80px] border-b-[1px] border-gallery flex items-center content-between cursor-pointer " +
-        (text === "Settings" ? "border-t-[1px]" : "")
+        "h-[8rem] border-b-[0.1rem] border-gallery flex items-center content-between cursor-pointer " +
+        (text === "Settings" ? "border-t-[0.1rem]" : "")
       }
     >
-      <div className="w-[150px] m-auto ">
+      <div className="w-[15rem] m-auto ">
         <div
           className={
-            "flex items-center font-UbuntuBold text-[16px] leading-[18px] " +
+            "flex items-center font-UbuntuBold text-[1.6rem] leading-[1.8rem] " +
             (isActive ? "text-easternBlue" : "text-corduroy")
           }
         >
-          <span className="mr-[18px] ">{selectIcon(iconName)} </span>
+          <span className="mr-[1.8rem] ">{selectIcon(iconName)} </span>
           <span>{text}</span>
         </div>
       </div>
