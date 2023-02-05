@@ -8,7 +8,7 @@ const UpcomingAppointments = () => {
       <div className="flex h-full flex-col justify-between ">
         <div className="flex justify-between h-[calc(100%-5.6rem)] ">
           <div className="w-[calc(100%-39rem)] h-full flex flex-col justify-between border-r-[0.1rem]  border-gallery pr-[2rem]">
-            <h4 className="text-[1.6rem] leading-[1.8rem] text-corduroy font-UbuntuBold pb-[1.5rem] mb-[1.5rem] border-b-[0.1rem]  border-gallery">
+            <h4 className="text-[1.6rem] leading-[1.8rem] text-corduroy font-UbuntuBold pb-[1.5rem] mb-[1.5rem] border-b-[1px]  border-gallery">
               Upcoming Appointments
             </h4>
             <div className="h-[calc(100%-1.8rem)]">

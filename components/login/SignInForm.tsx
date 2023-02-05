@@ -33,7 +33,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
     <div className=" bg-white w-[46.3rem] h-min rounded-[1.2rem]">
       <div className="flex flex-col h-full">
         {/* head */}
-        <div className="py-[2.6rem] px-[2rem] flex justify-between border-b-[0.1rem] border-gallery">
+        <div className="py-[2.6rem] px-[2rem] flex justify-between border-b-[1px] border-gallery">
           <div className="flex flex-col ">
             <h3 className="leading-[3.5rem] text-[3.5rem] font-UbuntuBold text-easternBlue mb-[0.3rem]">
               Sign In
@@ -69,14 +69,14 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
 
         {/* body */}
         <div className="py-[2rem] px-[2rem]">
-          <div className="flex flex-col  border-b-[0.1rem] border-gallery">
+          <div className="flex flex-col  border-b-[1px] border-gallery">
             <Grid className="mb-[3rem] w-full">
               <Input
                 color="primary"
                 labelPlaceholder="E-Mail"
                 bordered
                 borderWeight="light"
-                css={{ borderRadius: "0.6rem", width: "100%" }}
+                css={{ borderRadius: "6px", width: "100%" }}
                 name="email"
                 type="email"
                 value={loginCredentials.email}
@@ -91,7 +91,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 labelPlaceholder="Password"
                 bordered
                 borderWeight="light"
-                css={{ borderRadius: "0.6rem", width: "100%" }}
+                css={{ borderRadius: "6px", width: "100%" }}
                 name="password"
                 type="password"
                 value={loginCredentials.password}
@@ -114,7 +114,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 className="bg-easternBlue px-[1rem]"
                 auto
                 color="primary"
-                css={{ borderRadius: "0.6rem", width: "17rem" }}
+                css={{ borderRadius: "6px", width: "17rem" }}
                 onPress={handleLogin}
               >
                 <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
@@ -136,8 +136,8 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                   bordered
                   color="primary"
                   css={{
-                    borderWidth: "0.1rem",
-                    borderRadius: "0.6rem",
+                    borderWidth: "1px",
+                    borderRadius: "6px",
                     width: "17rem",
                     borderColor: "$corduroy",
                   }}
@@ -154,8 +154,8 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                   bordered
                   color="primary"
                   css={{
-                    borderWidth: "0.1rem",
-                    borderRadius: "0.6rem",
+                    borderWidth: "1px",
+                    borderRadius: "6px",
                     width: "17rem",
                     borderColor: "$corduroy",
                   }}

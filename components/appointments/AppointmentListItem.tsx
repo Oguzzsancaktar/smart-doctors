@@ -14,7 +14,7 @@ interface IProps {
 
 const AppointmentListItem: React.FC<IProps> = ({ appointment }) => {
   return (
-    <div className="w-full border-b-[0.1rem] border-gallery  px-[1.5rem] cursor-pointer">
+    <div className="w-full border-b-[1px] border-gallery  px-[1.5rem] cursor-pointer">
       <div className="my-[1.7rem] flex flex-row justify-between">
         <div className="flex items-center">
           <span className="flex items-center w-[4.6rem] mr-[1.3rem] ">

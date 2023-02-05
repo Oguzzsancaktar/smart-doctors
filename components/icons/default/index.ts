@@ -10,3 +10,4 @@ export { default as StethescopeIcon } from "./StethescopeIcon";
 export { default as PhoneIcon } from "./PhoneIcon";
 export { default as TurnRightIcon } from "./TurnRightIcon";
 export { default as ChartIcon } from "./ChartIcon";
+export { default as SearchIcon } from "./SearchIcon";

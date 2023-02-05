@@ -8,7 +8,7 @@ interface IProps {
 const FavoriteDoctorsListItem: React.FC<IProps> = ({ doctor }) => {
   //Todo doctor info to component
   return (
-    <div className="w-full border-b-[0.1rem] border-gallery  px-[1.5rem] cursor-pointer">
+    <div className="w-full border-b-[1px] border-gallery  px-[1.5rem] cursor-pointer">
       <div className="my-[1.7rem] flex flex-row justify-between">
         <div className="flex items-center">
           <span className="flex items-center w-[4.6rem] mr-[1.3rem] ">
@@ -40,7 +40,7 @@ const FavoriteDoctorsListItem: React.FC<IProps> = ({ doctor }) => {
             auto
             size={"sm"}
             color="primary"
-            css={{ borderRadius: "0.6rem", width: "12rem" }}
+            css={{ borderRadius: "6px", width: "12rem" }}
           >
             <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
               New Appointment

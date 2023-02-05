@@ -1,1 +1,1 @@
-export { default as CreateAppointment } from "./CreateAppointment";
+export * from "./appointment";

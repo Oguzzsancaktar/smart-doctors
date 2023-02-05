@@ -12,4 +12,4 @@ export * from "./views";
 export * from "./statistics";
 export * from "./charts";
 export * from "./searchbar";
-export * from "./doctor-speciality";
+export * from "./doctor";

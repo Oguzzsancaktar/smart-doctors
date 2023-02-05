@@ -13,7 +13,7 @@ const DashboardCardHeader: React.FC<IProps> = ({
   headButtonText,
 }) => {
   return (
-    <div className="h-[8rem] px-[2rem]  border-b-[0.1rem] border-gallery flex items-center justify-between">
+    <div className="h-[8rem] px-[2rem]  border-b-[1px] border-gallery flex items-center justify-between">
       <div
         className={
           "flex items-center font-UbuntuBold text-[1.6rem] leading-[1.8rem] text-easternBlue"

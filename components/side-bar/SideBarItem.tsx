@@ -10,7 +10,7 @@ const SideBarItem: React.FC<ISideBarItemProps> = ({
   return (
     <div
       className={
-        "h-[8rem] border-b-[0.1rem] border-gallery flex items-center content-between cursor-pointer " +
+        "h-[8rem] border-b-[1px] border-gallery flex items-center content-between cursor-pointer " +
         (text === "Settings" ? "border-t-[0.1rem]" : "")
       }
     >
