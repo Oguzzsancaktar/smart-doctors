@@ -1,11 +1,12 @@
 import Axios from "axios";
 
 let urls = {
-  test: `http://localhost:3334`,
-  development: "http://localhost:3333/",
-  production: "https://your-production-url.com/",
+  test: `http://localhost:3000`,
+  development: "https://smartdocsapi.azurewebsites.net/api",
+  production: "https://smartdocsapi.azurewebsites.net/api",
 };
-const api = Axios.create({
+
+const axiosInstance = Axios.create({
   baseURL: urls[process.env.NODE_ENV],
   headers: {
     Accept: "application/json",
@@ -13,4 +14,4 @@ const api = Axios.create({
   },
 });
 
-export default api;
+export default axiosInstance;
