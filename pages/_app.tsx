@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       },
       space: {
         12: "30px",
+        18: "100%",
       },
       radii: {
         lg: "2.5rem",
