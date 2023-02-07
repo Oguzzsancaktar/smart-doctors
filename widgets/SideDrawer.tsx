@@ -1,5 +1,5 @@
-import React from "react";
-import { CreateAppointment } from "../components";
+import React from 'react';
+import { CreateAppointment } from '../components';
 
 const SideDrawer = () => {
   return (

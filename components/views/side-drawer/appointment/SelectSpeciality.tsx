@@ -16,9 +16,6 @@ const SelectSpeciality = () => {
     fetcher
   );
 
-  if (!doctorSpecialitiesData) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="flex flex-col h-full w-full">

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import CompanyLogo from "../public/images/CompanyLogo.svg";
-import { SideBarItem } from "../components";
-import { sideBarItems } from "../constants";
-import { useAppApiContext, useAppStateContext } from "../contexts/appContext";
+import React, { useState } from 'react';
+import CompanyLogo from '../public/images/CompanyLogo.svg';
+import { SideBarItem } from '../components';
+import { sideBarItems } from '../constants';
+import { useAppApiContext, useAppStateContext } from '../contexts/appContext';
 
 const SideBar = () => {
   const { activePage } = useAppStateContext();
@@ -15,7 +15,7 @@ const SideBar = () => {
           <CompanyLogo />
         </div>
 
-        <div style={{ height: "inherit " }} className=" overflow-y-auto">
+        <div style={{ height: 'inherit ' }} className=" overflow-y-auto">
           {sideBarItems.map((item, index) => (
             <div onClick={() => changePage(item.tab)} key={index}>
               <SideBarItem {...item} isActive={activePage === item.tab} />
@@ -23,10 +23,10 @@ const SideBar = () => {
           ))}
         </div>
 
-        <div className="mb-[8rem]" onClick={() => changePage("settings")}>
+        <div className="mb-[8rem]" onClick={() => changePage('settings')}>
           <SideBarItem
             iconName="settings"
-            isActive={activePage === "settings"}
+            isActive={activePage === 'settings'}
             text="Settings"
             tab="settings"
           />

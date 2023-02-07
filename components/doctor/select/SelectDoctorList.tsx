@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
 // Components
-import fetcher from "../../../api/fetcherConfig";
-import { DoctorGeneralInfoCard } from "../card";
+import fetcher from '../../../api/fetcherConfig';
+import { DoctorGeneralInfoCard } from '../card';
 // Constants
-import { DOCTORS } from "../../../constants/apiEndpoints";
+import { DOCTORS } from '../../../constants/apiEndpoints';
 // Libs
-import useSWR from "swr";
-import map from "lodash/map";
+import useSWR from 'swr';
+import map from 'lodash/map';
 // Models
-import { IDoctor } from "../../../models";
+import { IDoctor } from '../../../models';
+import { ConfirmSelectButton } from '../../button';
 
 interface IProps {}
 const SelectDoctorList: React.FC<IProps> = () => {
@@ -23,8 +24,13 @@ const SelectDoctorList: React.FC<IProps> = () => {
       <ul className="w-full flex flex-col pl-[3rem]">
         {map(doctorsData, (doctor, index) => {
           return (
-            <li className="w-full h-[9rem]" key={index}>
-              <DoctorGeneralInfoCard doctor={doctor} />
+            <li
+              className="w-full h-[9rem] border-b-[1px]  py-[1.7rem] border-gallery "
+              key={index}
+            >
+              <ConfirmSelectButton>
+                <DoctorGeneralInfoCard doctor={doctor} />
+              </ConfirmSelectButton>
             </li>
           );
         })}
