@@ -1,1 +1,1 @@
-export type { default as IAppointment } from "./IAppointment";
+export type { default as IAppointment } from './IAppointment';

@@ -1,1 +1,1 @@
-export { default as DoctorGeneralInfoCard } from "./DoctorGeneralInfoCard";
+export { default as DoctorGeneralInfoCard } from './DoctorGeneralInfoCard';

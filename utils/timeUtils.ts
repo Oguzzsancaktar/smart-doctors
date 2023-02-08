@@ -1,5 +1,5 @@
-import moment from "moment";
-import { momentDateFormat } from "../constants/formats";
+import moment from 'moment';
+import { momentDateFormat } from '../constants/formats';
 
 export const getDateFromTimestamp = (timestamp: number, format?: string) => {
   if (!format) format = momentDateFormat;
@@ -8,9 +8,9 @@ export const getDateFromTimestamp = (timestamp: number, format?: string) => {
 };
 
 export const getTimeFromTimestamp = (timestamp: number) => {
-  return moment(timestamp).format("HH:mm");
+  return moment(timestamp).format('HH:mm');
 };
 
 export const getDayFromTimestamp = (timestamp: number) => {
-  return moment(timestamp).format("dddd");
+  return moment(timestamp).format('dddd');
 };

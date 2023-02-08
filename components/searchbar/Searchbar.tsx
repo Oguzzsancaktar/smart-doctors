@@ -1,7 +1,7 @@
-import { Input } from "@nextui-org/react";
-import React from "react";
-import { SearchIcon } from "../icons";
-import { themeColors } from "../../constants";
+import { Input } from "@nextui-org/react"
+import React from "react"
+import { SearchIcon } from "../icons"
+import { themeColors } from "../../constants"
 
 const Searchbar = () => {
   return (
@@ -21,7 +21,7 @@ const Searchbar = () => {
       />
       {/* <input type="text" placeholder="Search" className="w-full border-solid" /> */}
     </div>
-  );
-};
+  )
+}
 
-export default Searchbar;
+export default Searchbar 

@@ -1,8 +1,8 @@
-import React from "react";
-import { selectIcon } from "../../utils/selectIconUtils";
+import React from "react"
+import { selectIcon } from "../../utils/selectIconUtils"
 
 interface IProps {
-  page: string;
+  page: string
 }
 const NotReadyPage: React.FC<IProps> = ({ page }) => {
   return (
@@ -16,7 +16,7 @@ const NotReadyPage: React.FC<IProps> = ({ page }) => {
         </span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NotReadyPage;
+export default NotReadyPage 

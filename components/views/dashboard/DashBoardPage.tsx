@@ -1,11 +1,11 @@
-import React from "react";
-import { useAuthStateContext } from "../../../contexts/authContext";
-import { EUserType } from "../../../models";
-import DoctorDashboard from "./DoctorDashboard";
-import PatientDashboard from "./PatientDashboard";
+import React from "react"
+import { useAuthStateContext } from "../../../contexts/authContext"
+import { EUserType } from "../../../models"
+import DoctorDashboard from "./DoctorDashboard"
+import PatientDashboard from "./PatientDashboard"
 
 const DashBoardPage = () => {
-  const { loggedUser } = useAuthStateContext();
+  const { loggedUser } = useAuthStateContext()
 
   return (
     <>
@@ -15,7 +15,7 @@ const DashBoardPage = () => {
         <PatientDashboard />
       )}
     </>
-  );
-};
+  )
+}
 
-export default DashBoardPage;
+export default DashBoardPage 

@@ -1,11 +1,11 @@
-import React from "react";
-import { selectIcon } from "../../../utils/selectIconUtils";
-import { Button } from "@nextui-org/react";
+import React from "react"
+import { selectIcon } from "../../../utils/selectIconUtils"
+import { Button } from "@nextui-org/react"
 
 interface IProps {
-  headIconName: string;
-  headIconText: string;
-  headButtonText?: string;
+  headIconName: string
+  headIconText: string
+  headButtonText?: string
 }
 const DashboardCardHeader: React.FC<IProps> = ({
   headIconName,
@@ -31,7 +31,7 @@ const DashboardCardHeader: React.FC<IProps> = ({
             color="primary"
             css={{ borderRadius: "0.6rem" }}
             size={"sm"}
-            // onClick={onSwitchChange}
+          // onClick={onSwitchChange}
           >
             <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
               {headButtonText}
@@ -40,7 +40,7 @@ const DashboardCardHeader: React.FC<IProps> = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default DashboardCardHeader;
+export default DashboardCardHeader 

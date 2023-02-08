@@ -1,12 +1,12 @@
-import React from "react";
-import DashboardCardHeader from "./DashboardCardHeader";
-import DashboardCardBody from "./DashboardCardBody";
+import React from "react"
+import DashboardCardHeader from "./DashboardCardHeader"
+import DashboardCardBody from "./DashboardCardBody"
 
 interface IProps {
-  headIconName: string;
-  headIconText: string;
-  headButtonText?: string;
-  bodyElement?: React.ReactNode;
+  headIconName: string
+  headIconText: string
+  headButtonText?: string
+  bodyElement?: React.ReactNode
 }
 
 const DashboardCard: React.FC<IProps> = ({
@@ -24,7 +24,7 @@ const DashboardCard: React.FC<IProps> = ({
       />
       <DashboardCardBody bodyElement={bodyElement} />
     </div>
-  );
-};
+  )
+}
 
-export default DashboardCard;
+export default DashboardCard 

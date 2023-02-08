@@ -1,15 +1,15 @@
-import { Avatar } from "@nextui-org/react";
-import React from "react";
-import { FiChevronRight } from "react-icons/fi";
+import { Avatar } from "@nextui-org/react"
+import React from "react"
+import { FiChevronRight } from "react-icons/fi"
 import {
   getDateFromTimestamp,
   getDayFromTimestamp,
   getTimeFromTimestamp,
-} from "../../utils/timeUtils";
-import { IAppointment } from "../../models";
+} from "../../utils/timeUtils"
+import { IAppointment } from "../../models"
 
 interface IProps {
-  appointment: IAppointment | any;
+  appointment: IAppointment | any
 }
 
 const AppointmentListItem: React.FC<IProps> = ({ appointment }) => {
@@ -55,7 +55,7 @@ const AppointmentListItem: React.FC<IProps> = ({ appointment }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AppointmentListItem;
+export default AppointmentListItem 

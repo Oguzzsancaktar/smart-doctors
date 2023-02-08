@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const HeartIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -17,7 +17,7 @@ const HeartIcon: React.FC<IIconProps> = ({ color, size }) => {
         fill={color}
       />
     </svg>
-  );
-};
+  )
+}
 
-export default HeartIcon;
+export default HeartIcon 

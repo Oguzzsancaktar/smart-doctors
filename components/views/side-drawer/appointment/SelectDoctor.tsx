@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
 // Components
-import { Searchbar } from "../../../searchbar";
-import { SelectDoctorList } from "../../../doctor";
+import { Searchbar } from "../../../searchbar"
+import { SelectDoctorList } from "../../../doctor"
 
 const SelectSpeciality = () => {
   return (
@@ -16,10 +16,10 @@ const SelectSpeciality = () => {
       </div>
 
       <div className="flex flex-col overflow-y-auto h-[calc(100%-10rem-5rem-4rem)] mr-[1.5rem] ">
-        <SelectDoctorList />;
+        <SelectDoctorList />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SelectSpeciality;
+export default SelectSpeciality 

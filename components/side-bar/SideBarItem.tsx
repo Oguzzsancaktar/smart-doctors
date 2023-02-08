@@ -1,6 +1,6 @@
-import React from "react";
-import { ISideBarItemProps } from "../../models";
-import { selectIcon } from "../../utils/selectIconUtils";
+import React from "react"
+import { ISideBarItemProps } from "../../models"
+import { selectIcon } from "../../utils/selectIconUtils"
 
 const SideBarItem: React.FC<ISideBarItemProps> = ({
   iconName,
@@ -26,7 +26,7 @@ const SideBarItem: React.FC<ISideBarItemProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SideBarItem;
+export default SideBarItem 

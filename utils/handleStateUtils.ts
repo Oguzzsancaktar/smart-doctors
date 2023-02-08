@@ -1,4 +1,4 @@
-import { FormElement } from "@nextui-org/react";
+import { FormElement } from '@nextui-org/react';
 
 export const handleInputChange = (
   event: React.ChangeEvent<FormElement>,

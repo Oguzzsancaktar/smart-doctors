@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const ActivitiesIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -16,7 +16,7 @@ const ActivitiesIcon: React.FC<IIconProps> = ({ color, size }) => {
         fill={color}
       />
     </svg>
-  );
-};
+  )
+}
 
-export default ActivitiesIcon;
+export default ActivitiesIcon 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { CreateAppointment } from '../components';
+import React from 'react'
+import { CreateAppointment } from '../components'
 
 const SideDrawer = () => {
   return (
@@ -8,7 +8,7 @@ const SideDrawer = () => {
         <CreateAppointment />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SideDrawer;
+export default SideDrawer 

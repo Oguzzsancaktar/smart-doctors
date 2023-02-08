@@ -4,16 +4,16 @@ export const capitalizeFirstLetter = (str: string) => {
 };
 
 export const getFirstFiveWords = (str: string) => {
-  const words = str.split(" ");
-  return words.slice(0, 5).join(" ");
+  const words = str.split(' ');
+  return words.slice(0, 5).join(' ');
 };
 
 export const getFirstGivenChars = (str: string, chars: number) => {
-  return str.trim().slice(0, chars) + "...";
+  return str.trim().slice(0, chars) + '...';
 };
 
 export const getFirstTwoCapitalLetters = (str: string) => {
-  const words = str.split(" ");
+  const words = str.split(' ');
   const firstWord = words[0];
   const secondWord = words[1];
   if (secondWord) {
@@ -23,9 +23,9 @@ export const getFirstTwoCapitalLetters = (str: string) => {
 };
 
 export const camelCaseToSentenceCase = (str: string) => {
-  return str.split(/(?=[A-Z])/).join(" ");
+  return str.split(/(?=[A-Z])/).join(' ');
 };
 
 export const converUnderrscoreToSpace = (str: string) => {
-  return str.split("_").join(" ");
+  return str.split('_').join(' ');
 };

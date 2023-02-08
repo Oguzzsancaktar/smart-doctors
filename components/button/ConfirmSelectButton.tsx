@@ -1,10 +1,10 @@
-import { Button } from '@nextui-org/react';
-import React, { useEffect, useRef, useState } from 'react';
-import { useOutsideTrigger } from '../../hooks';
+import { Button } from '@nextui-org/react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useOutsideTrigger } from '../../hooks'
 
 interface IProps {
-  children: React.ReactElement;
-  isButton?: boolean;
+  children: React.ReactElement
+  isButton?: boolean
 }
 
 const ConfirmSelectButton: React.FC<IProps> = ({
@@ -12,14 +12,14 @@ const ConfirmSelectButton: React.FC<IProps> = ({
   isButton = false,
 }) => {
   // Refferances
-  const componentRef = useRef(null);
+  const componentRef = useRef(null)
   // States
-  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false)
 
   // Handlers
   const handleConfirm = () => {
-    setIsConfirmOpen(false);
-  };
+    setIsConfirmOpen(false)
+  }
 
   // Setters
   const setChildren = () => {
@@ -28,16 +28,16 @@ const ConfirmSelectButton: React.FC<IProps> = ({
       className:
         isButton &&
         'border-solid border-2 ' +
-          (isConfirmOpen
-            ? 'border-mineShaft bg-mineShaft text-white '
-            : 'border-easternBlue bg-white text-easternBlue'),
-    });
+        (isConfirmOpen
+          ? 'border-mineShaft bg-mineShaft text-white '
+          : 'border-easternBlue bg-white text-easternBlue'),
+    })
 
-    return updatedChildren;
-  };
+    return updatedChildren
+  }
 
   // Hooks
-  useOutsideTrigger(componentRef, () => setIsConfirmOpen(false));
+  useOutsideTrigger(componentRef, () => setIsConfirmOpen(false))
 
   return (
     <div
@@ -53,7 +53,7 @@ const ConfirmSelectButton: React.FC<IProps> = ({
       >
         {setChildren()}
       </div>
-      {}
+      { }
       <Button
         css={{
           borderWidth: '2px',
@@ -78,7 +78,7 @@ const ConfirmSelectButton: React.FC<IProps> = ({
         Confirm
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default ConfirmSelectButton;
+export default ConfirmSelectButton 

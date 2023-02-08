@@ -1,4 +1,4 @@
-import IDoctorSpecialityItem from "./IDoctorSpecialityItem";
+import IDoctorSpecialityItem from './IDoctorSpecialityItem';
 
 export default interface IDoctorSpeciality {
   id: string;

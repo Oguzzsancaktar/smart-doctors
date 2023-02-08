@@ -1,6 +1,6 @@
-import React from "react";
-import AppointmentList from "./AppointmentList";
-import AppointmentMiniCalendar from "./AppointmentMiniCalendar";
+import React from "react"
+import AppointmentList from "./AppointmentList"
+import AppointmentMiniCalendar from "./AppointmentMiniCalendar"
 
 const UpcomingAppointments = () => {
   return (
@@ -33,7 +33,7 @@ const UpcomingAppointments = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default UpcomingAppointments;
+export default UpcomingAppointments 

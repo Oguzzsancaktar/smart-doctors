@@ -1,16 +1,16 @@
-import { ApexOptions } from "apexcharts";
-import dynamic from "next/dynamic";
-import React from "react";
-import { themeColors } from "../../constants";
+import { ApexOptions } from "apexcharts"
+import dynamic from "next/dynamic"
+import React from "react"
+import { themeColors } from "../../constants"
 
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false })
 
 const MonthlyBarChart = () => {
   const chartSeries = [
     {
       data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
     },
-  ];
+  ]
 
   const barChartOptions: ApexOptions = {
     colors: [themeColors.matisse],
@@ -29,7 +29,7 @@ const MonthlyBarChart = () => {
     dataLabels: {
       enabled: true,
       formatter: function (val) {
-        return val.toString();
+        return val.toString()
       },
       offsetY: 0,
       style: {
@@ -86,11 +86,11 @@ const MonthlyBarChart = () => {
       labels: {
         show: false,
         formatter: function (val) {
-          return val.toString();
+          return val.toString()
         },
       },
     },
-  };
+  }
 
   return (
     <div id="barChart" className="h-full">
@@ -102,7 +102,7 @@ const MonthlyBarChart = () => {
         type="bar"
       />
     </div>
-  );
-};
+  )
+}
 
-export default MonthlyBarChart;
+export default MonthlyBarChart 

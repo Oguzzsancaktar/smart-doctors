@@ -1,1 +1,1 @@
-export type { default as ILanguage } from "./ILanguage";
+export type { default as ILanguage } from './ILanguage';

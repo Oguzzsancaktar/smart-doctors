@@ -1,10 +1,10 @@
-import { Avatar, Button } from "@nextui-org/react";
-import React from "react";
-import { getDateFromTimestamp } from "../../../utils/timeUtils";
-import { momentMonthDateFormat } from "../../../constants/formats";
-import { selectIcon } from "../../../utils/selectIconUtils";
+import { Avatar, Button } from "@nextui-org/react"
+import React from "react"
+import { getDateFromTimestamp } from "../../../utils/timeUtils"
+import { momentMonthDateFormat } from "../../../constants/formats"
+import { selectIcon } from "../../../utils/selectIconUtils"
 interface IProps {
-  message: any;
+  message: any
 }
 const PatientsChatListItem: React.FC<IProps> = ({ message }) => {
   return (
@@ -52,7 +52,7 @@ const PatientsChatListItem: React.FC<IProps> = ({ message }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PatientsChatListItem;
+export default PatientsChatListItem 

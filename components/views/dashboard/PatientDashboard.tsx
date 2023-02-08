@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 import {
   DashboardCard,
   PatientsChatList,
   FavoriteDoctorsList,
   Top5Activity,
   UpcomingAppointments,
-} from "../../../components";
+} from "../../../components"
 
 const PatientDashboard = () => {
   return (
@@ -46,7 +46,7 @@ const PatientDashboard = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PatientDashboard;
+export default PatientDashboard 

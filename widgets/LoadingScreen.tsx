@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const LoadingScreen = () => {
-  return <div>LoadingScreen</div>;
-};
+  return <div>LoadingScreen</div>
+}
 
-export default LoadingScreen;
+export default LoadingScreen 

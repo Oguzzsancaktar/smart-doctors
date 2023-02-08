@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "flatpickr/dist/themes/material_blue.css";
+import React, { useState } from "react"
+import "flatpickr/dist/themes/material_blue.css"
 
-import Flatpickr from "react-flatpickr";
+import Flatpickr from "react-flatpickr"
 
 const AppointmentMiniCalendar = () => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date())
   return (
     <div className="appointmentMiniCalendar">
       <Flatpickr
@@ -18,7 +18,7 @@ const AppointmentMiniCalendar = () => {
         }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default AppointmentMiniCalendar;
+export default AppointmentMiniCalendar 

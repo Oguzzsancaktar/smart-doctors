@@ -1,1 +1,1 @@
-export { default as SelectDoctorList } from "./SelectDoctorList";
+export { default as SelectDoctorList } from './SelectDoctorList';

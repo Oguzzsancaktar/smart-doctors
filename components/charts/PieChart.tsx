@@ -1,12 +1,12 @@
-import React from "react";
-import dynamic from "next/dynamic";
+import React from "react"
+import dynamic from "next/dynamic"
 
-import { ApexOptions } from "apexcharts";
-import { themeColors } from "../../constants";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import { ApexOptions } from "apexcharts"
+import { themeColors } from "../../constants"
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false })
 
 const PieChart = () => {
-  const chartSeries = [160, 25, 15];
+  const chartSeries = [160, 25, 15]
   const pieChartOptions: ApexOptions = {
     chart: {
       type: "donut",
@@ -41,7 +41,7 @@ const PieChart = () => {
               color: undefined,
               offsetY: -10,
               formatter: function (val) {
-                return val;
+                return val
               },
             },
             value: {
@@ -53,9 +53,9 @@ const PieChart = () => {
               color: themeColors.matisse,
               formatter: function (val) {
                 const total = chartSeries.reduce((a: number, b: number) => {
-                  return a + b;
-                }, 0);
-                return ((+val / total) * 100).toFixed() + "%";
+                  return a + b
+                }, 0)
+                return ((+val / total) * 100).toFixed() + "%"
               },
             },
             total: {
@@ -68,8 +68,8 @@ const PieChart = () => {
               color: "#373d3f",
               formatter: function (w) {
                 return w.globals.seriesTotals.reduce((a: number, b: number) => {
-                  return a + b;
-                }, 0);
+                  return a + b
+                }, 0)
               },
             },
           },
@@ -136,7 +136,7 @@ const PieChart = () => {
         },
       },
     ],
-  };
+  }
 
   return (
     <div id="pieChart" className="h-full">
@@ -148,7 +148,7 @@ const PieChart = () => {
         type="donut"
       />
     </div>
-  );
-};
+  )
+}
 
-export default PieChart;
+export default PieChart 

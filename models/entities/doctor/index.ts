@@ -1,1 +1,1 @@
-export type { default as IDoctor } from "./IDoctor";
+export type { default as IDoctor } from './IDoctor';

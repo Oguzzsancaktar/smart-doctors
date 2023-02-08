@@ -1,1 +1,1 @@
-export type { default as IPolyclinic } from "./IPolyclinic";
+export type { default as IPolyclinic } from './IPolyclinic';

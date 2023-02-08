@@ -1,15 +1,15 @@
-import { NextUIProvider, createTheme } from "@nextui-org/react";
-import { AppProps } from "next/app";
-import { themeColors } from "../constants";
+import { NextUIProvider, createTheme } from "@nextui-org/react"
+import { AppProps } from "next/app"
+import { themeColors } from "../constants"
 
-import "../shared/styles/globals.css";
-import "../shared/styles/vendors/next-ui.css";
-import "../shared/styles/vendors/react-flatpckr.css";
+import "../shared/styles/globals.css"
+import "../shared/styles/vendors/next-ui.css"
+import "../shared/styles/vendors/react-flatpckr.css"
 
-import { AppProvider } from "../contexts/appContext";
-import { AuthProvider } from "../contexts/authContext";
-import AuthRouter from "../routers/AuthRouter";
-import { SideDrawer } from "../widgets";
+import { AppProvider } from "../contexts/appContext"
+import { AuthProvider } from "../contexts/authContext"
+import AuthRouter from "../routers/AuthRouter"
+import { SideDrawer } from "../widgets"
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = createTheme({
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         lg: "2.5rem",
       },
     },
-  });
+  })
 
   return (
     <NextUIProvider theme={theme}>
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </AuthProvider>
       </AppProvider>
     </NextUIProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp 

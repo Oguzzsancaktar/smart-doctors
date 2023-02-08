@@ -1,6 +1,6 @@
-import React from "react";
-import PatientsChatListItem from "./PatientsChatListItem";
-import data from "../../../shared/jsons/tempMessages.json";
+import React from "react"
+import PatientsChatListItem from "./PatientsChatListItem"
+import data from "../../../shared/jsons/tempMessages.json"
 
 const PatientsChatList = () => {
   return (
@@ -9,7 +9,7 @@ const PatientsChatList = () => {
         <PatientsChatListItem message={item} key={index} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default PatientsChatList;
+export default PatientsChatList 

@@ -1,9 +1,9 @@
-import React from 'react';
-import { IDoctor } from '../../../models';
-import { Avatar } from '@nextui-org/react';
+import React from 'react'
+import { IDoctor } from '../../../models'
+import { Avatar } from '@nextui-org/react'
 
 interface IProps {
-  doctor: IDoctor;
+  doctor: IDoctor
 }
 const DoctorGeneralInfoCard: React.FC<IProps> = ({ doctor }) => {
   return (
@@ -33,7 +33,7 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({ doctor }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DoctorGeneralInfoCard;
+export default DoctorGeneralInfoCard 

@@ -1,6 +1,6 @@
-import React from "react";
-import AppointmentListItem from "./AppointmentListItem";
-import data from "../../shared/jsons/tempAppointment.json";
+import React from "react"
+import AppointmentListItem from "./AppointmentListItem"
+import data from "../../shared/jsons/tempAppointment.json"
 
 const AppointmentList = () => {
   return (
@@ -9,7 +9,7 @@ const AppointmentList = () => {
         <AppointmentListItem appointment={item} key={index} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default AppointmentList;
+export default AppointmentList 

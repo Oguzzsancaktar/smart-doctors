@@ -1,10 +1,10 @@
-import React from "react";
-import { selectIcon } from "../../utils/selectIconUtils";
-import { EActivityType } from "../../models";
-import { FiChevronRight } from "react-icons/fi";
+import React from "react"
+import { selectIcon } from "../../utils/selectIconUtils"
+import { EActivityType } from "../../models"
+import { FiChevronRight } from "react-icons/fi"
 
 interface IProps {
-  type: EActivityType;
+  type: EActivityType
 }
 const ActivityListItem: React.FC<IProps> = ({ type }) => {
   const appointmentItem = (
@@ -27,7 +27,7 @@ const ActivityListItem: React.FC<IProps> = ({ type }) => {
         <FiChevronRight size={16} />
       </div>
     </div>
-  );
+  )
 
   const messageItem = (
     <div className={"my-[1.7rem] flex flex-row  "}>
@@ -50,7 +50,7 @@ const ActivityListItem: React.FC<IProps> = ({ type }) => {
         <FiChevronRight size={16} />
       </div>
     </div>
-  );
+  )
 
   const reviewItem = (
     <div className={"my-[1.7rem] flex flex-row  "}>
@@ -72,26 +72,26 @@ const ActivityListItem: React.FC<IProps> = ({ type }) => {
         <FiChevronRight size={16} />
       </div>
     </div>
-  );
+  )
 
   const renderActivityType = (type: EActivityType) => {
     switch (type) {
       case EActivityType.APPOINTMENT:
-        return appointmentItem;
+        return appointmentItem
       case EActivityType.MESSAGE:
-        return messageItem;
+        return messageItem
       case EActivityType.REVIEW:
-        return reviewItem;
+        return reviewItem
       default:
-        return;
+        return
     }
-  };
+  }
 
   return (
     <div className="w-full border-b-[.1rem] border-gallery . rem-[1.5rem] cursor-pointer">
       {renderActivityType(type)}
     </div>
-  );
-};
+  )
+}
 
-export default ActivityListItem;
+export default ActivityListItem 

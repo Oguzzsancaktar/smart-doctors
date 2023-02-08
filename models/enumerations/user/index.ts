@@ -1,1 +1,1 @@
-export { default as EUserType } from "./EUserType";
+export { default as EUserType } from './EUserType';

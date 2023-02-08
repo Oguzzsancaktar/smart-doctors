@@ -1,5 +1,5 @@
-import React from "react";
-import { MonthlyBarChart, PieChart } from "../charts";
+import React from "react"
+import { MonthlyBarChart, PieChart } from "../charts"
 
 const DoctorStatistics = () => {
   return (
@@ -49,7 +49,7 @@ const DoctorStatistics = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DoctorStatistics;
+export default DoctorStatistics 

@@ -1,9 +1,9 @@
-import { Avatar, Button } from "@nextui-org/react";
-import React from "react";
-import { selectIcon } from "../../../utils/selectIconUtils";
-import { BorderedIcon } from "../../icons";
+import { Avatar, Button } from "@nextui-org/react"
+import React from "react"
+import { selectIcon } from "../../../utils/selectIconUtils"
+import { BorderedIcon } from "../../icons"
 interface IProps {
-  doctor: any;
+  doctor: any
 }
 const FavoriteDoctorsListItem: React.FC<IProps> = ({ doctor }) => {
   //Todo doctor info to component
@@ -49,7 +49,7 @@ const FavoriteDoctorsListItem: React.FC<IProps> = ({ doctor }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FavoriteDoctorsListItem;
+export default FavoriteDoctorsListItem 

@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const StethescopeIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -34,7 +34,7 @@ const StethescopeIcon: React.FC<IIconProps> = ({ color, size }) => {
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default StethescopeIcon;
+export default StethescopeIcon 

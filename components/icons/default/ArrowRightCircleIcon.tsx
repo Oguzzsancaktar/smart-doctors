@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const ArrowRightCircleIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -49,7 +49,7 @@ const ArrowRightCircleIcon: React.FC<IIconProps> = ({ color, size }) => {
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default ArrowRightCircleIcon;
+export default ArrowRightCircleIcon 

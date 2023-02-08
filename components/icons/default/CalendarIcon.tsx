@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const CalendarIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -60,7 +60,7 @@ const CalendarIcon: React.FC<IIconProps> = ({ color, size }) => {
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default CalendarIcon;
+export default CalendarIcon 

@@ -1,22 +1,22 @@
-import React from 'react';
+import React from 'react'
 // Components
-import fetcher from '../../../api/fetcherConfig';
-import { DoctorGeneralInfoCard } from '../card';
+import fetcher from '../../../api/fetcherConfig'
+import { DoctorGeneralInfoCard } from '../card'
 // Constants
-import { DOCTORS } from '../../../constants/apiEndpoints';
+import { DOCTORS } from '../../../constants/apiEndpoints'
 // Libs
-import useSWR from 'swr';
-import map from 'lodash/map';
+import useSWR from 'swr'
+import map from 'lodash/map'
 // Models
-import { IDoctor } from '../../../models';
-import { ConfirmSelectButton } from '../../button';
+import { IDoctor } from '../../../models'
+import { ConfirmSelectButton } from '../../button'
 
-interface IProps {}
+interface IProps { }
 const SelectDoctorList: React.FC<IProps> = () => {
-  const { data: doctorsData, error } = useSWR<IDoctor[]>(DOCTORS, fetcher);
+  const { data: doctorsData, error } = useSWR<IDoctor[]>(DOCTORS, fetcher)
 
   if (!doctorsData) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   return (
@@ -32,11 +32,11 @@ const SelectDoctorList: React.FC<IProps> = () => {
                 <DoctorGeneralInfoCard doctor={doctor} />
               </ConfirmSelectButton>
             </li>
-          );
+          )
         })}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default SelectDoctorList;
+export default SelectDoctorList 

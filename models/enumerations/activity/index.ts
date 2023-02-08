@@ -1,1 +1,1 @@
-export { default as EActivityType } from "./EActivityType";
+export { default as EActivityType } from './EActivityType';

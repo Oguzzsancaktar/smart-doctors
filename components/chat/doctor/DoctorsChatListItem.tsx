@@ -1,11 +1,11 @@
-import React from "react";
-import { Avatar, Button } from "@nextui-org/react";
-import { momentMonthDateFormat } from "../../../constants/formats";
-import { getDateFromTimestamp } from "../../../utils/timeUtils";
-import { getFirstFiveWords } from "../../../utils/stringUtils";
+import React from "react"
+import { Avatar, Button } from "@nextui-org/react"
+import { momentMonthDateFormat } from "../../../constants/formats"
+import { getDateFromTimestamp } from "../../../utils/timeUtils"
+import { getFirstFiveWords } from "../../../utils/stringUtils"
 
 interface IProps {
-  message: any;
+  message: any
 }
 
 const DoctorsChatListItem: React.FC<IProps> = ({ message }) => {
@@ -51,7 +51,7 @@ const DoctorsChatListItem: React.FC<IProps> = ({ message }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DoctorsChatListItem;
+export default DoctorsChatListItem 

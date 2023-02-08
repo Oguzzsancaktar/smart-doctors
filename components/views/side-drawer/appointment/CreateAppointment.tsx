@@ -1,7 +1,7 @@
-import React from 'react';
-import SelectSpeciality from './SelectSpeciality';
-import SelectDoctor from './SelectDoctor';
-import SelectDate from './SelectDate';
+import React from 'react' 
+import SelectSpeciality from './SelectSpeciality' 
+import SelectDoctor from './SelectDoctor' 
+import SelectDate from './SelectDate' 
 
 const CreateAppointment = () => {
   return (
@@ -18,7 +18,7 @@ const CreateAppointment = () => {
         <SelectDate />
       </div>
     </div>
-  );
-};
+  ) 
+} 
 
-export default CreateAppointment;
+export default CreateAppointment 

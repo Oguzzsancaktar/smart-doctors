@@ -1,20 +1,20 @@
-import React from "react";
+import React from "react"
 //Libs
-import useSWR from "swr";
-import map from "lodash/map";
+import useSWR from "swr"
+import map from "lodash/map"
 // Models
-import { IDoctorSpeciality } from "../../../../models";
+import { IDoctorSpeciality } from "../../../../models"
 // Components
-import { Searchbar } from "../../../searchbar";
-import { SelectSpecialityList } from "../../../doctor";
-import { DOCTORS_SPECIALITIES } from "../../../../constants/apiEndpoints";
-import fetcher from "../../../../api/fetcherConfig";
+import { Searchbar } from "../../../searchbar"
+import { SelectSpecialityList } from "../../../doctor"
+import { DOCTORS_SPECIALITIES } from "../../../../constants/apiEndpoints"
+import fetcher from "../../../../api/fetcherConfig"
 
 const SelectSpeciality = () => {
   const { data: doctorSpecialitiesData, error } = useSWR<IDoctorSpeciality[]>(
     DOCTORS_SPECIALITIES,
     fetcher
-  );
+  )
 
 
   return (
@@ -34,11 +34,11 @@ const SelectSpeciality = () => {
               key={key}
               doctorSpeciality={doctorSpeciality}
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SelectSpeciality;
+export default SelectSpeciality 

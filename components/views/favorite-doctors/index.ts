@@ -1,1 +1,1 @@
-export { default as FavoriteDoctorsPage } from "./FavoriteDoctorsPage";
+export { default as FavoriteDoctorsPage } from './FavoriteDoctorsPage';

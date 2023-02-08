@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const DoctorSearchPage = () => {
-  return <div>DoctorSearchPage</div>;
-};
+  return <div>DoctorSearchPage</div>
+}
 
-export default DoctorSearchPage;
+export default DoctorSearchPage 

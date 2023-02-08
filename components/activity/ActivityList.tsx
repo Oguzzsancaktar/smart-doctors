@@ -1,6 +1,6 @@
-import React from "react";
-import ActivityListItem from "./ActivityListItem";
-import { EActivityType } from "../../models";
+import React from "react"
+import ActivityListItem from "./ActivityListItem"
+import { EActivityType } from "../../models"
 
 const ActivityList = () => {
   return (
@@ -10,7 +10,7 @@ const ActivityList = () => {
       <ActivityListItem type={EActivityType.REVIEW} />
       <ActivityListItem type={EActivityType.APPOINTMENT} />
     </div>
-  );
-};
+  )
+}
 
-export default ActivityList;
+export default ActivityList 

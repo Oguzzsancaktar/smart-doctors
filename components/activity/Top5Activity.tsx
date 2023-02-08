@@ -1,6 +1,6 @@
-import React from "react";
-import ActivityListItem from "./ActivityListItem";
-import { EActivityType } from "../../models";
+import React from "react"
+import ActivityListItem from "./ActivityListItem"
+import { EActivityType } from "../../models"
 
 const Top5Activity = () => {
   return (
@@ -19,7 +19,7 @@ const Top5Activity = () => {
         </h5>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Top5Activity;
+export default Top5Activity 

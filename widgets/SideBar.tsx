@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import CompanyLogo from '../public/images/CompanyLogo.svg';
-import { SideBarItem } from '../components';
-import { sideBarItems } from '../constants';
-import { useAppApiContext, useAppStateContext } from '../contexts/appContext';
+import React, { useState } from 'react'
+import CompanyLogo from '../public/images/CompanyLogo.svg'
+import { SideBarItem } from '../components'
+import { sideBarItems } from '../constants'
+import { useAppApiContext, useAppStateContext } from '../contexts/appContext'
 
 const SideBar = () => {
-  const { activePage } = useAppStateContext();
-  const { changePage } = useAppApiContext();
+  const { activePage } = useAppStateContext()
+  const { changePage } = useAppApiContext()
 
   return (
     <div className="w-[260px] h-screen bg-white">
@@ -33,7 +33,7 @@ const SideBar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SideBar;
+export default SideBar 

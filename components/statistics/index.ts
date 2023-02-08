@@ -1,1 +1,1 @@
-export { default as DoctorStatistics } from "./DoctorStatistics";
+export { default as DoctorStatistics } from './DoctorStatistics';

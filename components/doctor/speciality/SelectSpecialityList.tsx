@@ -1,11 +1,11 @@
-import React from 'react';
-import { ConfirmSelectButton } from '../../button';
-import { IDoctorSpeciality } from '../../../models';
-import map from 'lodash/map';
-import { Button } from '@nextui-org/react';
+import React from 'react'
+import { ConfirmSelectButton } from '../../button'
+import { IDoctorSpeciality } from '../../../models'
+import map from 'lodash/map'
+import { Button } from '@nextui-org/react'
 
 interface IProps {
-  doctorSpeciality: IDoctorSpeciality;
+  doctorSpeciality: IDoctorSpeciality
 }
 const SelectSpecialityList: React.FC<IProps> = ({ doctorSpeciality }) => {
   return (
@@ -50,11 +50,11 @@ const SelectSpecialityList: React.FC<IProps> = ({ doctorSpeciality }) => {
                 </Button>
               </ConfirmSelectButton>
             </li>
-          );
+          )
         })}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default SelectSpecialityList;
+export default SelectSpecialityList 

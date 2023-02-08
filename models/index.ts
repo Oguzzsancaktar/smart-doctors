@@ -1,2 +1,2 @@
-export * from "./entities";
-export * from "./enumerations";
+export * from './entities';
+export * from './enumerations';

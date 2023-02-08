@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const ChartIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -18,7 +18,7 @@ const ChartIcon: React.FC<IIconProps> = ({ color, size }) => {
         fill={color}
       />
     </svg>
-  );
-};
+  )
+}
 
-export default ChartIcon;
+export default ChartIcon 

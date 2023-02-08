@@ -1,1 +1,1 @@
-export type { default as IPatient } from "./IPatient";
+export type { default as IPatient } from './IPatient';

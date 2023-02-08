@@ -1,5 +1,5 @@
 .appointmentMiniCalendar .flatpickr-calendar {
-  font-family: "Ubuntu-Bold";
+  font-family: 'Ubuntu-Bold';
   box-shadow: none;
   font-weight: bold;
 }
@@ -162,7 +162,7 @@
   background-color: inherit;
   opacity: 1 !important;
 }
-.flatpickr-weekdays {
+.flatpickr-weekdays {x
   margin-top: rem;
 }
 .flatpickr-current-month .flatpickr-monthDropdown-months {
@@ -182,6 +182,7 @@
 
 .flatpickr-calendar .flatpickr-day.today {
   border-radius: 0;
+  transition: all 0.15s ease-out;
   border-color: #21ada9;
   width: 5.4rem;
   height: 5.4rem;

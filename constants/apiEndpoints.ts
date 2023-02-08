@@ -1,2 +1,2 @@
-export const DOCTORS = "Doctors";
-export const DOCTORS_SPECIALITIES = "Doctors/specialties";
+export const DOCTORS = 'Doctors';
+export const DOCTORS_SPECIALITIES = 'Doctors/specialties';

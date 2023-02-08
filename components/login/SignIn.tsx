@@ -1,19 +1,19 @@
-import { Image } from "@nextui-org/react";
-import React, { useState } from "react";
-import { EUserType } from "../../models/enumerations/user";
-import { Footer } from "../../widgets";
-import SignInForm from "./SignInForm";
+import { Image } from "@nextui-org/react"
+import React, { useState } from "react"
+import { EUserType } from "../../models/enumerations/user"
+import { Footer } from "../../widgets"
+import SignInForm from "./SignInForm"
 
 const SignIn = () => {
-  const [loginType, setLoginType] = useState<EUserType>(EUserType.DOCTOR);
+  const [loginType, setLoginType] = useState<EUserType>(EUserType.DOCTOR)
 
   const handleSwitchLoginType = () => {
     if (loginType === EUserType.DOCTOR) {
-      setLoginType(EUserType.PATIENT);
+      setLoginType(EUserType.PATIENT)
     } else {
-      setLoginType(EUserType.DOCTOR);
+      setLoginType(EUserType.DOCTOR)
     }
-  };
+  }
 
   return (
     <section className="h-full min-h-screen bg-catskillWhite overflow-hidden relative ">
@@ -57,7 +57,7 @@ const SignIn = () => {
         <Footer />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SignIn;
+export default SignIn 

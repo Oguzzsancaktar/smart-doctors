@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const PhoneIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -34,7 +34,7 @@ const PhoneIcon: React.FC<IIconProps> = ({ color, size }) => {
         </g>
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default PhoneIcon;
+export default PhoneIcon 

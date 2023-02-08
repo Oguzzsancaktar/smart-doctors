@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const signUp = () => {
   return (
@@ -7,7 +7,7 @@ const signUp = () => {
         <h1 className="text-purple-200 text-6xl font-UbuntuRegular">Sing Up</h1>
       </main>
     </section>
-  );
-};
+  )
+}
 
-export default signUp;
+export default signUp 

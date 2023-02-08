@@ -1,33 +1,33 @@
-import React from "react";
-import { Button, Checkbox, Grid, Input, Row } from "@nextui-org/react";
-import AppleLogo from "../../public/images/AppleLogo.svg";
-import GoogleLogo from "../../public/images/GoogleLogo.svg";
-import { EUserType } from "../../models/enumerations/user";
-import { capitalizeFirstLetter } from "../../utils/stringUtils";
-import { handleInputChange } from "../../utils/handleStateUtils";
-import { selectIcon } from "../../utils/selectIconUtils";
-import Router from "next/router";
-import { selectAppRoute } from "../../utils/appRouteUtils";
-import { useAuthApiContext } from "../../contexts/authContext";
+import React from "react"
+import { Button, Checkbox, Grid, Input, Row } from "@nextui-org/react"
+import AppleLogo from "../../public/images/AppleLogo.svg"
+import GoogleLogo from "../../public/images/GoogleLogo.svg"
+import { EUserType } from "../../models/enumerations/user"
+import { capitalizeFirstLetter } from "../../utils/stringUtils"
+import { handleInputChange } from "../../utils/handleStateUtils"
+import { selectIcon } from "../../utils/selectIconUtils"
+import Router from "next/router"
+import { selectAppRoute } from "../../utils/appRouteUtils"
+import { useAuthApiContext } from "../../contexts/authContext"
 
 interface IProps {
-  loginType: EUserType;
-  onSwitchChange: () => void;
+  loginType: EUserType
+  onSwitchChange: () => void
 }
 const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
-  const { login } = useAuthApiContext();
+  const { login } = useAuthApiContext()
 
   const [loginCredentials, setLoginCredentials] = React.useState({
     email: "doctor@doctor.com",
     password: "dotnet2023",
-  });
+  })
 
   const handleLogin = () => {
-    const user = login(loginCredentials);
+    const user = login(loginCredentials)
     if (user) {
-      Router.replace(selectAppRoute("home"));
+      Router.replace(selectAppRoute("home"))
     }
-  };
+  }
 
   return (
     <div className=" bg-white w-[46.3rem] h-min rounded-[1.2rem]">
@@ -180,7 +180,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignInForm;
+export default SignInForm 

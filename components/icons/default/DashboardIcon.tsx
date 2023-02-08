@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const DashboardIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -16,7 +16,7 @@ const DashboardIcon: React.FC<IIconProps> = ({ color, size }) => {
         fill={color}
       />
     </svg>
-  );
-};
+  )
+}
 
-export default DashboardIcon;
+export default DashboardIcon 

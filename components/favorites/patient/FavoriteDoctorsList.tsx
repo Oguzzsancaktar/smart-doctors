@@ -1,6 +1,6 @@
-import React from "react";
-import data from "../../../shared/jsons/tempFavDoctors.json";
-import FavoriteDoctorsListItem from "./FavoriteDoctorsListItem";
+import React from "react"
+import data from "../../../shared/jsons/tempFavDoctors.json"
+import FavoriteDoctorsListItem from "./FavoriteDoctorsListItem"
 
 const FavoriteDoctorsList = () => {
   return (
@@ -9,7 +9,7 @@ const FavoriteDoctorsList = () => {
         <FavoriteDoctorsListItem doctor={item} key={index} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default FavoriteDoctorsList;
+export default FavoriteDoctorsList 

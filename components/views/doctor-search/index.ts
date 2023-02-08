@@ -1,1 +1,1 @@
-export { default as DoctorSearchPage } from "./DoctorSearchPage";
+export { default as DoctorSearchPage } from './DoctorSearchPage';

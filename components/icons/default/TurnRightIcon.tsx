@@ -1,5 +1,5 @@
-import React from "react";
-import { IIconProps } from "../../../models";
+import React from "react"
+import { IIconProps } from "../../../models"
 
 const TurnRightIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -15,7 +15,7 @@ const TurnRightIcon: React.FC<IIconProps> = ({ color, size }) => {
         fill={color}
       />
     </svg>
-  );
-};
+  )
+}
 
-export default TurnRightIcon;
+export default TurnRightIcon 

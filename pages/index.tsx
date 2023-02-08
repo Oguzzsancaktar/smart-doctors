@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { SideBar } from "../widgets";
-import { MainContent } from "../components";
-import AuthRouter from "../routers/AuthRouter";
+import Head from "next/head"
+import { SideBar } from "../widgets"
+import { MainContent } from "../components"
+import AuthRouter from "../routers/AuthRouter"
 
 function Home() {
   return (
@@ -22,6 +22,6 @@ function Home() {
         </section>
       </main>
     </div>
-  );
+  )
 }
-export default AuthRouter(Home);
+export default AuthRouter(Home) 

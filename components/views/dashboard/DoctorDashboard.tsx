@@ -1,9 +1,9 @@
-import React from "react";
-import { DashboardCard } from "../../cards";
-import { Top5Activity } from "../../activity";
-import { UpcomingAppointments } from "../../appointments";
-import { DoctorsChatList } from "../../chat";
-import { DoctorStatistics } from "../../statistics";
+import React from "react"
+import { DashboardCard } from "../../cards"
+import { Top5Activity } from "../../activity"
+import { UpcomingAppointments } from "../../appointments"
+import { DoctorsChatList } from "../../chat"
+import { DoctorStatistics } from "../../statistics"
 
 const DoctorDashboard = () => {
   return (
@@ -46,7 +46,7 @@ const DoctorDashboard = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default DoctorDashboard;
+export default DoctorDashboard 

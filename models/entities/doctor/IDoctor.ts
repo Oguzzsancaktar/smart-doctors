@@ -1,7 +1,7 @@
-import { IDoctorSpeciality } from "../doctor-speciality";
-import { IHoursOfWork } from "../hours-of-work";
-import { ILanguage } from "../language";
-import { IPolyclinic } from "../polyclinic";
+import { IDoctorSpeciality } from '../doctor-speciality';
+import { IHoursOfWork } from '../hours-of-work';
+import { ILanguage } from '../language';
+import { IPolyclinic } from '../polyclinic';
 
 export default interface IDoctor {
   id: string;
