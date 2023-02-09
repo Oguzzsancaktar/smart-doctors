@@ -42,7 +42,10 @@ const AuthProvider = ({ children }: any) => {
   const authApi = useMemo(() => {
     return {
       login: (credentials: ILoginCredentials) => {
-        let user = null
+        let user = {
+          name: "Doctor Doe",
+          type: EUserType.DOCTOR,
+        }
 
         if (
           credentials.email === doctorCredentials.email &&
@@ -61,7 +64,10 @@ const AuthProvider = ({ children }: any) => {
             type: EUserType.PATIENT,
           }
         } else {
-          user = null
+          user = {
+            name: "Doctor Doe",
+            type: EUserType.DOCTOR,
+          }
         }
 
         setUser(user)
