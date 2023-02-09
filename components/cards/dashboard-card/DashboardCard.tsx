@@ -5,14 +5,17 @@ import DashboardCardBody from "./DashboardCardBody"
 interface IProps {
   headIconName: string
   headIconText: string
-  headButtonText?: string
+  headButton?: {
+    text: string
+    action?: () => void
+  }
   bodyElement?: React.ReactNode
 }
 
 const DashboardCard: React.FC<IProps> = ({
   headIconName,
   headIconText,
-  headButtonText,
+  headButton,
   bodyElement,
 }) => {
   return (
@@ -20,7 +23,7 @@ const DashboardCard: React.FC<IProps> = ({
       <DashboardCardHeader
         headIconName={headIconName}
         headIconText={headIconText}
-        headButtonText={headButtonText}
+        headButton={headButton}
       />
       <DashboardCardBody bodyElement={bodyElement} />
     </div>

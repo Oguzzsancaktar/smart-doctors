@@ -2,10 +2,12 @@ import { createContext, useContext, useMemo, useState } from "react"
 
 const AppStateContext = createContext({
   activePage: "dashboard",
+  sideDrawerContent: null,
 })
 
 const AppApiContext = createContext({
   changePage: (page: string) => { },
+  changeSideDrawerContent: (content: JSX.Element[] | JSX.Element | null) => { },
 })
 
 const useAppStateContext = () => {
@@ -30,17 +32,20 @@ const useAppApiContext = () => {
 
 const AppProvider = ({ children }: any) => {
   const [activePage, setActivePage] = useState("dashboard")
+  const [sideDrawerContent, setSideDrawerContent] = useState<JSX.Element[] | JSX.Element | any>(null)
 
   const appApi = useMemo(() => {
     return {
       changePage: (page: string) => setActivePage(page),
+      changeSideDrawerContent: (content: JSX.Element[] | JSX.Element | null) => setSideDrawerContent(content),
     }
   }, [setActivePage])
 
   return (
     <AppStateContext.Provider
       value={{
-        activePage: activePage,
+        activePage,
+        sideDrawerContent,
       }}
     >
       <AppApiContext.Provider value={appApi}>{children}</AppApiContext.Provider>

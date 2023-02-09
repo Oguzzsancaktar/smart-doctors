@@ -44,7 +44,7 @@ const AuthProvider = ({ children }: any) => {
       login: (credentials: ILoginCredentials) => {
         let user = {
           name: "Doctor Doe",
-          type: EUserType.DOCTOR,
+          type: EUserType.PATIENT,
         }
 
         if (

@@ -9,7 +9,7 @@ const SideBar = () => {
   const { changePage } = useAppApiContext()
 
   return (
-    <div className="w-[260px] h-screen bg-white">
+    <div className="w-[260px] h-screen bg-white z-[1000]">
       <div className="h-full flex flex-col content-between">
         <div className="flex items-center justify-center py-[3rem] border-b-[1px] border-gallery">
           <CompanyLogo />

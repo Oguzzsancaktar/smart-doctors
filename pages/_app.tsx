@@ -8,7 +8,6 @@ import "../shared/styles/vendors/react-flatpckr.css"
 
 import { AppProvider } from "../contexts/appContext"
 import { AuthProvider } from "../contexts/authContext"
-import AuthRouter from "../routers/AuthRouter"
 import { SideDrawer } from "../widgets"
 
 function MyApp({ Component, pageProps }: AppProps) {

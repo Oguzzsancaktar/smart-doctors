@@ -1,17 +1,29 @@
 import React from "react"
+
+// Utils.
 import { selectIcon } from "../../../utils/selectIconUtils"
+// Components.
 import { Button } from "@nextui-org/react"
 
 interface IProps {
   headIconName: string
   headIconText: string
-  headButtonText?: string
+  headButton?: {
+    text: string
+    action?: () => void
+  }
 }
 const DashboardCardHeader: React.FC<IProps> = ({
   headIconName,
   headIconText,
-  headButtonText,
+  headButton,
 }) => {
+  // Handlers
+  const handleButtonClick = () => {
+    if (headButton?.action) headButton?.action()
+  }
+
+
   return (
     <div className="h-[8rem] px-[2rem]  border-b-[1px] border-gallery flex items-center justify-between">
       <div
@@ -23,7 +35,7 @@ const DashboardCardHeader: React.FC<IProps> = ({
         <span>{headIconText}</span>
       </div>
 
-      {headButtonText && (
+      {headButton && (
         <div className="w-auto">
           <Button
             className="bg-easternBlue px-[1rem]"
@@ -31,10 +43,10 @@ const DashboardCardHeader: React.FC<IProps> = ({
             color="primary"
             css={{ borderRadius: "0.6rem" }}
             size={"sm"}
-          // onClick={onSwitchChange}
+            onPress={handleButtonClick}
           >
             <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
-              {headButtonText}
+              {headButton.text}
             </h4>
           </Button>
         </div>
