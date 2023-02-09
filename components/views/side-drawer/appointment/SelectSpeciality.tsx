@@ -3,7 +3,7 @@ import React from "react"
 import useSWR from "swr"
 import map from "lodash/map"
 // Models
-import { IDoctorSpeciality } from "../../../../models"
+import {ICallResponse, IDoctorSpeciality} from "../../../../models"
 // Components
 import { Searchbar } from "../../../searchbar"
 import { SelectSpecialityList } from "../../../doctor"
@@ -11,11 +11,10 @@ import { DOCTORS_SPECIALITIES } from "../../../../constants/apiEndpoints"
 import fetcher from "../../../../api/fetcherConfig"
 
 const SelectSpeciality = () => {
-  const { data: doctorSpecialitiesData, error } = useSWR<IDoctorSpeciality[]>(
+  const { data: doctorSpecialitiesData, error } = useSWR<ICallResponse<IDoctorSpeciality[]>>(
     DOCTORS_SPECIALITIES,
     fetcher
   )
-
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -28,7 +27,7 @@ const SelectSpeciality = () => {
       </div>
 
       <div className="flex flex-col overflow-y-auto h-[calc(100%-10rem-5rem-4rem)] mr-[1.5rem] ">
-        {map(doctorSpecialitiesData, (doctorSpeciality, key) => {
+        {map(doctorSpecialitiesData?.value, (doctorSpeciality, key) => {
           return (
             <SelectSpecialityList
               key={key}

@@ -6,6 +6,9 @@ interface IProps {
   doctor: IDoctor
 }
 const DoctorGeneralInfoCard: React.FC<IProps> = ({ doctor }) => {
+
+  if (!doctor) return <div>No Data</div>
+
   return (
     <div className="w-full h-full cursor-pointer">
       <div className="flex items-center  h-full w-full">

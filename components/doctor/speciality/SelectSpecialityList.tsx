@@ -8,6 +8,9 @@ interface IProps {
   doctorSpeciality: IDoctorSpeciality
 }
 const SelectSpecialityList: React.FC<IProps> = ({ doctorSpeciality }) => {
+
+  if (!doctorSpeciality) return <div>No Data</div>
+
   return (
     <div className="w-full flex flex-col pr-[1.5rem]">
       <h3
@@ -18,8 +21,8 @@ const SelectSpecialityList: React.FC<IProps> = ({ doctorSpeciality }) => {
       flex
       items-center
       w-full 
-    text-easternBlue
-     bg-easternBlue/25
+      text-easternBlue
+      bg-easternBlue/25
       pl-[3rem]
       pr-[1.5rem]
       rounded-tr-[6px]
@@ -29,10 +32,11 @@ const SelectSpecialityList: React.FC<IProps> = ({ doctorSpeciality }) => {
         {doctorSpeciality.name}
       </h3>
 
-      <ul className="w-full flex flex-col py-5 pl-[3rem]">
+
+      <ul className="w-full flex flex-col py-5 pl-[3rem] ">
         {map(doctorSpeciality.children, (speciality, index) => {
           return (
-            <li className="w-full h-[5rem]" key={index}>
+            <li className="w-full h-[5rem] mb-[1rem]" key={index}>
               <ConfirmSelectButton isButton={true}>
                 <Button
                   css={{

@@ -6,6 +6,7 @@ import Flatpickr from "react-flatpickr"
 // Components
 import { Searchbar } from '../../../searchbar'
 import { SelectDoctorList } from '../../../doctor'
+import { SelectDateList } from '../../../appointments'
 
 const SelectDate = () => {
   const [date, setDate] = useState(new Date())
@@ -18,14 +19,12 @@ const SelectDate = () => {
         3. Select date and time
       </h5>
 
-      <div className=" flex flex-col overflow-y-auto h-[calc(100%-10rem-5rem-4rem)] mr-[1.5rem] ">
-
-        <div className='appointmentMiniCalendar'>
-
+      <div className="flex flex-col items-center h-[calc(100%-10rem)] mr-[1.5rem] py-5 pl-[3rem]">
+        <div className='appointmentMiniCalendar h-[340px] pr-[1.5rem]'>
           <Flatpickr
             value={date}
             options={{
-              mode: "multiple",
+              mode: "single",
               dateFormat: "d-m-Y",
               inline: true,
               minDate: "today",
@@ -34,6 +33,9 @@ const SelectDate = () => {
           />
         </div>
 
+        <div className='w-full h-[calc(100%-340px)]'>
+          <SelectDateList />
+        </div>
       </div>
     </div>
   )

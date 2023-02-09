@@ -8,12 +8,12 @@ import { DOCTORS } from '../../../constants/apiEndpoints'
 import useSWR from 'swr'
 import map from 'lodash/map'
 // Models
-import { IDoctor } from '../../../models'
+import {ICallResponse, IDoctor, IDoctorSpeciality} from '../../../models'
 import { ConfirmSelectButton } from '../../button'
 
 interface IProps { }
 const SelectDoctorList: React.FC<IProps> = () => {
-  const { data: doctorsData, error } = useSWR<IDoctor[]>(DOCTORS, fetcher)
+  const { data: doctorsData, error } = useSWR<ICallResponse<IDoctor[]>>(DOCTORS, fetcher)
 
   if (!doctorsData) {
     return <div>Loading...</div>
@@ -22,7 +22,7 @@ const SelectDoctorList: React.FC<IProps> = () => {
   return (
     <div className="w-full flex flex-col pr-[1.5rem]">
       <ul className="w-full flex flex-col pl-[3rem]">
-        {map(doctorsData, (doctor, index) => {
+        {map(doctorsData.value, (doctor, index) => {
           return (
             <li
               className="w-full h-[9rem] border-b-[1px]  py-[1.7rem] border-gallery "

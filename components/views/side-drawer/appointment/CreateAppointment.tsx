@@ -1,7 +1,7 @@
-import React from 'react' 
-import SelectSpeciality from './SelectSpeciality' 
-import SelectDoctor from './SelectDoctor' 
-import SelectDate from './SelectDate' 
+import React from 'react'
+import SelectSpeciality from './SelectSpeciality'
+import SelectDoctor from './SelectDoctor'
+import SelectDate from './SelectDate'
 
 const CreateAppointment = () => {
   return (
@@ -14,11 +14,11 @@ const CreateAppointment = () => {
         <SelectDoctor />
       </div>
 
-      <div className="h-full min-w-[calc(280px+3rem+3rem+3rem)]">
+      <div className="h-full min-w-[calc(300px+3rem+3rem+3rem)] ">
         <SelectDate />
       </div>
     </div>
-  ) 
-} 
+  )
+}
 
 export default CreateAppointment 
