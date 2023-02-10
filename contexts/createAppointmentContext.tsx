@@ -38,7 +38,6 @@
 //   const [sideDrawerContent, setSideDrawerContent] = useState<JSX.Element[] | JSX.Element | any>(null)
 //   const [userType, setUserType] = useState<EUserType>(EUserType.PATIENT)
 
-
 //   const createAppointmentApi = useMemo(() => {
 //     return {
 //       changePage: (page: string) => setActivePage(page),
@@ -60,4 +59,5 @@
 //   )
 // }
 
-// export { CreateAppointmentProvider, useCreateAppointmentStateContext, useCreateAppointmentApiContext } 
+// export { CreateAppointmentProvider, useCreateAppointmentStateContext, useCreateAppointmentApiContext }
+export default {};

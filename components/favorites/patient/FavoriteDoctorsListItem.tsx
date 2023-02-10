@@ -2,8 +2,10 @@ import { Avatar, Button } from '@nextui-org/react';
 import React from 'react';
 import { BorderedIcon } from '../../icons';
 import { IDoctor } from '../../../models';
+
+// Todo Fİx
 interface IProps {
-  doctor: IDoctor;
+  doctor: IDoctor | any;
   showIcons?: boolean;
 }
 const FavoriteDoctorsListItem: React.FC<IProps> = ({
