@@ -1,7 +1,6 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react"
+import { createContext, useContext, useMemo, useState } from "react"
 import { EUserType, ILoginCredentials } from "../models"
-import Router from "next/router"
-import { selectAppRoute } from "../utils/appRouteUtils"
+
 import {
   doctorCredentials,
   patientCredentials,
@@ -44,31 +43,31 @@ const AuthProvider = ({ children }: any) => {
       login: (credentials: ILoginCredentials) => {
         let user = {
           name: "Doctor Doe",
-          type: EUserType.PATIENT,
+          type: credentials.type,
         }
 
-        if (
-          credentials.email === doctorCredentials.email &&
-          credentials.password === doctorCredentials.password
-        ) {
-          user = {
-            name: "Doctor Doe",
-            type: EUserType.DOCTOR,
-          }
-        } else if (
-          credentials.email === patientCredentials.email &&
-          credentials.password === patientCredentials.password
-        ) {
-          user = {
-            name: "Patient Doe",
-            type: EUserType.PATIENT,
-          }
-        } else {
-          user = {
-            name: "Doctor Doe",
-            type: EUserType.DOCTOR,
-          }
-        }
+        // if (
+        //   credentials.email === doctorCredentials.email &&
+        //   credentials.password === doctorCredentials.password
+        // ) {
+        //   user = {
+        //     name: "Doctor Doe",
+        //     type: EUserType.DOCTOR,
+        //   }
+        // } else if (
+        //   credentials.email === patientCredentials.email &&
+        //   credentials.password === patientCredentials.password
+        // ) {
+        //   user = {
+        //     name: "Patient Doe",
+        //     type: EUserType.PATIENT,
+        //   }
+        // } else {
+        //   user = {
+        //     name: "Doctor Doe",
+        //     type: EUserType.DOCTOR,
+        //   }
+        // }
 
         setUser(user)
         return user

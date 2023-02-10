@@ -3,13 +3,14 @@ import { useAuthStateContext } from "../../../contexts/authContext"
 import { EUserType } from "../../../models"
 import DoctorDashboard from "./DoctorDashboard"
 import PatientDashboard from "./PatientDashboard"
+import { useAppStateContext } from "../../../contexts/appContext"
 
 const DashBoardPage = () => {
-  const { loggedUser } = useAuthStateContext()
+  const { userType } = useAppStateContext()
 
   return (
     <>
-      {loggedUser && loggedUser?.type === EUserType.DOCTOR ? (
+      {userType === EUserType.DOCTOR ? (
         <DoctorDashboard />
       ) : (
         <PatientDashboard />

@@ -23,7 +23,7 @@ const DoctorDashboard = () => {
         <div className="h-[60.2rem]  w-full flex flex-row pb-[1rem]">
           <div className="w-[calc(100%-30rem)] mr-[1rem] ">
             <DashboardCard
-              headButton={{ text: "New Appointment", action: () => handleNewAppointmentClick() }}
+              headButton={{ text: "All Appointment" }}
               headIconName="calendar"
               headIconText="Calendar"
               bodyElement={<UpcomingAppointments />}

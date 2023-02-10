@@ -1,13 +1,16 @@
 import { createContext, useContext, useMemo, useState } from "react"
+import { EUserType } from "../models"
 
 const AppStateContext = createContext({
   activePage: "dashboard",
   sideDrawerContent: null,
+  userType: EUserType.PATIENT
 })
 
 const AppApiContext = createContext({
   changePage: (page: string) => { },
   changeSideDrawerContent: (content: JSX.Element[] | JSX.Element | null) => { },
+  changeUserType: (userType: EUserType) => { }
 })
 
 const useAppStateContext = () => {
@@ -33,11 +36,14 @@ const useAppApiContext = () => {
 const AppProvider = ({ children }: any) => {
   const [activePage, setActivePage] = useState("dashboard")
   const [sideDrawerContent, setSideDrawerContent] = useState<JSX.Element[] | JSX.Element | any>(null)
+  const [userType, setUserType] = useState<EUserType>(EUserType.PATIENT)
+
 
   const appApi = useMemo(() => {
     return {
       changePage: (page: string) => setActivePage(page),
       changeSideDrawerContent: (content: JSX.Element[] | JSX.Element | null) => setSideDrawerContent(content),
+      changeUserType: (userType: EUserType) => setUserType(userType)
     }
   }, [setActivePage])
 
@@ -46,6 +52,7 @@ const AppProvider = ({ children }: any) => {
       value={{
         activePage,
         sideDrawerContent,
+        userType
       }}
     >
       <AppApiContext.Provider value={appApi}>{children}</AppApiContext.Provider>

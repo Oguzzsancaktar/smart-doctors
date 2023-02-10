@@ -8,19 +8,19 @@ interface IProps {
 }
 
 const AuthRouter = (Component: any) => {
-  const AuthenticatedComponent = () => {
-    const { loggedUser }: any = useAuthStateContext()
+  // const AuthenticatedComponent = () => {
+  // const { loggedUser }: any = useAuthStateContext()
 
-    useEffect(() => {
-      if (!loggedUser) {
-        Router.replace(selectAppRoute("login"))
-      }
-    }, [])
+  // useEffect(() => {
+  //   if (!loggedUser) {
+  //     Router.replace(selectAppRoute("login"))
+  //   }
+  // }, [])
 
-    return !!loggedUser ? <Component /> : null  // Render whatever you want while the authentication occurs
-  }
+  //   return !!loggedUser ? <Component /> : null  // Render whatever you want while the authentication occurs
+  // }
 
-  return AuthenticatedComponent
+  return Component
 }
 
-export default AuthRouter 
+export default AuthRouter

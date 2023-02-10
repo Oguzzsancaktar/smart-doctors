@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
-import CompanyLogo from '../public/images/CompanyLogo.svg'
-import { SideBarItem } from '../components'
-import { sideBarItems } from '../constants'
-import { useAppApiContext, useAppStateContext } from '../contexts/appContext'
+import React, { useState } from 'react';
+import CompanyLogo from '../public/images/CompanyLogo.svg';
+import { SideBarItem } from '../components';
+import { sideBarItems } from '../constants';
+import { useAppApiContext, useAppStateContext } from '../contexts/appContext';
+import {
+  useAuthApiContext,
+  useAuthStateContext,
+} from '../contexts/authContext';
+import { selectAppRoute } from '../utils/appRouteUtils';
+import Router from 'next/router';
 
 const SideBar = () => {
-  const { activePage } = useAppStateContext()
-  const { changePage } = useAppApiContext()
+  const { logout } = useAuthApiContext();
+  const { activePage } = useAppStateContext();
+  const { changePage } = useAppApiContext();
+
+  const handleLogout = () => {
+    Router.replace(selectAppRoute('login'));
+  };
 
   return (
     <div className="w-[260px] h-screen bg-white z-[1000]">
       <div className="h-full flex flex-col content-between">
-        <div className="flex items-center justify-center py-[3rem] border-b-[1px] border-gallery">
+        <div className="flex items-center justify-center py-[3rem] border-b-[1px] border-gallery h-[10rem]">
           <CompanyLogo />
         </div>
 
@@ -23,7 +34,7 @@ const SideBar = () => {
           ))}
         </div>
 
-        <div className="mb-[8rem]" onClick={() => changePage('settings')}>
+        <div onClick={() => changePage('settings')}>
           <SideBarItem
             iconName="settings"
             isActive={activePage === 'settings'}
@@ -31,9 +42,18 @@ const SideBar = () => {
             tab="settings"
           />
         </div>
+
+        <div className="mb-[8rem]" onClick={handleLogout}>
+          <SideBarItem
+            iconName="logout"
+            isActive={activePage === 'settings'}
+            text="Logout"
+            tab="logout"
+          />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SideBar 
+export default SideBar;

@@ -35,10 +35,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider theme={theme}>
       <AppProvider>
-        <AuthProvider>
-          <SideDrawer />
-          <Component {...pageProps} />
-        </AuthProvider>
+        {/* <AuthProvider> */}
+        <SideDrawer />
+        <Component {...pageProps} />
+        {/* </AuthProvider> */}
       </AppProvider>
     </NextUIProvider>
   )

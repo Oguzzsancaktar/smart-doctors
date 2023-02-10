@@ -9,22 +9,26 @@ import { selectIcon } from "../../utils/selectIconUtils"
 import Router from "next/router"
 import { selectAppRoute } from "../../utils/appRouteUtils"
 import { useAuthApiContext } from "../../contexts/authContext"
+import { useAppApiContext } from "../../contexts/appContext"
 
 interface IProps {
   loginType: EUserType
   onSwitchChange: () => void
 }
 const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
-  const { login } = useAuthApiContext()
+  // const { login } = useAuthApiContext()
+  const { changeUserType } = useAppApiContext()
 
   const [loginCredentials, setLoginCredentials] = React.useState({
     email: "doctor@doctor.com",
     password: "dotnet2023",
+    type: loginType
   })
 
   const handleLogin = () => {
-    const user = login(loginCredentials)
-    if (user) {
+    // const user = login(loginCredentials)
+    if (loginCredentials) {
+      changeUserType(loginType)
       Router.replace(selectAppRoute("home"))
     }
   }

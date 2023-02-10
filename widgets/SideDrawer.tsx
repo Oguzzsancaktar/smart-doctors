@@ -14,16 +14,10 @@ const SideDrawer = () => {
   // States.
   const isSidebarOpen = useMemo(() => sideDrawerContent, [sideDrawerContent])
 
-
-
-
-
-
-
   return (
     <div
       className={"z-[999] w-screen h-screen fixed top-0 left-0 flex items-center justify-end backdrop-blur-[2px] bg-mineShaft/30 py-[4rem] " + (!isSidebarOpen && "hidden")} >
-      <div ref={sideDrawerRef} className="rounded-l-lg bg-white h-full ">
+      <div ref={sideDrawerRef} className="rounded-l-[12px] bg-white h-full ">
         {sideDrawerContent}
       </div>
     </div>
