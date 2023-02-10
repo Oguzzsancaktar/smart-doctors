@@ -184,16 +184,16 @@
   border-radius: 0;
   transition: all 0.15s ease-out;
   border-color: #21ada9;
-  width: 5.4rem;
-  height: 5.4rem;
-  max-width: 5.4rem;
+  width: 4rem;
+  height: 4rem;
+  max-width: 4rem;
   margin: 0;
   background-color: #21ada9;
   color: white;
 }
 
 .appointmentMiniCalendar {
-  width: 38rem;
+  width: 30rem;
 }
 .appointmentMiniCalendar input.flatpickr-input {
   display: none;
@@ -220,9 +220,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5.4rem !important;
-  height: 5.4rem;
-  max-width: 5.4rem;
+  width: 4rem !important;
+  height: 4rem;
+  max-width: 4rem;
 }
 
 .appointmentMiniCalendar .flatpickr-calendar .flatpickr-weekday {
@@ -231,16 +231,16 @@
   justify-content: center;
   background: transparent;
   color: #21ada9;
-  width: 5.4rem;
-  height: 5.4rem;
-  max-width: 5.4rem;
+  width: 4rem;
+  height: 4rem;
+  max-width: 4rem;
 }
 .appointmentMiniCalendar .flatpickr-calendar .flatpickr-days {
   border: none;
 }
 
 .appointmentMiniCalendar .flatpickr-weekdays {
-  height: 5.4rem;
+  height: 4rem;
   background: transparent;
 }
 
@@ -253,4 +253,8 @@
 }
 .appointmentMiniCalendar .flatpickr-innerContainer {
   border: none;
+}
+
+.appointmentMiniCalendar .flatpickr-weekdaycontainer {
+  justify-content: space-evenly !important;
 }

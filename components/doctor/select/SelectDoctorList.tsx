@@ -1,22 +1,39 @@
-import React from 'react'
+import React from 'react';
 // Components
-import fetcher from '../../../api/fetcherConfig'
-import { DoctorGeneralInfoCard } from '../card'
+import fetcher from '../../../api/fetcherConfig';
+import { DoctorGeneralInfoCard } from '../card';
 // Constants
-import { DOCTORS } from '../../../constants/apiEndpoints'
+import { DOCTORS } from '../../../constants/apiEndpoints';
 // Libs
-import useSWR from 'swr'
-import map from 'lodash/map'
+import useSWR from 'swr';
+import map from 'lodash/map';
 // Models
-import {ICallResponse, IDoctor, IDoctorSpeciality} from '../../../models'
-import { ConfirmSelectButton } from '../../button'
+import { ICallResponse, IDoctor } from '../../../models';
+import { ConfirmSelectButton } from '../../button';
+import {
+  useCreateAppointmentStateContext,
+  useCreateAppointmentApiContext,
+} from '../../../contexts/createAppointmentContext';
 
-interface IProps { }
+interface IProps {}
 const SelectDoctorList: React.FC<IProps> = () => {
-  const { data: doctorsData, error } = useSWR<ICallResponse<IDoctor[]>>(DOCTORS, fetcher)
+  // Contexts.
+  const { selectedDoctor } = useCreateAppointmentStateContext();
+  const { changeDoctor } = useCreateAppointmentApiContext();
+
+  // Api.
+  const { data: doctorsData, error } = useSWR<ICallResponse<IDoctor[]>>(
+    DOCTORS,
+    fetcher
+  );
+
+  // Handlers.
+  const handleSelectDoctor = (doctorId: IDoctor['id']) => {
+    changeDoctor(doctorId);
+  };
 
   if (!doctorsData) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
@@ -28,15 +45,20 @@ const SelectDoctorList: React.FC<IProps> = () => {
               className="w-full h-[9rem] border-b-[1px]  py-[1.7rem] border-gallery "
               key={index}
             >
-              <ConfirmSelectButton>
-                <DoctorGeneralInfoCard doctor={doctor} />
+              <ConfirmSelectButton
+                onConfirm={() => handleSelectDoctor(doctor.id)}
+              >
+                <DoctorGeneralInfoCard
+                  isActive={selectedDoctor === doctor.id}
+                  doctor={doctor}
+                />
               </ConfirmSelectButton>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default SelectDoctorList 
+export default SelectDoctorList;

@@ -1,25 +1,30 @@
-import { Button } from '@nextui-org/react'
-import React, { useEffect, useRef, useState } from 'react'
-import { useOutsideTrigger } from '../../hooks'
+import { Button } from '@nextui-org/react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useOutsideTrigger } from '../../hooks';
 
 interface IProps {
-  children: React.ReactElement
-  isButton?: boolean
+  children: React.ReactElement;
+  isButton?: boolean;
+  isSelected?: boolean;
+  onConfirm?: () => void;
 }
 
 const ConfirmSelectButton: React.FC<IProps> = ({
   children,
   isButton = false,
+  onConfirm,
+  isSelected = false,
 }) => {
   // Refferances
-  const componentRef = useRef(null)
+  const componentRef = useRef(null);
   // States
-  const [isConfirmOpen, setIsConfirmOpen] = useState(false)
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
   // Handlers
   const handleConfirm = () => {
-    setIsConfirmOpen(false)
-  }
+    setIsConfirmOpen(false);
+    onConfirm && onConfirm();
+  };
 
   // Setters
   const setChildren = () => {
@@ -28,16 +33,18 @@ const ConfirmSelectButton: React.FC<IProps> = ({
       className:
         isButton &&
         'border-solid border-2 ' +
-        (isConfirmOpen
-          ? 'border-mineShaft bg-mineShaft text-white '
-          : 'border-easternBlue bg-white text-easternBlue'),
-    })
+          (isSelected
+            ? 'border-easternBlue bg-easternBlue text-white '
+            : isConfirmOpen
+            ? 'border-mineShaft bg-mineShaft text-white '
+            : 'border-easternBlue bg-white text-easternBlue'),
+    });
 
-    return updatedChildren
-  }
+    return updatedChildren;
+  };
 
   // Hooks
-  useOutsideTrigger(componentRef, () => setIsConfirmOpen(false))
+  useOutsideTrigger(componentRef, () => setIsConfirmOpen(false));
 
   return (
     <div
@@ -47,13 +54,13 @@ const ConfirmSelectButton: React.FC<IProps> = ({
     >
       <div
         className={
-          'h-full transition-all duration-1000  ' +
-          (isConfirmOpen ? 'w-[calc(100%-100px)]  mr-[10px]' : 'w-full')
+          'h-full transition-all duration-1000 ' +
+          (isConfirmOpen ? ' w-[calc(100%-100px)]  mr-[10px]' : 'w-full')
         }
       >
         {setChildren()}
       </div>
-      { }
+
       <Button
         css={{
           borderWidth: '2px',
@@ -78,7 +85,7 @@ const ConfirmSelectButton: React.FC<IProps> = ({
         Confirm
       </Button>
     </div>
-  )
-}
+  );
+};
 
-export default ConfirmSelectButton 
+export default ConfirmSelectButton;

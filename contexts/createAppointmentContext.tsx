@@ -1,63 +1,78 @@
-// import { createContext, useContext, useMemo, useState } from "react"
-// import { EUserType } from "../models"
+import { createContext, useContext, useMemo, useState } from 'react';
+import { EUserType } from '../models';
 
-// const CreateAppointmentStateContext = createContext({
-//   selectedSpeciality: null,
-//   sideDrawerContent: null,
-//   userType: EUserType.PATIENT
-// })
+const CreateAppointmentStateContext = createContext({
+  selectedSpeciality: '',
+  selectedDoctor: '',
+  selectedDate: '',
+  activeStepIndex: 0,
+});
 
-// const CreateAppointmentApiContext = createContext({
-//   changePage: (page: string) => { },
-//   changeSideDrawerContent: (content: JSX.Element[] | JSX.Element | null) => { },
-//   changeUserType: (userType: EUserType) => { }
-// })
+const CreateAppointmentApiContext = createContext({
+  changeSpeciality: (page: string) => {},
+  changeDoctor: (doctor: string) => {},
+  changeDate: (date: string) => {},
+  changeStepIndex: (index: number) => {},
+});
 
-// const useCreateAppointmentStateContext = () => {
-//   const context = useContext(CreateAppointmentStateContext)
+const useCreateAppointmentStateContext = () => {
+  const context = useContext(CreateAppointmentStateContext);
 
-//   if (!context) {
-//     throw new Error("useCreateAppointmentContext must be used within a CreateAppointmentProvider")
-//   }
+  if (!context) {
+    throw new Error(
+      'useCreateAppointmentContext must be used within a CreateAppointmentProvider'
+    );
+  }
 
-//   return context
-// }
+  return context;
+};
 
-// const useCreateAppointmentApiContext = () => {
-//   const context = useContext(CreateAppointmentApiContext)
+const useCreateAppointmentApiContext = () => {
+  const context = useContext(CreateAppointmentApiContext);
 
-//   if (!context) {
-//     throw new Error("useCreateAppointmentApiContext must be used within a CreateAppointmentProvider")
-//   }
+  if (!context) {
+    throw new Error(
+      'useCreateAppointmentApiContext must be used within a CreateAppointmentProvider'
+    );
+  }
 
-//   return context
-// }
+  return context;
+};
 
-// const CreateAppointmentProvider = ({ children }: any) => {
-//   const [activePage, setActivePage] = useState("dashboard")
-//   const [sideDrawerContent, setSideDrawerContent] = useState<JSX.Element[] | JSX.Element | any>(null)
-//   const [userType, setUserType] = useState<EUserType>(EUserType.PATIENT)
+const CreateAppointmentProvider = ({ children }: any) => {
+  const [selectedSpeciality, setSelectedSpeciality] = useState('');
+  const [selectedDoctor, setSelectedDoctor] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
 
-//   const createAppointmentApi = useMemo(() => {
-//     return {
-//       changePage: (page: string) => setActivePage(page),
-//       changeSideDrawerContent: (content: JSX.Element[] | JSX.Element | null) => setSideDrawerContent(content),
-//       changeUserType: (userType: EUserType) => setUserType(userType)
-//     }
-//   }, [setActivePage])
+  const createAppointmentApi = useMemo(() => {
+    return {
+      changeSpeciality: (speciality: string) =>
+        setSelectedSpeciality(speciality),
+      changeDoctor: (doctor: string) => setSelectedDoctor(doctor),
+      changeDate: (date: string) => setSelectedDate(date),
+      changeStepIndex: (index: number) => setActiveStepIndex(index),
+    };
+  }, [setSelectedSpeciality, setSelectedDoctor, setSelectedDate]);
 
-//   return (
-//     <CreateAppointmentStateContext.Provider
-//       value={{
-//         activePage,
-//         sideDrawerContent,
-//         userType
-//       }}
-//     >
-//       <CreateAppointmentApiContext.Provider value={createAppointmentApi}>{children}</CreateAppointmentApiContext.Provider>
-//     </CreateAppointmentStateContext.Provider>
-//   )
-// }
+  return (
+    <CreateAppointmentStateContext.Provider
+      value={{
+        selectedSpeciality,
+        selectedDoctor,
+        selectedDate,
+        activeStepIndex,
+      }}
+    >
+      <CreateAppointmentApiContext.Provider value={createAppointmentApi}>
+        {children}
+      </CreateAppointmentApiContext.Provider>
+    </CreateAppointmentStateContext.Provider>
+  );
+};
 
-// export { CreateAppointmentProvider, useCreateAppointmentStateContext, useCreateAppointmentApiContext }
-export default {};
+export {
+  CreateAppointmentProvider,
+  useCreateAppointmentStateContext,
+  useCreateAppointmentApiContext,
+};

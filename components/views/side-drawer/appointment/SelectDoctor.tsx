@@ -1,13 +1,23 @@
-import React from "react"
+import React from 'react';
 
 // Components
-import { Searchbar } from "../../../searchbar"
-import { SelectDoctorList } from "../../../doctor"
+import { Searchbar } from '../../../searchbar';
+import { SelectDoctorList } from '../../../doctor';
+import { useCreateAppointmentStateContext } from '../../../../contexts/createAppointmentContext';
 
 const SelectSpeciality = () => {
+  // Contexts.
+  const { activeStepIndex } = useCreateAppointmentStateContext();
+
   return (
     <div className="flex flex-col h-full w-full">
-      <h5 className="h-[10rem] flex items-center justify-center text-[20px] text-easternBlue font-UbuntuBold px-[3rem] border-b-[1px] border-edgeWater ">
+      <h5
+        className={
+          'h-[10rem] flex items-center justify-center text-[20px] text-easternBlue font-UbuntuBold px-[3rem] border-b-[1px] border-edgeWater duration-300 transition-all ' +
+          (activeStepIndex !== 1 &&
+            ' text-edgeWater duration-300 transition-all')
+        }
+      >
         2. Select doctor and field
       </h5>
 
@@ -19,7 +29,7 @@ const SelectSpeciality = () => {
         <SelectDoctorList />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SelectSpeciality 
+export default SelectSpeciality;
