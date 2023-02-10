@@ -79,7 +79,7 @@ const DoctorSearchPage = () => {
           </div>
         </div>
 
-        <div className="px-[4rem] w-2/3">
+        <div className="px-[4rem] w-2/3 overflow-y-auto">
           <Collapse.Group>
             {map(doctorsData?.value, (doctor, key) => {
               return (
