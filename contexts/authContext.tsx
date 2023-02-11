@@ -1,80 +1,54 @@
-import { createContext, useContext, useMemo, useState } from "react"
-import { EUserType, ILoginCredentials } from "../models"
+import { createContext, useContext, useMemo, useState } from 'react';
+import jwt from 'jsonwebtoken';
+import { EUserType, ILoginCredentials, ITokenUser } from '../models';
 
-import {
-  doctorCredentials,
-  patientCredentials,
-} from "../constants/tempCredentials"
+// Libs.
+import { useSWRConfig } from 'swr';
+import { LOGIN } from '../constants/apiEndpoints';
+import Cookies from 'js-cookie';
 
 const AuthStateContext = createContext<{ loggedUser: any }>({
   loggedUser: null,
-})
+});
 
 const AuthApiContext = createContext({
-  login: (credentials: ILoginCredentials): any => { },
-  logout: () => { },
-})
+  login: (token: string) => {},
+  logout: () => {},
+});
 
 const useAuthStateContext = () => {
-  const context = useContext(AuthStateContext)
+  const context = useContext(AuthStateContext);
 
   if (!context) {
-    throw new Error("useAuthStateContext must be used within a AuthProvider")
+    throw new Error('useAuthStateContext must be used within a AuthProvider');
   }
 
-  return context
-}
+  return context;
+};
 
 const useAuthApiContext = () => {
-  const context = useContext(AuthApiContext)
+  const context = useContext(AuthApiContext);
 
   if (!context) {
-    throw new Error("useAuthApiContext must be used within a AuthProvider")
+    throw new Error('useAuthApiContext must be used within a AuthProvider');
   }
 
-  return context
-}
+  return context;
+};
 
 const AuthProvider = ({ children }: any) => {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<any>(null);
 
   const authApi = useMemo(() => {
     return {
-      login: (credentials: ILoginCredentials) => {
-        let user = {
-          name: "Doctor Doe",
-          type: credentials.type,
-        }
-
-        // if (
-        //   credentials.email === doctorCredentials.email &&
-        //   credentials.password === doctorCredentials.password
-        // ) {
-        //   user = {
-        //     name: "Doctor Doe",
-        //     type: EUserType.DOCTOR,
-        //   }
-        // } else if (
-        //   credentials.email === patientCredentials.email &&
-        //   credentials.password === patientCredentials.password
-        // ) {
-        //   user = {
-        //     name: "Patient Doe",
-        //     type: EUserType.PATIENT,
-        //   }
-        // } else {
-        //   user = {
-        //     name: "Doctor Doe",
-        //     type: EUserType.DOCTOR,
-        //   }
-        // }
-
-        setUser(user)
-        return user
+      login: (token: string) => {
+        const user: ITokenUser = jwt.decode(token);
+        Cookies.set('token', token);
+        setUser(user);
       },
       logout: () => setUser(null),
-    }
-  }, [setUser])
+    };
+  }, [setUser]);
 
   return (
     <AuthStateContext.Provider
@@ -86,7 +60,7 @@ const AuthProvider = ({ children }: any) => {
         {children}
       </AuthApiContext.Provider>
     </AuthStateContext.Provider>
-  )
-}
+  );
+};
 
-export { AuthProvider, useAuthStateContext, useAuthApiContext } 
+export { AuthProvider, useAuthStateContext, useAuthApiContext };

@@ -20,9 +20,9 @@ const LogoutIcon: React.FC<IIconProps> = ({ color, size }) => {
           d="M13.5,31.5h-6a3,3,0,0,1-3-3V7.5a3,3,0,0,1,3-3h6"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
         />
         <path
           id="Pfad_100"
@@ -30,9 +30,9 @@ const LogoutIcon: React.FC<IIconProps> = ({ color, size }) => {
           d="M24,25.5,31.5,18,24,10.5"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
         />
         <path
           id="Pfad_101"
@@ -40,9 +40,9 @@ const LogoutIcon: React.FC<IIconProps> = ({ color, size }) => {
           d="M31.5,18h-18"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
         />
       </g>
     </svg>

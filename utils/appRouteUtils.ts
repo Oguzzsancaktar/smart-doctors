@@ -1,3 +1,5 @@
+// TOdo create entity
+
 export const selectAppRoute = (pageName: string): string => {
   switch (pageName) {
     case 'home':

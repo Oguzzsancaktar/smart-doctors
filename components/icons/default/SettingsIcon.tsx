@@ -1,5 +1,5 @@
-import React from "react"
-import { IIconProps } from "../../../models"
+import React from 'react';
+import { IIconProps } from '../../../models';
 
 const SettingsIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -7,8 +7,8 @@ const SettingsIcon: React.FC<IIconProps> = ({ color, size }) => {
       id="Icon_feather-settings"
       data-name="Icon feather-settings"
       xmlns="http://www.w3.org/2000/svg"
-      width={size ? size : "30.056"}
-      height={size ? size : "30.056"}
+      width={size ? size : '30.056'}
+      height={size ? size : '30.056'}
       viewBox="0 0 30.056 30.056"
     >
       <path
@@ -33,7 +33,7 @@ const SettingsIcon: React.FC<IIconProps> = ({ color, size }) => {
         strokeWidth="3"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default SettingsIcon 
+export default SettingsIcon;

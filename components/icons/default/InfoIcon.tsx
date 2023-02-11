@@ -1,5 +1,5 @@
-import React from "react"
-import { IIconProps } from "../../../models"
+import React from 'react';
+import { IIconProps } from '../../../models';
 
 const InfoIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -49,7 +49,7 @@ const InfoIcon: React.FC<IIconProps> = ({ color, size }) => {
         />
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default InfoIcon 
+export default InfoIcon;

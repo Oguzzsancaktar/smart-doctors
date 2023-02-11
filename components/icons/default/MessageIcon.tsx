@@ -1,5 +1,5 @@
-import React from "react"
-import { IIconProps } from "../../../models"
+import React from 'react';
+import { IIconProps } from '../../../models';
 
 const MessageIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
@@ -21,7 +21,7 @@ const MessageIcon: React.FC<IIconProps> = ({ color, size }) => {
         strokeWidth="3"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default MessageIcon 
+export default MessageIcon;

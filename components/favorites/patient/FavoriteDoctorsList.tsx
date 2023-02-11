@@ -6,8 +6,8 @@ const FavoriteDoctorsList = () => {
   return (
     <ul className="h-full overflow-y-auto pl-[2rem] pr-[3rem] mr-[1rem]">
       {data.data.map((item, index) => (
-        <li className="border-b-[1px] border-gallery ">
-          <FavoriteDoctorsListItem doctor={item} key={index} />
+        <li key={index} className="border-b-[1px] border-gallery ">
+          <FavoriteDoctorsListItem doctor={item} />
         </li>
       ))}
     </ul>

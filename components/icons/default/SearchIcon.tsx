@@ -21,9 +21,9 @@ const SearchIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-4.5 -4.5)"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2.5"
         />
         <path
           id="Pfad_89"
@@ -32,9 +32,9 @@ const SearchIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-13.6 -13.6)"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2.5"
         />
       </g>
     </svg>

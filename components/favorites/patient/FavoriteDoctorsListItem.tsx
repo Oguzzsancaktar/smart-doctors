@@ -50,7 +50,7 @@ const FavoriteDoctorsListItem: React.FC<IProps> = ({
             </>
           )}
           <Button
-            className="bg-easternBlue px-[1rem]"
+            className="bg-easternBlue h-[3.2rem] px-[1rem]"
             auto
             size={'sm'}
             color="primary"

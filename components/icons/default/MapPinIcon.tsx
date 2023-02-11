@@ -21,9 +21,9 @@ const MapPinIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(0 0)"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2.5"
         />
         <path
           id="Pfad_104"
@@ -32,9 +32,9 @@ const MapPinIcon: React.FC<IIconProps> = ({ color, size }) => {
           transform="translate(-4.226 -4.226)"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2.5"
         />
       </g>
     </svg>

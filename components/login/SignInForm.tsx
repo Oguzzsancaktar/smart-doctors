@@ -1,37 +1,58 @@
-import React from "react"
-import { Button, Checkbox, Grid, Input, Row } from "@nextui-org/react"
-import AppleLogo from "../../public/images/AppleLogo.svg"
-import GoogleLogo from "../../public/images/GoogleLogo.svg"
-import { EUserType } from "../../models/enumerations/user"
-import { capitalizeFirstLetter } from "../../utils/stringUtils"
-import { handleInputChange } from "../../utils/handleStateUtils"
-import { selectIcon } from "../../utils/selectIconUtils"
-import Router from "next/router"
-import { selectAppRoute } from "../../utils/appRouteUtils"
-import { useAuthApiContext } from "../../contexts/authContext"
-import { useAppApiContext } from "../../contexts/appContext"
+import React from 'react';
+import { Button, Checkbox, Grid, Input, Row } from '@nextui-org/react';
+import AppleLogo from '../../public/images/AppleLogo.svg';
+import GoogleLogo from '../../public/images/GoogleLogo.svg';
+import { EUserType } from '../../models/enumerations/user';
+import { capitalizeFirstLetter } from '../../utils/stringUtils';
+import { handleInputChange } from '../../utils/handleStateUtils';
+import { selectIcon } from '../../utils/selectIconUtils';
+import { useRouter } from 'next/router';
+import { useAuthApiContext } from '../../contexts/authContext';
+import { useAppApiContext } from '../../contexts/appContext';
+import useSWR from 'swr';
+import { LOGIN } from '../../constants/apiEndpoints';
+import { fetcherPost } from '../../api/fetcherConfig';
+import { IAuthSuccess, ICallResponse, ILoginCredentials } from '../../models';
+import { selectAppRoute } from '../../utils/appRouteUtils';
 
 interface IProps {
-  loginType: EUserType
-  onSwitchChange: () => void
+  loginType: EUserType;
+  onSwitchChange: () => void;
 }
+
 const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
-  // const { login } = useAuthApiContext()
-  const { changeUserType } = useAppApiContext()
+  // Hooks.
+  const router = useRouter();
+  const { login } = useAuthApiContext();
+  const { changeUserType } = useAppApiContext();
 
+  const { data: authResultData } = useSWR<
+    ICallResponse<IAuthSuccess>,
+    ILoginCredentials
+  >(LOGIN, (url) => fetcherPost(url, loginCredentials), {
+    revalidateOnFocus: false,
+  });
+
+  // State.
   const [loginCredentials, setLoginCredentials] = React.useState({
-    email: "doctor@doctor.com",
-    password: "dotnet2023",
-    type: loginType
-  })
+    email: 'admin@admin.com',
+    password: 'admin123',
+  });
 
-  const handleLogin = () => {
-    // const user = login(loginCredentials)
+  // Handlers.
+  const handleLogin = async () => {
     if (loginCredentials) {
-      changeUserType(loginType)
-      Router.replace(selectAppRoute("home"))
+      const result = await fetcherPost(LOGIN, loginCredentials);
+      const token = authResultData?.value.accessToken;
+
+      if (authResultData?.isSuccess) {
+        login(token as string);
+        router.push(selectAppRoute('home'));
+      }
+    } else {
+      console.log('Invalid Credentials');
     }
-  }
+  };
 
   return (
     <div className=" bg-white w-[46.3rem] h-min rounded-[1.2rem]">
@@ -52,20 +73,20 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
               className="bg-gamboge px-[1rem]"
               auto
               color="primary"
-              css={{ borderRadius: "0.6rem" }}
+              css={{ borderRadius: '0.6rem' }}
               onClick={onSwitchChange}
             >
               <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
-                Switch to{" "}
+                Switch to{' '}
                 {capitalizeFirstLetter(
-                  EUserType[loginType] === "DOCTOR"
+                  EUserType[loginType] === 'DOCTOR'
                     ? EUserType[1]
                     : EUserType[0]
-                )}{" "}
+                )}{' '}
                 Login
               </h4>
               <span className="pl-[0.5rem]">
-                {selectIcon("arrow-right-circle")}
+                {selectIcon('arrow-right-circle')}
               </span>
             </Button>
           </div>
@@ -80,7 +101,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 labelPlaceholder="E-Mail"
                 bordered
                 borderWeight="light"
-                css={{ borderRadius: "6px", width: "100%" }}
+                css={{ borderRadius: '6px', width: '100%' }}
                 name="email"
                 type="email"
                 value={loginCredentials.email}
@@ -95,7 +116,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 labelPlaceholder="Password"
                 bordered
                 borderWeight="light"
-                css={{ borderRadius: "6px", width: "100%" }}
+                css={{ borderRadius: '6px', width: '100%' }}
                 name="password"
                 type="password"
                 value={loginCredentials.password}
@@ -118,7 +139,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                 className="bg-easternBlue px-[1rem]"
                 auto
                 color="primary"
-                css={{ borderRadius: "6px", width: "17rem" }}
+                css={{ borderRadius: '6px', width: '17rem' }}
                 onPress={handleLogin}
               >
                 <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
@@ -140,10 +161,10 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                   bordered
                   color="primary"
                   css={{
-                    borderWidth: "1px",
-                    borderRadius: "6px",
-                    width: "17rem",
-                    borderColor: "$corduroy",
+                    borderWidth: '1px',
+                    borderRadius: '6px',
+                    width: '17rem',
+                    borderColor: '$corduroy',
                   }}
                   onPress={handleLogin}
                 >
@@ -158,10 +179,10 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
                   bordered
                   color="primary"
                   css={{
-                    borderWidth: "1px",
-                    borderRadius: "6px",
-                    width: "17rem",
-                    borderColor: "$corduroy",
+                    borderWidth: '1px',
+                    borderRadius: '6px',
+                    width: '17rem',
+                    borderColor: '$corduroy',
                   }}
                 >
                   <GoogleLogo />
@@ -184,7 +205,7 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignInForm 
+export default SignInForm;
