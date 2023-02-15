@@ -8,3 +8,7 @@ export const APPOINTMENTS = 'Appointments';
 export const DOCTORS = 'Doctors';
 export const DOCTORS_SPECIALITIES = 'Lookup/specialties';
 export const LANGUAGES = 'Lookup/languages';
+
+// Patients.
+export const PATIENT = 'Patient';
+export const PATIENTS = 'Patients';
