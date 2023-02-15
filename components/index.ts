@@ -7,6 +7,7 @@ export * from './charts';
 export * from './doctor';
 export * from './favorites';
 export * from './filters';
+export * from './file-upload';
 export * from './icons';
 export * from './login';
 export * from './page';
