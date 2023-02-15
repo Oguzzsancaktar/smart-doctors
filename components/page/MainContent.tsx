@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// Views.
 import {
   DashBoardPage,
   DoctorDashboard,
@@ -6,15 +7,18 @@ import {
   FavoriteDoctorsPage,
   NotReadyPage,
   PatientDashboard,
+  ChatPage,
+  SettingsPage,
+  CalendarPage,
 } from '../views';
-import { useAppStateContext } from '../../contexts/appContext';
-import ChatPage from '../views/chat/ChatPage';
-import { SettingsPage } from '../views/settings';
-import CalendarPage from '../views/calendar/CalendarPage';
-import Cookies from 'js-cookie';
-import { selectAppRoute } from '../../utils/appRouteUtils';
+// Contexts.
 import { useAuthApiContext } from '../../contexts/authContext';
+import { useAppStateContext } from '../../contexts/appContext';
+// Libs.
+import Cookies from 'js-cookie';
 const { useRouter } = require('next/router');
+// Utils.
+import { selectAppRoute } from '../../utils/appRouteUtils';
 
 const MainContent = () => {
   // Context.
@@ -40,7 +44,7 @@ const MainContent = () => {
       case 'calendar':
         return <NotReadyPage page="Calendar" />;
       case 'chat':
-        return <NotReadyPage page="Chat" />;
+        return <ChatPage />;
       case 'dashboard':
         return <DashBoardPage />;
       case 'doctor-search':

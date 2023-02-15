@@ -1,1 +1,1 @@
-export { default as Chat } from './CalendarPage';
+export { default as CalendarPage } from './CalendarPage';
