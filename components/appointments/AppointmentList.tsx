@@ -7,24 +7,23 @@ import AppointmentListItem from './AppointmentListItem';
 // Contexts.
 import { useAuthStateContext } from '../../contexts/authContext';
 // Libs.
-import { IAppointment, ICallResponse } from '../../models';
-//Models
+import map from 'lodash/map';
 import useSWR from 'swr';
+//Models
+import { IAppointment, ICallResponse } from '../../models';
 
 const AppointmentList = () => {
   const { loggedUser } = useAuthStateContext();
 
   const { data: appointmentData, error } = useSWR<
     ICallResponse<IAppointment[]>
-  >(`${PATIENT}/${loggedUser?.patientId}/${APPOINTMENTS}`, fetcherQuery);
-
-  console.log(appointmentData);
+  >(`${PATIENT}/${loggedUser?.userId}/${APPOINTMENTS}`, fetcherQuery);
 
   return (
     <div className="h-full overflow-y-auto">
-      {/* {data.data.map((item, index) => (
+      {map(appointmentData?.value, (item, index) => (
         <AppointmentListItem appointment={item} key={index} />
-      ))} */}
+      ))}
     </div>
   );
 };

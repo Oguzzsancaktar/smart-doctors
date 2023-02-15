@@ -23,5 +23,18 @@ export const getMinutesFromTimeText = (timeText: string) => {
 export const getTimeTextFromMinutes = (minutes: number) => {
   const hours = Math.floor(minutes / 60);
   const mins = minutes % 60;
-  return `${hours}:${mins}`;
+
+  let minsText = mins.toString();
+  let hoursText = hours.toString();
+
+  // add zero for single digit
+  if (mins < 10) {
+    minsText = `0${mins}`;
+  }
+
+  if (hours < 10) {
+    hoursText = `0${hours}`;
+  }
+
+  return `${hoursText}:${minsText}`;
 };

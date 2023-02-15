@@ -3,13 +3,12 @@ import { IDoctorSpeciality, IDoctorSpecialityItem } from '../doctor-speciality';
 import { IPatient } from '../patient';
 
 export default interface IAppointment {
-  id: string;
-  patientId: string;
+  doctor: IDoctor;
+  doctorId: IDoctor['id'];
   specialty: IDoctorSpeciality;
-  specialtyId: IDoctorSpecialityItem['id'];
+  specialtyId: IDoctorSpeciality['id'];
   note: string;
   attachment: string;
   appointmentDate: string;
   appointmentTime: string;
-  status: number;
 }

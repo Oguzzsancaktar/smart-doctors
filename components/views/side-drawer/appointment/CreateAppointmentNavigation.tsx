@@ -2,21 +2,22 @@ import React, { useMemo } from 'react';
 // Api
 import { fetcherPost } from '../../../../api/fetcherConfig';
 // Constants.
-import { APPOINTMENTS } from '../../../../constants/apiEndpoints';
+import { systemDateFormat } from '../../../../constants/formats';
+import { APPOINTMENTS, PATIENT } from '../../../../constants/apiEndpoints';
 // Contexts.
 import {
   useCreateAppointmentApiContext,
   useCreateAppointmentStateContext,
 } from '../../../../contexts/createAppointmentContext';
-// Libs.
-import { Button } from '@nextui-org/react';
-import useSWR from 'swr';
-// Models.
-import { ICallResponse } from '../../../../models';
-import IAppointmentCreateDto from '../../../../models/entities/appointment/IAppointmentCreateDto';
-import moment from 'moment';
-import { systemDateFormat } from '../../../../constants/formats';
 import { useAppApiContext } from '../../../../contexts/appContext';
+import { useAuthStateContext } from '../../../../contexts/authContext';
+// Libs.
+import moment from 'moment';
+import { Button } from '@nextui-org/react';
+import useSWR, { useSWRConfig } from 'swr';
+// Models.
+import IAppointmentCreateDto from '../../../../models/entities/appointment/IAppointmentCreateDto';
+import { ICallResponse } from '../../../../models';
 
 const CreateAppointmentNavigation = () => {
   // HardCoded.
@@ -31,6 +32,9 @@ const CreateAppointmentNavigation = () => {
   } = useCreateAppointmentStateContext();
   const { changeSideDrawerContent } = useAppApiContext();
   const { changeStepIndex } = useCreateAppointmentApiContext();
+  const { loggedUser } = useAuthStateContext();
+
+  const { mutate } = useSWRConfig();
 
   const { data: createAppointmentResultData } = useSWR<
     ICallResponse<any>,
@@ -58,6 +62,9 @@ const CreateAppointmentNavigation = () => {
       specialtyId: selectedSpeciality.id,
     };
     const result = await fetcherPost(APPOINTMENTS, appointmentCreateDto);
+
+    mutate(`${PATIENT}/${loggedUser?.userId}/${APPOINTMENTS}`);
+
     if (result.isSuccess) {
       return changeSideDrawerContent(null);
     }

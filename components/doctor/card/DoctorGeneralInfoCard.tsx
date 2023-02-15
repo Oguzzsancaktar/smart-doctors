@@ -1,6 +1,10 @@
 import React from 'react';
-import { IDoctor } from '../../../models';
+// Libs.
 import { Avatar } from '@nextui-org/react';
+// Models.
+import { IDoctor } from '../../../models';
+// Utils.
+import { getDoctorLocationFromPolyclinic } from '../../../utils/customUtils';
 
 interface IProps {
   doctor: IDoctor;
@@ -46,7 +50,7 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
               (isActive && ' text-white ')
             }
           >
-            {/* {doctor.} */}adsfasdf
+            {getDoctorLocationFromPolyclinic(doctor.polyclinics[0])}
           </span>
           <span
             className={
