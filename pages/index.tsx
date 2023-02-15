@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { SideBar } from '../widgets';
 import { MainContent } from '../components';
-import { useAuthSession } from '../hooks';
 
 function Home() {
   return (

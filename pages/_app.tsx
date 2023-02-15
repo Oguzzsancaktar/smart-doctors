@@ -5,6 +5,7 @@ import { themeColors } from '../constants';
 import '../shared/styles/globals.css';
 import '../shared/styles/vendors/next-ui.css';
 import '../shared/styles/vendors/react-flatpckr.css';
+import '../shared/styles/customNext.css';
 
 import { AppProvider } from '../contexts/appContext';
 import { AuthProvider } from '../contexts/authContext';
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         text: themeColors.corduroy,
       },
       space: {
+        5: '10px',
         12: '30px',
         18: '100%',
       },
