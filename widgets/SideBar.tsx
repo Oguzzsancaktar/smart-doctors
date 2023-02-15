@@ -3,20 +3,20 @@ import CompanyLogo from '../public/images/CompanyLogo.svg';
 import { SideBarItem } from '../components';
 import { sideBarItems } from '../constants';
 import { useAppApiContext, useAppStateContext } from '../contexts/appContext';
-import {
-  useAuthApiContext,
-  useAuthStateContext,
-} from '../contexts/authContext';
+import { useAuthApiContext } from '../contexts/authContext';
 import { selectAppRoute } from '../utils/appRouteUtils';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 
 const SideBar = () => {
+  // Hooks.
   const { logout } = useAuthApiContext();
   const { activePage } = useAppStateContext();
   const { changePage } = useAppApiContext();
-
+  const router = useRouter();
+  // Handlers.
   const handleLogout = () => {
-    Router.replace(selectAppRoute('login'));
+    router.replace(selectAppRoute('login'));
+    logout();
   };
 
   return (

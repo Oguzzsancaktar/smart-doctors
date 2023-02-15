@@ -37,7 +37,7 @@ const useAuthApiContext = () => {
 };
 
 const AuthProvider = ({ children }: any) => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<ITokenUser | null>(null);
 
   const authApi = useMemo(() => {
     return {
@@ -46,7 +46,10 @@ const AuthProvider = ({ children }: any) => {
         Cookies.set('token', token);
         setUser(user);
       },
-      logout: () => setUser(null),
+      logout: () => {
+        Cookies.remove('token');
+        setUser(null);
+      },
     };
   }, [setUser]);
 
