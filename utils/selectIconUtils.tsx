@@ -6,6 +6,7 @@ import {
   CalendarIcon,
   ChartIcon,
   DashboardIcon,
+  FileIcon,
   HeartIcon,
   InfoIcon,
   LogoutIcon,
@@ -18,6 +19,7 @@ import {
   StarBgIcon,
   StethescopeIcon,
   TurnRightIcon,
+  UploadIcon,
 } from '../components';
 
 // TODO - create type for icon names.
@@ -40,6 +42,8 @@ export const selectIcon = (iconName: string, size?: string, color?: string) => {
       return <AiOutlineEye size={size} color={color} />;
     case 'eye-visible':
       return <AiOutlineEyeInvisible size={size} color={color} />;
+    case 'file':
+      return <FileIcon size={size} color={color} />;
     case 'heart':
       return <HeartIcon size={size} color={color} />;
     case 'info':
@@ -60,6 +64,8 @@ export const selectIcon = (iconName: string, size?: string, color?: string) => {
       return <StethescopeIcon size={size} color={color} />;
     case 'turn-right':
       return <TurnRightIcon size={size} color={color} />;
+    case 'upload':
+      return <UploadIcon size={size} color={color} />;
       MapPinIcon;
     // backgrounded
     case 'bg-calendar':

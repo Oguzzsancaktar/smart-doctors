@@ -5,8 +5,8 @@ const SearchIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="18.018"
-      height="18.018"
+      width={size}
+      height={size}
       viewBox="0 0 18.018 18.018"
     >
       <g
