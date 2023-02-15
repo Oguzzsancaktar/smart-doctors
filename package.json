@@ -23,6 +23,7 @@
     "react": "18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "18.2.0",
+    "react-drag-drop-files": "^2.3.8",
     "react-flatpickr": "^3.10.13",
     "react-icons": "^4.7.1",
     "swr": "^2.0.3"
