@@ -14,6 +14,7 @@ const Searchbar: React.FC<IProps> = ({ icon = 'search' }) => {
         css={{
           height: '100%',
         }}
+        style={{ borderColor: themeColors.easternBlue }}
         aria-label="Search"
         className="h-full"
         clearable

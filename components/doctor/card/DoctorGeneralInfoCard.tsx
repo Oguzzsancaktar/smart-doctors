@@ -50,7 +50,7 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
               (isActive && ' text-white ')
             }
           >
-            {getDoctorLocationFromPolyclinic(doctor.polyclinics[0])}
+            {getDoctorLocationFromPolyclinic(doctor?.polyclinics[0])}
           </span>
           <span
             className={
