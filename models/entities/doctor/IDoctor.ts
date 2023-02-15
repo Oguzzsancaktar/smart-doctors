@@ -9,7 +9,7 @@ export default interface IDoctor {
   surname: string;
   email: string;
   phone: string;
-  gender: 2;
+  gender: number;
   birthDate: string;
   profileImage: string;
   title: string;

@@ -13,20 +13,24 @@ import { SettingsPage } from '../views/settings';
 import CalendarPage from '../views/calendar/CalendarPage';
 import Cookies from 'js-cookie';
 import { selectAppRoute } from '../../utils/appRouteUtils';
+import { useAuthApiContext } from '../../contexts/authContext';
 const { useRouter } = require('next/router');
 
 const MainContent = () => {
+  // Context.
+  const { login } = useAuthApiContext();
   // Hooks.
   const { activePage } = useAppStateContext();
   const router = useRouter();
   // State.
   const [domLoaded, setDomLoaded] = useState(false);
   const [token, setToken] = useState(Cookies.get('token'));
-
   // LifeCycle.
   useEffect(() => {
     if (!token) {
       router.push(selectAppRoute('login'));
+    } else {
+      login(token);
     }
     setDomLoaded(true);
   }, [token]);
@@ -50,7 +54,6 @@ const MainContent = () => {
     }
   };
 
-  console.log('pageRenderSwitch(activePage) ', domLoaded);
   return domLoaded ? pageRenderSwitch(activePage) : null;
 };
 

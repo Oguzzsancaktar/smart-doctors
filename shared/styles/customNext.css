@@ -1,0 +1,14 @@
+/* Text Area */
+.createAppointmentTextArea {
+  height: 100%;
+}
+
+.createAppointmentTextArea .nextui-input-wrapper--normal {
+  background-color: white;
+  height: 100%;
+}
+
+.createAppointmentTextArea .nextui-input-wrapper--normal textarea {
+  height: 100% !important;
+  box-shadow: none;
+}

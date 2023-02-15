@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ConfirmSelectButton } from '../../button';
 import { IDoctorSpeciality, IDoctorSpecialityItem } from '../../../models';
 import map from 'lodash/map';
@@ -7,22 +7,34 @@ import {
   useCreateAppointmentApiContext,
   useCreateAppointmentStateContext,
 } from '../../../contexts/createAppointmentContext';
+import { disabledButtonStyle, selectedButtonStyle } from '../../../constants';
+import { initialSpecialityItem } from '../../../constants/initialValues';
 
 interface IProps {
   doctorSpeciality: IDoctorSpeciality;
 }
 const SelectSpecialityList: React.FC<IProps> = ({ doctorSpeciality }) => {
   // Contexts.
-  const { selectedSpeciality } = useCreateAppointmentStateContext();
-  const { changeSpeciality } = useCreateAppointmentApiContext();
+  const { selectedSpeciality, activeStepIndex } =
+    useCreateAppointmentStateContext();
+
+  const { changeSpeciality, changeStepIndex } =
+    useCreateAppointmentApiContext();
 
   // Handlers.
-  const handleSelectSpeciality = (
-    specialityId: IDoctorSpecialityItem['id']
-  ) => {
-    changeSpeciality(specialityId);
+  const handleSelectSpeciality = (specialityItem: IDoctorSpecialityItem) => {
+    changeSpeciality(specialityItem);
+    if (!!specialityItem.id.trim().length) {
+      changeStepIndex(1);
+    } else {
+      changeStepIndex(0);
+    }
   };
 
+  // Variables.
+  const isDisabled = activeStepIndex !== 0;
+
+  // Render.
   if (!doctorSpeciality) return <div>No Data</div>;
 
   return (
@@ -47,27 +59,37 @@ const SelectSpecialityList: React.FC<IProps> = ({ doctorSpeciality }) => {
       </h3>
 
       <ul className="w-full flex flex-col py-5 pl-[3rem] ">
-        {map(doctorSpeciality.children, (speciality, index) => {
+        {map(doctorSpeciality.children, (specialityItem, index) => {
           return (
             <li className="w-full h-[5rem] mb-[1rem]" key={index}>
               <ConfirmSelectButton
-                isSelected={selectedSpeciality === speciality.id}
-                onConfirm={() => handleSelectSpeciality(speciality.id)}
+                onConfirm={() => handleSelectSpeciality(specialityItem)}
+                onCancel={() => handleSelectSpeciality(initialSpecialityItem)}
                 isButton={true}
+                isDisabled={isDisabled}
+                isSelected={selectedSpeciality.id === specialityItem.id}
               >
                 <Button
+                  // style={
+                  //   selectedSpeciality === speciality.id
+                  //     ? selectedButtonStyle
+                  //     : isDisabled
+                  //     ? disabledButtonStyle
+                  //     : {}
+                  // }
+                  style={isDisabled ? disabledButtonStyle : {}}
                   css={{
                     borderWidth: '2px',
                     borderRadius: '12px',
-                    borderColor: '$corduroy',
                     fontSize: '16px',
                     fontFamily: 'Ubuntu-Bold',
                     height: '100%',
                     width: '100%',
                     transition: 'all 0.4 ease',
                   }}
+                  disabled={isDisabled}
                 >
-                  {speciality.name}
+                  {specialityItem.name}
                 </Button>
               </ConfirmSelectButton>
             </li>

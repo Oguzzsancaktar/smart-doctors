@@ -37,12 +37,14 @@ const SelectSpeciality = () => {
 
       <div className="flex flex-col overflow-y-auto h-[calc(100%-10rem-5rem-4rem)] mr-[1.5rem] ">
         {map(doctorSpecialitiesData?.value, (doctorSpeciality, key) => {
-          return (
-            <SelectSpecialityList
-              key={key}
-              doctorSpeciality={doctorSpeciality}
-            />
-          );
+          if (doctorSpeciality.children.length > 0) {
+            return (
+              <SelectSpecialityList
+                key={key}
+                doctorSpeciality={doctorSpeciality}
+              />
+            );
+          }
         })}
       </div>
     </div>

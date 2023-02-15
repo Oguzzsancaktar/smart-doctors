@@ -4,16 +4,26 @@ import React, { useState } from 'react';
 import Flatpickr from 'react-flatpickr';
 
 // Components
-import { Searchbar } from '../../../searchbar';
-import { SelectDoctorList } from '../../../doctor';
 import { SelectDateList } from '../../../appointments';
-import { useCreateAppointmentStateContext } from '../../../../contexts/createAppointmentContext';
+import {
+  useCreateAppointmentApiContext,
+  useCreateAppointmentStateContext,
+} from '../../../../contexts/createAppointmentContext';
 
 const SelectDate = () => {
   // Contexts.
   const { activeStepIndex } = useCreateAppointmentStateContext();
+  const { changeDate, changeTime } = useCreateAppointmentApiContext();
   // States.
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState<Date>(new Date()[0]);
+  // Handlers.
+  const handleDateChange = (date: Date[]) => {
+    setDate(date[0]);
+    changeTime('');
+    changeDate(date[0].toString());
+  };
+
+  console.log('date', date);
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -28,7 +38,7 @@ const SelectDate = () => {
       </h5>
 
       <div className="flex flex-col items-center h-[calc(100%-10rem)] mr-[1.5rem] py-5 pl-[3rem]">
-        <div className="appointmentMiniCalendar h-[340px] pr-[1.5rem]">
+        <div className="appointmentMiniCalendar pr-[1.5rem]">
           <Flatpickr
             value={date}
             options={{
@@ -38,12 +48,15 @@ const SelectDate = () => {
               minDate: 'today',
               disableMobile: true,
             }}
+            onChange={handleDateChange}
           />
         </div>
 
-        <div className="w-full h-[calc(100%-340px)]">
-          <SelectDateList />
-        </div>
+        {date && (
+          <div className="w-full h-[calc(100%-340px)]">
+            <SelectDateList isDisabled={activeStepIndex !== 2} />
+          </div>
+        )}
       </div>
     </div>
   );

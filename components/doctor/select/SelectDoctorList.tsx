@@ -14,12 +14,14 @@ import {
   useCreateAppointmentStateContext,
   useCreateAppointmentApiContext,
 } from '../../../contexts/createAppointmentContext';
+import { initialDoctor } from '../../../constants/initialValues';
 
 interface IProps {}
 const SelectDoctorList: React.FC<IProps> = () => {
   // Contexts.
-  const { selectedDoctor } = useCreateAppointmentStateContext();
-  const { changeDoctor } = useCreateAppointmentApiContext();
+  const { selectedDoctor, activeStepIndex } =
+    useCreateAppointmentStateContext();
+  const { changeDoctor, changeStepIndex } = useCreateAppointmentApiContext();
 
   // Api.
   const { data: doctorsData, error } = useSWR<ICallResponse<IDoctor[]>>(
@@ -28,8 +30,13 @@ const SelectDoctorList: React.FC<IProps> = () => {
   );
 
   // Handlers.
-  const handleSelectDoctor = (doctorId: IDoctor['id']) => {
-    changeDoctor(doctorId);
+  const handleSelectDoctor = (doctor: IDoctor) => {
+    changeDoctor(doctor);
+    if (!!doctor.id.trim().length) {
+      changeStepIndex(2);
+    } else {
+      changeStepIndex(1);
+    }
   };
 
   if (!doctorsData) {
@@ -42,14 +49,19 @@ const SelectDoctorList: React.FC<IProps> = () => {
         {map(doctorsData.value, (doctor, index) => {
           return (
             <li
-              className="w-full h-[9rem] border-b-[1px]  py-[1.7rem] border-gallery "
+              className={
+                'w-full h-[9rem] border-b-[1px]  py-[1rem] border-gallery cursor-pointer ' +
+                (activeStepIndex !== 1 && 'opacity-70 cursor-default')
+              }
               key={index}
             >
               <ConfirmSelectButton
-                onConfirm={() => handleSelectDoctor(doctor.id)}
+                onConfirm={() => handleSelectDoctor(doctor)}
+                onCancel={() => handleSelectDoctor(initialDoctor)}
+                isDisabled={activeStepIndex !== 1}
               >
                 <DoctorGeneralInfoCard
-                  isActive={selectedDoctor === doctor.id}
+                  isActive={selectedDoctor.id === doctor.id}
                   doctor={doctor}
                 />
               </ConfirmSelectButton>

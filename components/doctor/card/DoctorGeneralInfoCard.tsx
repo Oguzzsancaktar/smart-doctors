@@ -13,11 +13,11 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
   if (!doctor) return <div>No Data</div>;
 
   return (
-    <div className="w-full h-full cursor-pointer">
+    <div className="w-full h-full ">
       <div
         className={
-          'flex items-center  h-full w-full ' +
-          (isActive && 'bg-easternBlue rounded-[6px] p-[10px] ')
+          'flex items-center  h-full w-full  pl-[10px] ' +
+          (isActive && 'bg-easternBlue rounded-[6px] ')
         }
       >
         <div className="flex items-center w-[4.6rem] mr-[1.3rem] ">

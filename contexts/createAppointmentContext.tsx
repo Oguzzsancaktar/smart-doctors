@@ -1,17 +1,25 @@
 import { createContext, useContext, useMemo, useState } from 'react';
-import { EUserType } from '../models';
+// Models.
+import { IDoctor, IDoctorSpecialityItem } from '../models';
+// Initial Values.
+import {
+  initialDoctor,
+  initialSpecialityItem,
+} from '../constants/initialValues';
 
 const CreateAppointmentStateContext = createContext({
-  selectedSpeciality: '',
-  selectedDoctor: '',
+  selectedSpeciality: initialSpecialityItem,
+  selectedDoctor: initialDoctor,
   selectedDate: '',
+  selectedTime: '',
   activeStepIndex: 0,
 });
 
 const CreateAppointmentApiContext = createContext({
-  changeSpeciality: (page: string) => {},
-  changeDoctor: (doctor: string) => {},
+  changeSpeciality: (specialityItem: IDoctorSpecialityItem) => {},
+  changeDoctor: (doctor: IDoctor) => {},
   changeDate: (date: string) => {},
+  changeTime: (time: string) => {},
   changeStepIndex: (index: number) => {},
 });
 
@@ -40,17 +48,20 @@ const useCreateAppointmentApiContext = () => {
 };
 
 const CreateAppointmentProvider = ({ children }: any) => {
-  const [selectedSpeciality, setSelectedSpeciality] = useState('');
-  const [selectedDoctor, setSelectedDoctor] = useState('');
+  const [selectedSpeciality, setSelectedSpeciality] =
+    useState<IDoctorSpecialityItem>(initialSpecialityItem);
+  const [selectedDoctor, setSelectedDoctor] = useState<IDoctor>(initialDoctor);
   const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
   const createAppointmentApi = useMemo(() => {
     return {
-      changeSpeciality: (speciality: string) =>
-        setSelectedSpeciality(speciality),
-      changeDoctor: (doctor: string) => setSelectedDoctor(doctor),
+      changeSpeciality: (specialityItem: IDoctorSpecialityItem) =>
+        setSelectedSpeciality(specialityItem),
+      changeDoctor: (doctor: IDoctor) => setSelectedDoctor(doctor),
       changeDate: (date: string) => setSelectedDate(date),
+      changeTime: (time: string) => setSelectedTime(time),
       changeStepIndex: (index: number) => setActiveStepIndex(index),
     };
   }, [setSelectedSpeciality, setSelectedDoctor, setSelectedDate]);
@@ -61,6 +72,7 @@ const CreateAppointmentProvider = ({ children }: any) => {
         selectedSpeciality,
         selectedDoctor,
         selectedDate,
+        selectedTime,
         activeStepIndex,
       }}
     >

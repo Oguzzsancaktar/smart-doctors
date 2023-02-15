@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 // Models
 import { ICallResponse, IDoctor, ILanguage } from '../../../models';
 //Constants
@@ -17,13 +17,39 @@ import { FavoriteDoctorsListItem } from '../../favorites';
 import map from 'lodash/map';
 import { DoctorSpecialities } from '../../doctor';
 
+function searchReducer(state, action) {
+  switch (action.type) {
+    case 'search':
+      return { ...state, searchText: action.payload };
+    case 'location':
+      return { ...state, location: action.payload };
+    case 'speciality':
+      return { ...state, specialities: action.payload };
+    case 'language':
+      return { ...state, languages: action.payload };
+    default:
+      throw new Error();
+  }
+}
+
+const initialState = {
+  searchText: '',
+  location: '',
+  specialities: [],
+  languages: [],
+};
+
 const DoctorSearchPage = () => {
+  // State.
+  const [searchState, searchDispatch] = useReducer(searchReducer, {
+    count: initialState,
+  });
+
+  // Api.
   const { data: doctorsData, error } = useSWR<ICallResponse<IDoctor[]>>(
     DOCTORS,
     fetcher
   );
-
-  console.log('useSWR', doctorsData);
 
   return (
     <div className="h-full bg-white flex flex-col rounded-[12px] ">
