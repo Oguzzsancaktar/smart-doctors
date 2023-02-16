@@ -23,8 +23,6 @@ const SelectDate = () => {
     changeDate(date[0].toString());
   };
 
-  console.log('date', date);
-
   return (
     <div className="flex flex-col h-full w-full">
       <h5

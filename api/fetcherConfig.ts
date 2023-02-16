@@ -10,7 +10,6 @@ export const fetcherQuery = async (url, queryParams = '') => {
 };
 
 export const fetcherPost = async (url, data) => {
-  console.log('url, data', url, data);
   return await axiosInstance.post(url, data).then((res) => res.data);
 };
 
