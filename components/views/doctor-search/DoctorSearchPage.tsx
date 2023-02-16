@@ -65,7 +65,7 @@ const DoctorSearchPage = () => {
       </div>
 
       <div className="pt-[4rem] h-[calc(100%-8rem)] flex flex-row w-full   ">
-        <div className="px-[4rem] w-1/3 border-r-[1px] border-edgeWater overflow-y-auto">
+        <div className="px-[4rem] w-[40rem] border-r-[1px] border-edgeWater overflow-y-auto">
           <div className="w-full  flex flex-col justify-center items-center">
             <div className="w-full mb-[2rem]">
               <span className="mb-[1rem] inline-block font-UbuntuBold text-corduroy text-[1.6rem] leading-[1.8rem]">
@@ -105,7 +105,7 @@ const DoctorSearchPage = () => {
           </div>
         </div>
 
-        <div className="px-[4rem] w-2/3 overflow-y-auto">
+        <div className="px-[4rem] w-[calc(100%-40rem)] overflow-y-auto">
           <Collapse.Group>
             {map(doctorsData?.value, (doctor, key) => {
               return (
@@ -113,7 +113,7 @@ const DoctorSearchPage = () => {
                   css={{ padding: '0px' }}
                   style={{ padding: '0px' }}
                   title={
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center mr-[2rem]">
                       <DoctorGeneralInfoCard height="7rem" doctor={doctor} />
                       <Button
                         className="bg-easternBlue h-[4rem] px-[1rem]"

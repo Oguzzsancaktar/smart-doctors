@@ -12,7 +12,7 @@ const DoctorSpecialities: React.FC<IProps> = ({ specialities }) => {
         return (
           <li
             className={
-              'w-1/3 rounded-[12px] h-[5rem] flex items-center justify-center border-[1px] border-easternBlue' +
+              'w-1/3 rounded-[12px] h-[5rem] flex items-center justify-center border-[2px] border-easternBlue' +
               (key % 3 === 1 ? ' mx-[1.5rem]' : '')
             }
             key={key}

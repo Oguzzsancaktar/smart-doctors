@@ -14,13 +14,13 @@ interface IProps {
 }
 const DoctorGeneralInfoCard: React.FC<IProps> = ({
   doctor,
-  height = 'full',
+  height,
   isActive = false,
 }) => {
   if (!doctor) return <div>No Data</div>;
 
   return (
-    <div className={`w-full h-[${height}]`}>
+    <div className={`w-full ${height ? 'h-[' + height + ']' : 'h-full'} `}>
       <div
         className={
           'flex items-center h-full w-full pl-[10px] ' +

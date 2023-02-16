@@ -48,20 +48,20 @@ const ChatConversationSection = () => {
         <DoctorGeneralInfoCard isActive={true} doctor={activeConversation} />
       </div>
 
-      <div className="h-[calc(100%-10rem-5rem)] overflow-y-auto">
+      <ul className="h-[calc(100%-10rem-5rem)] overflow-y-auto">
         {map(doctorsData?.value, (doctor) => {
           if (doctor.id !== activeConversation.id) {
             return (
-              <div
-                className="w-full h-[9rem] border-b-[1px]  py-[1rem] border-gallery cursor-pointer "
+              <li
+                className="w-full h-[10rem] border-b-[1px] py-[2rem] border-gallery cursor-pointer "
                 onClick={handleConversationClick.bind(this, doctor)}
               >
                 <DoctorGeneralInfoCard doctor={doctor} />
-              </div>
+              </li>
             );
           }
         })}
-      </div>
+      </ul>
     </React.Fragment>
   );
 };
