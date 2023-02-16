@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       },
       space: {
         5: '10px',
+        10: '100%',
         12: '30px',
         18: '100%',
       },

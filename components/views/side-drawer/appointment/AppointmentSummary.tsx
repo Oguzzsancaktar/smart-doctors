@@ -37,7 +37,7 @@ const AppointmentSummary = () => {
       </h5>
 
       <div className="flex flex-col overflow-y-auto h-[calc(100%-10rem-5rem-4rem)] mr-[1.5rem] pl-[3rem] pr-[1.5rem]">
-        <div className="my-[2rem] ">
+        <div className="my-[2rem] h-[7rem] ">
           <DoctorGeneralInfoCard doctor={selectedDoctor} />
         </div>
         <div className="h-[5rem]  mb-[1rem]">

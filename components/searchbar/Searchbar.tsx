@@ -13,17 +13,27 @@ const Searchbar: React.FC<IProps> = ({ icon = 'search' }) => {
       <Input
         css={{
           height: '100%',
+          border: '2px solid' + themeColors.easternBlue,
         }}
-        style={{ borderColor: themeColors.easternBlue }}
+        style={{
+          fontSize: '14px',
+        }}
         aria-label="Search"
         className="h-full"
         clearable
         bordered
         fullWidth
+        // @ts-ignore nextui bug
+        borderWeight="none"
         color="primary"
         size="lg"
         placeholder="Search"
-        contentLeft={selectIcon(icon, '30', themeColors.edgeWater)}
+        contentLeftStyling={true}
+        contentLeft={
+          <div className="w-[14px]">
+            {selectIcon(icon, '10', themeColors.easternBlue)}
+          </div>
+        }
       />
       {/* <input type="text" placeholder="Search" className="w-full border-solid" /> */}
     </div>

@@ -19,19 +19,21 @@ const SpecialityFilter = () => {
   >(DOCTORS_SPECIALITIES, fetcher);
 
   return (
-    <div className="flex flex-col h-full w-full rounded-[12px] border-easternBlue border-[1px]">
+    <div className="flex flex-col h-full w-full rounded-[12px] border-easternBlue border-[2px]">
       <div className="h-[5rem] my-[2rem] pl-[1.5rem] pr-[3rem]">
         <Searchbar />
       </div>
 
       <div className="flex flex-col overflow-y-auto h-[calc(100%-5rem-4rem)] mr-[1.5rem] ">
         {map(doctorSpecialitiesData?.value, (doctorSpeciality, key) => {
-          return (
-            <SpecialityFilterItem
-              key={key}
-              doctorSpeciality={doctorSpeciality}
-            />
-          );
+          if (doctorSpeciality.children.length > 0) {
+            return (
+              <SpecialityFilterItem
+                key={key}
+                doctorSpeciality={doctorSpeciality}
+              />
+            );
+          }
         })}
       </div>
     </div>

@@ -5,11 +5,11 @@
   /* background: red !important; */
 }
 .nextui-icon-check-line1::after {
-  background: #525f60;
+  /* background: #525f60; */
   height: 0.3rem;
 }
 .nextui-icon-check-line2::after {
-  background: #525f60;
+  /* background: #525f60; */
   width: 0.3rem;
 }
 

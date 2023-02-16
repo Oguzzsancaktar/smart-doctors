@@ -50,7 +50,7 @@ const SelectDoctorList: React.FC<IProps> = () => {
           return (
             <li
               className={
-                'w-full h-[9rem] border-b-[1px]  py-[1rem] border-gallery cursor-pointer ' +
+                'w-full h-[11rem] border-b-[1px]  py-[2rem] border-gallery cursor-pointer ' +
                 (activeStepIndex !== 1 && 'opacity-70 cursor-default')
               }
               key={index}

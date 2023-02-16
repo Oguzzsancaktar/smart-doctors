@@ -1,6 +1,6 @@
-import React from "react"
-import { ISideBarItemProps } from "../../models"
-import { selectIcon } from "../../utils/selectIconUtils"
+import React from 'react';
+import { ISideBarItemProps } from '../../models';
+import { selectIcon } from '../../utils/selectIconUtils';
 
 const SideBarItem: React.FC<ISideBarItemProps> = ({
   iconName,
@@ -10,15 +10,15 @@ const SideBarItem: React.FC<ISideBarItemProps> = ({
   return (
     <div
       className={
-        "h-[8rem] border-b-[1px] border-gallery flex items-center content-between cursor-pointer " +
-        (text === "Settings" ? "border-t-[0.1rem]" : "")
+        'h-[8rem] border-b-[1px] border-gallery flex items-center content-between cursor-pointer ' +
+        (text === 'Settings' ? 'border-t-[1px]' : '')
       }
     >
-      <div className="w-[15rem] m-auto ">
+      <div className=" m-auto ">
         <div
           className={
-            "flex items-center font-UbuntuBold text-[1.6rem] leading-[1.8rem] " +
-            (isActive ? "text-easternBlue" : "text-corduroy")
+            'flex items-center font-UbuntuBold text-[1.6rem] leading-[1.8rem] w-[175px] ' +
+            (isActive ? 'text-easternBlue' : 'text-corduroy')
           }
         >
           <span className="mr-[1.8rem] ">{selectIcon(iconName)} </span>
@@ -26,7 +26,7 @@ const SideBarItem: React.FC<ISideBarItemProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SideBarItem 
+export default SideBarItem;

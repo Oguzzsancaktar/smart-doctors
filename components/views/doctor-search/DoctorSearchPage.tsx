@@ -6,7 +6,7 @@ import { DOCTORS } from '../../../constants/apiEndpoints';
 // APi.
 import fetcher from '../../../api/fetcherConfig';
 // Libs
-import { Collapse } from '@nextui-org/react';
+import { Button, Collapse } from '@nextui-org/react';
 // Utils
 import { selectIcon } from '../../../utils/selectIconUtils';
 import useSWR from 'swr';
@@ -15,7 +15,7 @@ import { Searchbar } from '../../searchbar';
 import { LanguageFilter, SpecialityFilter } from '../../filters';
 import { FavoriteDoctorsListItem } from '../../favorites';
 import map from 'lodash/map';
-import { DoctorSpecialities } from '../../doctor';
+import { DoctorGeneralInfoCard, DoctorSpecialities } from '../../doctor';
 
 function searchReducer(state, action) {
   switch (action.type) {
@@ -98,7 +98,7 @@ const DoctorSearchPage = () => {
               <span className=" mb-[1rem] inline-block font-UbuntuBold text-corduroy text-[1.6rem] leading-[1.8rem]">
                 Choose language
               </span>
-              <div className="w-full h-[10rem] ">
+              <div className="w-full h-[15rem] ">
                 <LanguageFilter />
               </div>
             </div>
@@ -113,10 +113,20 @@ const DoctorSearchPage = () => {
                   css={{ padding: '0px' }}
                   style={{ padding: '0px' }}
                   title={
-                    <FavoriteDoctorsListItem
-                      showIcons={false}
-                      doctor={doctor}
-                    />
+                    <div className="flex justify-between items-center">
+                      <DoctorGeneralInfoCard height="7rem" doctor={doctor} />
+                      <Button
+                        className="bg-easternBlue h-[4rem] px-[1rem]"
+                        auto
+                        size={'sm'}
+                        color="primary"
+                        css={{ borderRadius: '6px', width: '12rem' }}
+                      >
+                        <h4 className="font-UbuntuBold text-white text-[1.4rem] leading-[1.6rem]">
+                          New Appointment
+                        </h4>
+                      </Button>
+                    </div>
                   }
                 >
                   <h3 className="font-UbuntuBold text-easternBlue text-[1.4rem] leading-[1.6rem] mb-[2rem]">

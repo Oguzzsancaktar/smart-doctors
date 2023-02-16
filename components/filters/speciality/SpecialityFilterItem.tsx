@@ -31,12 +31,16 @@ const SpecialityFilterItem: React.FC<IProps> = ({ doctorSpeciality }) => {
         {doctorSpeciality.name}
       </h3>
 
-      <ul className="w-full flex flex-col py-5 pl-[1.5rem]">
+      <ul className="w-full flex flex-col py-[3rem] pl-[1.5rem]">
         {map(doctorSpeciality.children, (speciality, index) => {
           return (
-            <li className="flex w-full h-[2rem] mb-[1rem] " key={index}>
-              <Checkbox size="xl" />
-              <p>{speciality.name}</p>
+            <li className="flex w-full h-[3rem] mb-[1rem] " key={index}>
+              <div className="w-[20px] h-[20px] mr-[2rem]">
+                <Checkbox css={{ width: '100%', height: '100%' }} size="lg" />
+              </div>
+              <p className="font-UbuntuBold text-easternBlue  text-[16px] leading-[18px] ">
+                {speciality.name}
+              </p>
             </li>
           );
         })}

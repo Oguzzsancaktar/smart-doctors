@@ -14,9 +14,13 @@ const LangugaeFilterItem: React.FC<IProps> = ({ language }) => {
   if (!language) return <div>No Data</div>;
 
   return (
-    <li className="w-full flex flex-row items-center pr-[1.5rem] h-[2rem]  mb-[1rem] pl-[1.5rem]">
-      <Checkbox size="xl" />
-      <p>{language.name}</p>
+    <li className="flex w-full h-[3rem] mb-[1rem] ">
+      <div className="w-[20px] h-[20px] mr-[2rem]">
+        <Checkbox css={{ width: '100%', height: '100%' }} size="lg" />
+      </div>
+      <p className="font-UbuntuBold text-easternBlue  text-[16px] leading-[18px] ">
+        {language.name}
+      </p>
     </li>
   );
 };

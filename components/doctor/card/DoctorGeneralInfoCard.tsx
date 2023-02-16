@@ -5,26 +5,29 @@ import { Avatar } from '@nextui-org/react';
 import { IDoctor } from '../../../models';
 // Utils.
 import { getDoctorLocationFromPolyclinic } from '../../../utils/customUtils';
+import { getFirstGivenChars } from '../../../utils/stringUtils';
 
 interface IProps {
   doctor: IDoctor;
+  height?: string;
   isActive?: boolean;
 }
 const DoctorGeneralInfoCard: React.FC<IProps> = ({
   doctor,
+  height = 'full',
   isActive = false,
 }) => {
   if (!doctor) return <div>No Data</div>;
 
   return (
-    <div className="w-full h-full ">
+    <div className={`w-full h-[${height}]`}>
       <div
         className={
           'flex items-center h-full w-full pl-[10px] ' +
-          (isActive && 'bg-easternBlue rounded-[6px] ')
+          (isActive && 'bg-easternBlue py-[10px] rounded-[6px] ')
         }
       >
-        <div className="flex items-center h-[6rem] w-[6rem]  mr-[1.3rem] ">
+        <div className="flex items-center h-full  mr-[1.3rem] ">
           <Avatar
             squared
             src={doctor.profileImage}
@@ -35,10 +38,10 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
             borderWeight={'none'}
           />
         </div>
-        <div className="flex flex-col w-[calc(100%-4.6rem-1.3rem)]">
+        <div className="flex flex-col h-full justify-between w-[calc(100%-4.6rem-1.3rem)]">
           <span
             className={
-              'font-UbuntuBold text-corduroy text-[16px] leading-[18px]' +
+              'font-UbuntuBold text-corduroy text-[16px] leading-[18px] h-auto' +
               (isActive && ' text-white ')
             }
           >
@@ -53,11 +56,14 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
           </span>
           <span
             className={
-              'text-corduroy text-[14px] leading-[16px] mt-[-0.4rem] ' +
+              'text-corduroy text-[14px] leading-[16px]  ' +
               (isActive && 'hidden')
             }
           >
-            {getDoctorLocationFromPolyclinic(doctor?.polyclinics[0])}
+            {getFirstGivenChars(
+              getDoctorLocationFromPolyclinic(doctor?.polyclinics[0]),
+              25
+            )}
           </span>
           <span
             className={

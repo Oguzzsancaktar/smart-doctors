@@ -18,7 +18,7 @@ const LanguageFilter = () => {
   );
 
   return (
-    <ul className="flex flex-col h-full w-full rounded-[12px] border-easternBlue border-[1px] py-[2rem] overflow-y-auto">
+    <ul className="flex flex-col h-full w-full rounded-[12px] border-easternBlue border-[2px] py-[3rem] overflow-y-auto pl-[1.5rem]">
       {map(languageData?.value, (lang, key) => {
         return <LanguageFilterItem key={key} language={lang} />;
       })}

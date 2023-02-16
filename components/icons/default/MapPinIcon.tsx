@@ -5,7 +5,7 @@ const MapPinIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16.822"
+      width={size}
       height="20.005"
       viewBox="0 0 16.822 20.005"
     >
