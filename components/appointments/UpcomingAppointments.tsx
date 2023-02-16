@@ -26,11 +26,11 @@ const UpcomingAppointments = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-start  h-[5.6rem] cursor-pointer">
+        {/* <div className="flex items-center justify-start  h-[5.6rem] cursor-pointer">
           <h5 className="text-[1.2rem] leading-[1.3rem] text-easternBlue">
             View more appointments
           </h5>
-        </div>
+        </div> */}
       </div>
     </div>
   );
