@@ -24,7 +24,7 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
           (isActive && 'bg-easternBlue rounded-[6px] ')
         }
       >
-        <div className="flex items-center w-[4.6rem] mr-[1.3rem] ">
+        <div className="flex items-center h-[6rem] w-[6rem]  mr-[1.3rem] ">
           <Avatar
             squared
             src={doctor.profileImage}
@@ -38,24 +38,31 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
         <div className="flex flex-col w-[calc(100%-4.6rem-1.3rem)]">
           <span
             className={
-              'font-UbuntuBold text-corduroy text-[1.2rem] leading-[1.3rem]' +
+              'font-UbuntuBold text-corduroy text-[16px] leading-[18px]' +
               (isActive && ' text-white ')
             }
           >
-            {doctor.name + ' ' + doctor.surname}
+            {isActive ? (
+              <span>
+                Dr. {doctor.name} <br />
+                {doctor.surname}
+              </span>
+            ) : (
+              <span> Dr. {doctor.name + ' ' + doctor.surname}</span>
+            )}
           </span>
           <span
             className={
-              '  text-corduroy text-[1.2rem] leading-[1.3rem] my-[0.4rem]' +
-              (isActive && ' text-white ')
+              'text-corduroy text-[14px] leading-[16px] mt-[-0.4rem] ' +
+              (isActive && 'hidden')
             }
           >
             {getDoctorLocationFromPolyclinic(doctor?.polyclinics[0])}
           </span>
           <span
             className={
-              'text-easternBlue text-[1.1rem] leading-[1.2rem] ' +
-              (isActive && ' text-white ')
+              'text-easternBlue text-[14px] leading-[16px] ' +
+              (isActive && ' hidden')
             }
           >
             {doctor.phone}
