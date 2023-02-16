@@ -6,6 +6,7 @@ import { EUserType, ILoginCredentials, ITokenUser } from '../models';
 import { useSWRConfig } from 'swr';
 import { LOGIN } from '../constants/apiEndpoints';
 import Cookies from 'js-cookie';
+import axiosInstance from '../api/axiosInstance';
 
 const AuthStateContext = createContext<{ loggedUser: any }>({
   loggedUser: null,
@@ -44,6 +45,17 @@ const AuthProvider = ({ children }: any) => {
       login: (token: string) => {
         const user: ITokenUser = jwt.decode(token);
         Cookies.set('token', token);
+
+        axiosInstance.interceptors.request.use(
+          (config) => {
+            config.headers['Authorization'] = `Bearer ${token}`;
+            return config;
+          },
+          (error) => {
+            return Promise.reject(error);
+          }
+        );
+
         setUser(user);
       },
       logout: () => {
