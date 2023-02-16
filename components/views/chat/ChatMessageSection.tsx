@@ -50,7 +50,9 @@ const ChatMessageSection = () => {
           <span className="mr-[1rem]">
             {selectIcon('search', '15', themeColors.easternBlue)}
           </span>
-          <span>{selectIcon('search', '15', themeColors.easternBlue)}</span>
+          <span>
+            {selectIcon('video-camera', '15', themeColors.easternBlue)}
+          </span>
         </div>
       </div>
 

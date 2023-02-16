@@ -15,3 +15,4 @@ export { default as LogoutIcon } from './LogoutIcon';
 export { default as MapPinIcon } from './MapPinIcon';
 export { default as UploadCloudIcon } from './UploadCloudIcon';
 export { default as FileIcon } from './FileIcon';
+export { default as VideoCameraIcon } from './VideoCameraIcon';

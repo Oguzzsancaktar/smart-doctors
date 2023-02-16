@@ -21,6 +21,7 @@ import {
   StethescopeIcon,
   TurnRightIcon,
   UploadCloudIcon,
+  VideoCameraIcon,
 } from '../components';
 
 // TODO - create type for icon names.
@@ -67,6 +68,8 @@ export const selectIcon = (iconName: string, size?: string, color?: string) => {
       return <TurnRightIcon size={size} color={color} />;
     case 'upload-cloud':
       return <UploadCloudIcon size={size} color={color} />;
+    case 'video-camera':
+      return <VideoCameraIcon size={size} color={color} />;
       MapPinIcon;
     // backgrounded
     case 'bg-calendar':
