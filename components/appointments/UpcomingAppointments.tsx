@@ -17,9 +17,9 @@ const UpcomingAppointments = () => {
           </div>
 
           <div className="w-[32.5rem] h-full  flex flex-col justify-between ml-[2rem] ">
-            <h4 className="text-[1.6rem] leading-[1.8rem] text-easternBlue  text-end font-UbuntuBold  pb-[1.5rem]">
+            {/* <h4 className="text-[1.6rem] leading-[1.8rem] text-easternBlue  text-end font-UbuntuBold  pb-[1.5rem]">
               December 2022
-            </h4>
+            </h4> */}
             <div className="h-[calc(100%-1.8rem)] ">
               <AppointmentMiniCalendar />
             </div>

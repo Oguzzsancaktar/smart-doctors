@@ -69,7 +69,13 @@
 }
 .flatpickr-calendar .flatpickr-months .flatpickr-prev-month,
 .flatpickr-calendar .flatpickr-months .flatpickr-next-month {
-  top: -0.5rem;
+  position: relative;
+  fill: #21ada9;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0;
+  /* top: -0.5rem; */
 }
 
 .flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover i,
@@ -77,6 +83,31 @@
 .flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover svg,
 .flatpickr-calendar .flatpickr-months .flatpickr-next-month:hover svg {
   fill: #21ada9;
+}
+
+.flatpickr-calendar .flatpickr-current-month {
+  flex-direction: row-reverse;
+  display: flex;
+  position: relative;
+  padding-top: 0;
+  width: auto;
+  left: 0;
+  height: 25px;
+}
+
+.flatpickr-calendar .flatpickr-current-month .flatpickr-monthDropdown-months {
+  background: transparent;
+  font-size: 16px;
+  color: #21ada9;
+  font-family: Ubuntu-Regular;
+}
+
+.flatpickr-calendar .flatpickr-current-month select {
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
 }
 
 .flatpickr-calendar .flatpickr-current-month span.cur-month {
@@ -103,20 +134,36 @@
 .flatpickr-weekdays {
   margin-top: 1rem;
 }
-.flatpickr-current-month .flatpickr-monthDropdown-months {
+/* .flatpickr-current-month .flatpickr-monthDropdown-months {
   -webkit-appearance: none;
-}
+} */
 .flatpickr-current-month .flatpickr-monthDropdown-months,
 .flatpickr-current-month .numInputWrapper {
-  font-size: 1.1rem;
+  font-size: 16px;
+  line-height: 18px;
   border-radius: 0.4rem;
   padding: 0.2rem;
   transition: all 0.15s ease-out;
 }
-.flatpickr-current-month .flatpickr-monthDropdown-months span,
+
+.flatpickr-current-month .numInputWrapper {
+  width: 43px !important;
+}
+
+.flatpickr-current-month .numInputWrapper .numInput.cur-year {
+  font-size: 16px;
+  line-height: 18px;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+  transition: all 0.15s ease-out;
+  color: #21ada9;
+  font-family: Ubuntu-Regular;
+}
+
+/* .flatpickr-current-month .flatpickr-monthDropdown-months span,
 .flatpickr-current-month .numInputWrapper span {
   display: none;
-}
+} */
 
 .flatpickr-calendar .flatpickr-day.today {
   border-radius: 0;
@@ -135,6 +182,7 @@
   width: 100%;
   height: 100%;
 }
+
 .appointmentMiniCalendar input.flatpickr-input {
   display: none;
 }
@@ -175,6 +223,7 @@
   height: 4rem;
   max-width: 4rem;
 }
+
 .appointmentMiniCalendar .flatpickr-calendar .flatpickr-days {
   border: none;
 }
@@ -185,7 +234,19 @@
 }
 
 .appointmentMiniCalendar .flatpickr-months {
-  display: none;
+  margin-left: auto;
+  width: min-content;
+  height: 25px;
+  margin-right: 15px;
+}
+
+.appointmentMiniCalendar .flatpickr-months .flatpickr-month {
+  height: 25px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: transparent;
 }
 
 .appointmentMiniCalendar .flatpickr-calendar .flatpickr-day.nextMonthDay {
