@@ -15,11 +15,12 @@ import {
   MessageIcon,
   PhoneIcon,
   SearchIcon,
+  SendMessageBgIcon,
   SettingsIcon,
   StarBgIcon,
   StethescopeIcon,
   TurnRightIcon,
-  UploadIcon,
+  UploadCloudIcon,
 } from '../components';
 
 // TODO - create type for icon names.
@@ -64,16 +65,19 @@ export const selectIcon = (iconName: string, size?: string, color?: string) => {
       return <StethescopeIcon size={size} color={color} />;
     case 'turn-right':
       return <TurnRightIcon size={size} color={color} />;
-    case 'upload':
-      return <UploadIcon size={size} color={color} />;
+    case 'upload-cloud':
+      return <UploadCloudIcon size={size} color={color} />;
       MapPinIcon;
     // backgrounded
     case 'bg-calendar':
       return <CalendarBgIcon size={size} color={color} />;
     case 'bg-message':
       return <MessageBgIcon size={size} color={color} />;
+    case 'bg-send-message':
+      return <SendMessageBgIcon size={size} color={color} />;
     case 'bg-star':
       return <StarBgIcon size={size} color={color} />;
+
     default:
       return undefined;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IIconProps } from '../../../models';
 
-const UploadIcon: React.FC<IIconProps> = ({ color, size }) => {
+const UploadCloudIcon: React.FC<IIconProps> = ({ color, size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -63,4 +63,4 @@ const UploadIcon: React.FC<IIconProps> = ({ color, size }) => {
   );
 };
 
-export default UploadIcon;
+export default UploadCloudIcon;

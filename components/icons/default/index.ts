@@ -13,5 +13,5 @@ export { default as ChartIcon } from './ChartIcon';
 export { default as SearchIcon } from './SearchIcon';
 export { default as LogoutIcon } from './LogoutIcon';
 export { default as MapPinIcon } from './MapPinIcon';
-export { default as UploadIcon } from './UploadIcon';
+export { default as UploadCloudIcon } from './UploadCloudIcon';
 export { default as FileIcon } from './FileIcon';

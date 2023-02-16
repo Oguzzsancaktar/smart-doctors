@@ -20,7 +20,7 @@ const DoctorGeneralInfoCard: React.FC<IProps> = ({
     <div className="w-full h-full ">
       <div
         className={
-          'flex items-center  h-full w-full  pl-[10px] ' +
+          'flex items-center h-full w-full pl-[10px] ' +
           (isActive && 'bg-easternBlue rounded-[6px] ')
         }
       >
