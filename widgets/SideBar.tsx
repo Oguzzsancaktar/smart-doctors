@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import CompanyLogo from '../public/images/CompanyLogo.svg';
-import { SideBarItem } from '../components';
+import { SideBarItem, UserInfoCard } from '../components';
 import { sideBarItems } from '../constants';
 import { useAppApiContext, useAppStateContext } from '../contexts/appContext';
-import { useAuthApiContext } from '../contexts/authContext';
+import {
+  useAuthApiContext,
+  useAuthStateContext,
+} from '../contexts/authContext';
 import { selectAppRoute } from '../utils/appRouteUtils';
 import { useRouter } from 'next/router';
 
 const SideBar = () => {
   // Hooks.
   const { logout } = useAuthApiContext();
+  const { loggedUser } = useAuthStateContext();
   const { activePage } = useAppStateContext();
   const { changePage } = useAppApiContext();
   const router = useRouter();
@@ -24,6 +28,10 @@ const SideBar = () => {
       <div className="h-full flex flex-col content-between">
         <div className="flex items-center justify-center py-[3rem] border-b-[1px] border-gallery h-[10rem]">
           <CompanyLogo />
+        </div>
+
+        <div className="flex items-center justify-center py-[3rem] border-b-[1px] border-gallery h-[10rem]">
+          <UserInfoCard user={loggedUser} />
         </div>
 
         <div style={{ height: 'inherit ' }} className=" overflow-y-auto">
