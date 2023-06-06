@@ -54,7 +54,7 @@ const SideBar = () => {
         <div className="mb-[8rem]" onClick={handleLogout}>
           <SideBarItem
             iconName="logout"
-            isActive={activePage === 'settings'}
+            isActive={false}
             text="Logout"
             tab="logout"
           />

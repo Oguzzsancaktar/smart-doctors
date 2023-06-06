@@ -24,7 +24,6 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
   // Hooks.
   const router = useRouter();
   const { login } = useAuthApiContext();
-  const { changeUserType } = useAppApiContext();
 
   const { data: authResultData } = useSWR<
     ICallResponse<IAuthSuccess>,
@@ -126,12 +125,13 @@ const SignInForm: React.FC<IProps> = ({ loginType, onSwitchChange }) => {
               />
             </Grid>
 
-            <Grid className="mb-[2rem]">
-              <Checkbox size="lg">
-                <h5 className="font-normal text-corduroy text-[1.3rem] leading-[1.4rem]">
-                  Save my login information and keep me signed in.
-                </h5>
-              </Checkbox>
+            <Grid className="mb-[2rem] flex items-center">
+              <div className="h-[20px] w-[20px] ">
+                <Checkbox css={{ width: '100%', height: '100%' }} size="lg" />
+              </div>
+              <h5 className="font-normal text-corduroy text-[1.3rem] leading-[1.4rem] ml-[1rem]">
+                Save my login information and keep me signed in.
+              </h5>
             </Grid>
 
             <Grid className="mb-[2rem]">

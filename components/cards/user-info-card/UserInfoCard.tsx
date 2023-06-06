@@ -1,7 +1,5 @@
-import { Avatar } from '@nextui-org/react';
-import Image from 'next/image';
 import React from 'react';
-import { EUserType } from '../../../models';
+import { Avatar } from '@nextui-org/react';
 
 interface IProps {
   user: any;

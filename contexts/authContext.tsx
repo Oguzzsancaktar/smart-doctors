@@ -1,10 +1,8 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 import jwt from 'jsonwebtoken';
-import { EUserType, ILoginCredentials, ITokenUser } from '../models';
+import { ITokenUser } from '../models';
 
 // Libs.
-import { useSWRConfig } from 'swr';
-import { LOGIN } from '../constants/apiEndpoints';
 import Cookies from 'js-cookie';
 import axiosInstance from '../api/axiosInstance';
 
@@ -13,8 +11,8 @@ const AuthStateContext = createContext<{ loggedUser: any }>({
 });
 
 const AuthApiContext = createContext({
-  login: (token: string) => {},
-  logout: () => {},
+  login: (token: string) => { },
+  logout: () => { },
 });
 
 const useAuthStateContext = () => {
